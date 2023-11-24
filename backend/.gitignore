@@ -5,5 +5,5 @@
 !.elasticbeanstalk/*.global.yml
 
 .venv/ 
-node_modules
-uploadData.js
+node_modules/
+uploadData.js 
