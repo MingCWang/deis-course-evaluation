@@ -5,7 +5,13 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import router from './routes/index.js';
-dotenv.config();
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+// dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -42,7 +48,12 @@ mongoose.
 		console.log(`mongodb connection failed ${err}`);
 	});
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
+app.get('/', (req, res) => {
+	res.render('index')
+	})
 
 
 app.use('/', router);

@@ -29,6 +29,7 @@ export default function UserProvider({ children }) {
     }, [authenticated]);
 
     useEffect(() => {
+		console.log('validate jwt')
         validateJWT()
             .then((validated) => {
                 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
