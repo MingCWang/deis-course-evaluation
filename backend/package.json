@@ -6,7 +6,8 @@
 	"scripts": {
 		"doc": "jsdoc -c jsdoc.json",
 		"lint": "eslint . --fix --ext .js",
-		"start": "nodemon index.js"
+		"start": "node index.js",
+		"dev": "nodemon index.js"
 	},
 	"author": "",
 	"license": "ISC",
