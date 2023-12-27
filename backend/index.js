@@ -1,5 +1,5 @@
 
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import express from 'express';
 // import morgan from 'morgan';
@@ -11,7 +11,7 @@ import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-// dotenv.config();
+dotenv.config();
 const app = express();
 // const PORT = process.env.PORT || 8081;
 const PORT = 8081;

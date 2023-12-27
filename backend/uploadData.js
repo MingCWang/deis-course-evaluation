@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 import fs from 'fs';
 
-// dotenv.config();
+dotenv.config();
 console.log(process.env.MONGODB_URL)
 /**
  * Set up mongodb connection and start the server
@@ -28,7 +28,7 @@ mongoose.
 import Course from './models/course.js';
 import EvalForm from './models/evalForm.js';
 import User from './models/user.js';
-import courseData from './data/sorted.json'  assert { type: 'json' };
+import courseData from './data/modified.json'  assert { type: 'json' };
 
 const data = courseData.courses;
 

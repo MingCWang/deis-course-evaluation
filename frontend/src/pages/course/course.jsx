@@ -37,6 +37,7 @@ export default function Course() {
         usefulnessAverage,
         prerequisites,
         professors,
+		requirements,
     } = courseInfo || {};
 
     const { courseFormatted, courseTitleFormatted } = format(
@@ -97,14 +98,17 @@ export default function Course() {
                     <div className={styles.lowerHalf}>
                         <div className={styles.profContainer}>
                             Instructors:{' '}
-                            {professors.map((professor, index) => (
+                            {/* {professors.map((professor, index) => (
                                 <p
                                     className={styles.prof}
                                     key={index.toString()}
                                 >
                                 {professor.name}
                                 </p>
-                            ))}
+                            ))} */}
+							{professors.length === 0
+								? ''
+								: professors}
                         </div>
                         <RateCourseButton course={courseInfo} isCourse />
                     </div>
@@ -151,7 +155,7 @@ export default function Course() {
                                 <span className={styles.bold}>
                                     Prerequisites:{' '}
                                 </span>
-                                {prerequisites.length === 0
+                                {/* {prerequisites.length === 0
                                     ? 'None'
                                     : prerequisites.map(
                                           (prerequisite, index) => (
@@ -159,7 +163,8 @@ export default function Course() {
                                                   {prerequisite}
                                               </span>
                                           ),
-                                      )}
+                                      )} */}
+								{prerequisites}
                             </p>
                             <p className={styles.description}>Description: </p>
                             <p className={styles.descriptionText}>

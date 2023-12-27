@@ -41,7 +41,7 @@ const courseSchema = Schema({
 	professors: {
 		type: String,
 		// type: Array,
-		// required: true,
+		required: true,
 	},
 	comments: {
 		type: [{ type: Schema.Types.ObjectId, ref: 'EvalForm' }],  // Link to EvalForm model to populate data
@@ -77,6 +77,7 @@ const courseSchema = Schema({
 	},
 	courseDescription: {
 		type: String,
+		default: '',
 		// required: true,
 	},
 	prerequisites: {
