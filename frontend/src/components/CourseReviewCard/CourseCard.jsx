@@ -26,10 +26,6 @@ export default function CourseCard({ course, reload }) {
                         {course.course}
                     </Link>
                     <p className={styles.courseTitle}>{course.courseTitle}</p>
-                    <p className={styles.prerequisites}>
-                        Prerequisite:
-                        {course.prerequisites}
-                    </p>
                 </div>
                 <div className={styles.button}>
                     <LikeButton courseId={course._id} reload={reload} />

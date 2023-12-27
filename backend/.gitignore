@@ -1,0 +1,15 @@
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.ebextensions/*
+.platform/*
+
+.venv/ 
+node_modules/
+uploadData.js 
+
+*.pem
+certs/
+

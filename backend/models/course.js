@@ -39,7 +39,8 @@ const courseSchema = Schema({
 		required: true,
 	},
 	professors: {
-		type: Array,
+		type: String,
+		// type: Array,
 		required: true,
 	},
 	comments: {
@@ -76,11 +77,11 @@ const courseSchema = Schema({
 	},
 	courseDescription: {
 		type: String,
-		required: true,
+		default: '',
+		// required: true,
 	},
 	prerequisites: {
-		type: Array,
-		required: true,
+		type: String,
 	},
 	requirements: {
 		type: Array,
