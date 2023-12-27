@@ -14,13 +14,12 @@ import Course from '../models/course.js';
  */
 async function getCourses(req, res, next) {
 	let course = req.query.course;
-
+	let page = req.query.page;
+	const limit = 20;
 	let courses = [];
 	try {
 		if(!course){
 			courses = await Course.find({});
-			res.status(200).json(courses);
-			next();
 		}else{
 			courses = await Course.find(
 				{$or: [
@@ -28,10 +27,11 @@ async function getCourses(req, res, next) {
 					{ "courseTitle": { $regex: course, $options: "i" }},
 				]},
 			);
-			res.status(200).json(courses);
-
 		}
-			
+		console.log(courses.length);
+		console.log(courses.length <= page*limit)
+		res.status(200).json({courses: courses.slice((page-1)*limit, page*limit), end: courses.length > page*limit});
+
 	} catch (err) {
 		res.status(500).json({ error: err.message });
 	}

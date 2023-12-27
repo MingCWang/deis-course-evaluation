@@ -181,12 +181,12 @@ export default function Review() {
 					
 						/> */}
                         <input
-							className={styles.professorInput}
+                            className={styles.professorInput}
                             value={professor}
                             onChange={(e) =>
                                 handleProfessorChange(e.target.value)
                             }
-							placeholder='Professor: <First> <Last>'
+                            placeholder='Professor: <First> <Last>'
                         />
                     </div>
                     <div className={styles.ratingWrapper}>

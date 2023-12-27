@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styles from './search.module.css';
 import CourseCard from '../../components/CourseReviewCard/CourseCard.jsx';
-import fetchCourses from '../../services/fetchCourses.js';
+import UseCourseSearch from '../../services/UseCourseSearch.jsx';
 import Loading from '../loading/loading';
 
 function Error() {
@@ -14,40 +14,66 @@ function Error() {
     );
 }
 
-function Content({ data }) {
+function Content({ data, loading, lastCourseRef }) {
     if (data && data.length > 0) {
         return (
             <>
-                {data.map((course) => (
-                    <CourseCard key={course._id} course={course} />
-                ))}
+                {data.map((course, index) => {
+                    if (data.length === index + 1) {
+                        return (
+                            <CourseCard
+                                ref={lastCourseRef}
+                                key={course._id}
+                                course={course}
+                            />
+                        );
+                    }
+                    return <CourseCard key={course._id} course={course} />;
+                })}
+                <div>{loading && <Loading />}</div>
             </>
         );
     }
-    if (data && data.length === 0) {
+    if (loading) {
+        return <Loading />;
+    }
+    if (data.length === 0) {
         return <div className={styles.NotFoundContainer}>No Courses Found</div>;
     }
-    return <Loading />;
 }
 
 export default function Search() {
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(false);
+    // These state could be moved to a custom hook for fetching data
+
     const [searchParams, setSearchParams] = useSearchParams();
+    const [page, setPage] = useState(1);
+    const observer = useRef();
 
-    function storeData(retrievedData) {
-        setData([...retrievedData]);
-    }
-    function storeError(retrievedError) {
-        setError(retrievedError);
-    }
+    const { data, error, loading, hasmore } = UseCourseSearch(
+        searchParams.get('course'),
+        page,
+    );
 
-    // fetch data from backend when page is loaded
-    useEffect(() => {
-        fetchCourses(searchParams.get('course'), storeData, storeError);
-    }, [searchParams]);
+    // This callback keep tracks of the last element in the list of courses, and when it is reached, it will fetch more courses
+    const lastCourseRef = useCallback(
+        (node) => {
+            if (loading) return;
+            if (observer.current) observer.current.disconnect();
+            console.log(`page: ${page}`);
+            console.log(`hasmore: ${hasmore}`);
+            observer.current = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && hasmore) {
+                    setPage((prevPage) => prevPage + 1);
+                }
+            });
+            if (node) observer.current.observe(node);
+        },
+        [loading, hasmore],
+    );
 
     if (error) return <Error />;
 
-    return <Content data={data} />;
+    return (
+        <Content data={data} loading={loading} lastCourseRef={lastCourseRef} />
+    );
 }

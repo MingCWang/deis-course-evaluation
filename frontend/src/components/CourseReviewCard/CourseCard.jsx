@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CourseCard.module.css';
 import RatingBox from './RatingBox.jsx';
@@ -10,11 +11,11 @@ import RateCourseButton from './RateCourseButton';
  *
  * Stores liked courses in local storage and updates when liked/unliked, if user is logged in, stores liked courses in database
  */
-export default function CourseCard({ course, reload }) {
+function CourseCard({ course, reload }, ref) {
     const path = `/course/${course._id}`;
 
     return (
-        <div className={styles.card}>
+        <div className={styles.card} ref={ref}>
             <RatingBox
                 ratingAverage={course.ratingAverage}
                 isCourse
@@ -35,3 +36,5 @@ export default function CourseCard({ course, reload }) {
         </div>
     );
 }
+
+export default forwardRef(CourseCard);

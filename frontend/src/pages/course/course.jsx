@@ -97,7 +97,7 @@ export default function Course() {
                     </div>
                     <div className={styles.lowerHalf}>
                         <div className={styles.profContainer}>
-                            Instructors:{' '}
+                            {/* Instructors:{' '} */}
                             {/* {professors.map((professor, index) => (
                                 <p
                                     className={styles.prof}
@@ -106,7 +106,7 @@ export default function Course() {
                                 {professor.name}
                                 </p>
                             ))} */}
-                            {professors.length === 0 ? '' : professors}
+                            {/* {professors.length === 0 ? '' : professors} */}
                         </div>
                         <RateCourseButton course={courseInfo} isCourse />
                     </div>
@@ -150,9 +150,9 @@ export default function Course() {
                     <div className={styles.right}>
                         <div className={styles.courseDescription}>
                             <p className={styles.prerequisite}>
-                                <span className={styles.bold}>
+                                {/* <span className={styles.bold}>
                                     Prerequisites:{' '}
-                                </span>
+                                </span> */}
                                 {/* {prerequisites.length === 0
                                     ? 'None'
                                     : prerequisites.map(
