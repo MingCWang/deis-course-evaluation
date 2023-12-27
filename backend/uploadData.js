@@ -17,8 +17,7 @@ mongoose.
 		console.log(`mongodb is connected on location: ${mongoose.connection.host}:${mongoose.connection.port}`);
 		uploadData();
 		// modifyFields();
-
-
+		// sortCourses();
 	})
 	.catch((err) => {
 		console.log(`mongodb connection failed ${err}`);
@@ -29,7 +28,7 @@ mongoose.
 import Course from './models/course.js';
 import EvalForm from './models/evalForm.js';
 import User from './models/user.js';
-import courseData from './data/modified.json';
+import courseData from './data/sorted.json'  assert { type: 'json' };
 
 const data = courseData.courses;
 
@@ -80,3 +79,50 @@ async function uploadData() {
 };
 
 
+// Function to extract course code and number
+function extractCourseParts(course) {
+	const match = course.match(/^([A-Za-z]+)\s*(\d+)([A-Za-z]*)$/);
+	if (match) {
+	  return {
+		code: match[1],
+		number: parseInt(match[2], 10),
+		suffix: match[3]
+	  };
+	}
+	return null;
+  }
+  
+function sortCourses() {
+	// Custom sort function
+	data.sort((a, b) => {
+		const courseA = extractCourseParts(a.course);
+		const courseB = extractCourseParts(b.course);
+	
+		if (!courseA || !courseB) {
+		return 0; // Handle courses with invalid or missing codes
+		}
+	
+		// First, compare by course code
+		if (courseA.code < courseB.code) return -1;
+		if (courseA.code > courseB.code) return 1;
+	
+		// Then, compare by course number
+		if (courseA.number < courseB.number) return -1;
+		if (courseA.number > courseB.number) return 1;
+	
+		// Finally, compare by any suffix (like 'A' in '104A')
+		if (courseA.suffix < courseB.suffix) return -1;
+		if (courseA.suffix > courseB.suffix) return 1;
+	
+		return 0; // Equal courses
+	});
+	
+	console.log(data); // Sorted data
+	const jsonString = JSON.stringify(data, null, 2); // Use null and 2 for pretty formatting	
+	// Specify the output file path
+	const outputPath = './data/sorted.json'; // Change this to your desired file path
+		// Write the JSON string to the output file
+	fs.writeFileSync(outputPath, jsonString, 'utf-8');
+
+	process.exit();
+}
