@@ -8,7 +8,7 @@ import styles from './oauth-loading.module.css';
 export default function OauthLoading() {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
-    const { nameState, idState, authState, emailState } = 
+    const { nameState, idState, authState, emailState } =
         useContext(UserContext);
     const [name, setName] = nameState;
     const [id, setId] = idState;

@@ -37,7 +37,7 @@ export default function Course() {
         usefulnessAverage,
         prerequisites,
         professors,
-		requirements,
+        requirements,
     } = courseInfo || {};
 
     const { courseFormatted, courseTitleFormatted } = format(
@@ -106,9 +106,7 @@ export default function Course() {
                                 {professor.name}
                                 </p>
                             ))} */}
-							{professors.length === 0
-								? ''
-								: professors}
+                            {professors.length === 0 ? '' : professors}
                         </div>
                         <RateCourseButton course={courseInfo} isCourse />
                     </div>
@@ -164,7 +162,7 @@ export default function Course() {
                                               </span>
                                           ),
                                       )} */}
-								{prerequisites}
+                                {prerequisites}
                             </p>
                             <p className={styles.description}>Description: </p>
                             <p className={styles.descriptionText}>

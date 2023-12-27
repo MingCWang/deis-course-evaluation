@@ -27,9 +27,7 @@ function Content({ data }) {
     if (data && data.length === 0) {
         return <div className={styles.NotFoundContainer}>No Courses Found</div>;
     }
-    return (
-		<Loading />
-    );
+    return <Loading />;
 }
 
 export default function Search() {
@@ -51,7 +49,5 @@ export default function Search() {
 
     if (error) return <Error />;
 
-    return (
-        <Content data={data} />
-    );
+    return <Content data={data} />;
 }

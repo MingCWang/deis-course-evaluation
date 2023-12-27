@@ -13,7 +13,7 @@ function AttendanceButton({ value, state, setState }) {
     if (value) {
         return (
             <button
-				type='button'
+                type='button'
                 className={
                     (buttonStyle = `${buttonStyle} ${styles.firstAttendanceButton}`)
                 }
@@ -26,7 +26,7 @@ function AttendanceButton({ value, state, setState }) {
     if (!value) {
         return (
             <button
-				type='button'
+                type='button'
                 className={`${buttonStyle} ${styles.lastAttendanceButton}`}
                 onClick={handleOnClick}
             >

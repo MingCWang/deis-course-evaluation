@@ -56,6 +56,23 @@
 	width: 100%;
 }
 
+/* professor input */
+.professorInput {
+	width: 615px;
+	height: 55px;
+	margin-right: 3px;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	border-bottom: 1px solid #3A7BD5;
+	font-family: inherit;
+	padding-left: 10px;
+	font-size: 16px;
+	caret-color: #3A7BD5;
+}
+.professorInput:focus{
+	outline: none;
+}
+
 /* Grade button*/
 .gradeDropdown {
 	width: 615px;

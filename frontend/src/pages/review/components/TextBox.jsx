@@ -54,13 +54,17 @@ const StyledTextarea = styled(TextareaAutosize)(
 `,
 );
 
-export default function TextBox({ handleCommentChange }) {
+export default function TextBox({
+    handleCommentChange,
+    row = 5,
+    placeholder = '. . . . . .',
+}) {
     return (
         <StyledTextarea
             onChange={(event) => handleCommentChange(event)}
             aria-label='minimum height'
-            minRows={5}
-            placeholder='. . . . . .'
+            minRows={row}
+            placeholder={placeholder}
         />
     );
 }

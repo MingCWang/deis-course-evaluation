@@ -39,7 +39,7 @@ export default function Review() {
     }, []);
 
     if (loadingCourse) {
-        return <Loading/>;
+        return <Loading />;
     }
 
     const { course, courseTitle, professors } = courseInfo;
@@ -56,19 +56,17 @@ export default function Review() {
     });
     // TO DO: should i use these default values or fetch them dynamically from the backend?
     const term = [
-		{ label: 'FALL 2023', value: 'FALL 2023' },
-		{ label: 'SPRING 2023', value: 'SPRING 2023' },
-		{ label: 'FALL 2022', value: 'FALL 2022' },
-		{ label: 'SPRING 2022', value: 'SPRING 2022' },
+        { label: 'SPRING 2024', value: 'SPRING 2024' },
+        { label: 'FALL 2023', value: 'FALL 2023' },
+        { label: 'SPRING 2023', value: 'SPRING 2023' },
+        { label: 'FALL 2022', value: 'FALL 2022' },
+        { label: 'SPRING 2022', value: 'SPRING 2022' },
         { label: 'FALL 2021', value: 'FALL 2021' },
         { label: 'SPRING 2021', value: 'SPRING 2021' },
         { label: 'FALL 2020', value: 'FALL 2020' },
         { label: 'SPRING 2020', value: 'SPRING 2020' },
         { label: 'FALL 2019', value: 'FALL 2019' },
         { label: 'SPRING 2019', value: 'SPRING 2019' },
-        { label: 'FALL 2018', value: 'FALL 2018' },
-        { label: 'SPRING 2018', value: 'SPRING 2018' },
-        { label: 'FALL 2017', value: 'FALL 2017' },
     ];
 
     const letterGrades = [
@@ -127,8 +125,9 @@ export default function Review() {
             });
     }
 
-    function handleProfessorChange(event, value) {
+    function handleProfessorChange(value) {
         setProfessor(value);
+        console.log(value);
     }
     function handleSemesterChange(event, value) {
         Object.keys(term).forEach((key) => {
@@ -136,7 +135,6 @@ export default function Review() {
                 setSemester(value);
             }
         });
-
     }
     function handleCommentChange(event) {
         setComment({ ...comment, comment: event.target.value });
@@ -170,10 +168,25 @@ export default function Review() {
                             label='Select Term'
                             handleChange={handleSemesterChange}
                         />
-                        <DropdownSelection
+                        {/* <DropdownSelection
                             options={professorsArray}
                             label='Select Professor'
                             handleChange={handleProfessorChange}
+                        /> */}
+                        {/* <TextBox
+							comment={professor}
+							handleCommentChange={handleProfessorChange}
+							row={1}
+							placeholder='Professor'
+					
+						/> */}
+                        <input
+							className={styles.professorInput}
+                            value={professor}
+                            onChange={(e) =>
+                                handleProfessorChange(e.target.value)
+                            }
+							placeholder='Professor: <First> <Last>'
                         />
                     </div>
                     <div className={styles.ratingWrapper}>
