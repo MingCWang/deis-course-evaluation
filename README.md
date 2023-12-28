@@ -8,7 +8,7 @@ Checkout the website! [link](https://deiseval.com)
 
 	
 
-Always welcome for any feedbacks and suggestions! email: mingshihwang@brandeis.edu
+Always welcome for any feedbacks and suggestions! email: deiseval26@gmail.com
 
 ## Features
 **General**
