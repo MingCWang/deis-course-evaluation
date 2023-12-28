@@ -1,11 +1,57 @@
-.loading{
-	text-align: center;
-	margin-top: 100px;
+
+.containerPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	padding: 1em;
+}
+.container > svg{
+	width: 3.25em;
+	transform-origin: center;
+	animation: rotate4 2s linear infinite;
+   }
+
+.containerPage > svg{
+	width: 5.25em;
+	transform-origin: center;
+	animation: rotate4 2s linear infinite;
+}
+   
+.circle {
+	fill: none;
+	stroke: hsl(214, 97%, 59%);
+	stroke-width: 2;
+	stroke-dasharray: 1, 200;
+	stroke-dashoffset: 0;
+	stroke-linecap: round;
+	animation: dash4 1.5s ease-in-out infinite;
+}
+   
+@keyframes rotate4 {
+100% {
+	transform: rotate(360deg);
+}
 }
 
-.loadingMessage{
-	margin-top: 20px;
-	text-align: center;
-	font-size: 15px;
-	font-weight: 300;
+@keyframes dash4 {
+0% {
+	stroke-dasharray: 1, 200;
+	stroke-dashoffset: 0;
+}
+
+50% {
+	stroke-dasharray: 90, 200;
+	stroke-dashoffset: -35px;
+}
+
+100% {
+	stroke-dashoffset: -125px;
+}
 }

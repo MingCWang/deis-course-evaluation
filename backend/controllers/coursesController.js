@@ -28,9 +28,12 @@ async function getCourses(req, res, next) {
 				]},
 			);
 		}
-		console.log(courses.length);
-		console.log(courses.length <= page*limit)
-		res.status(200).json({courses: courses.slice((page-1)*limit, page*limit), end: courses.length > page*limit});
+
+		if (courses.length <= limit) {
+			res.status(200).json({courses: courses, hasmore: false});
+			return;
+		}
+		res.status(200).json({courses: courses.slice((page-1)*limit, page*limit), hasmore: courses.length > page*limit});
 
 	} catch (err) {
 		res.status(500).json({ error: err.message });

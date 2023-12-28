@@ -1,5 +1,5 @@
 {
-	"courses":[
+	"courses": [
   {
     "course": "AAAS 104A",
     "courseTitle": "Colorism in Paradise",
@@ -4475,21 +4475,12 @@
   },
   {
     "course": "COSI 114B",
-    "courseTitle": "Fundamentals of Computational Linguistics",
-    "syllabus": "Not Provided",
-    "professors": "James, Pustejovsky",
-    "requirements": "{sn}",
-    "prerequisites": "Prerequisites: COSI 12b and LING 131a, or permission of the instructor.",
-    "courseDescription": "Provides a fundamental understanding of the problems in natural language understanding by computers, and the theory and practice of current computational linguistic systems. Of interest to students of artificial intelligence, algorithms, and the computational processes of comprehension and understanding. Usually offered every year."
-  },
-  {
-    "course": "COSI 114B",
     "courseTitle": "Fundamentals of Natural Language Processing II",
     "syllabus": "Not Provided",
     "professors": "James Pustejovsky",
     "requirements": "{dl,sn},{sn}",
     "prerequisites": ",Prerequisites: COSI 114a, or permission of the instructor.,Prerequisites: LING 131a, COSI 114a, or permission of the instructor.",
-    "courseDescription": "Prerequisites: COSI 114a, plus at least one of LING 160b, MATH 10a, MATH 10b, MATH 15a, MATH 20a, MATH 22a, or equivalent knowledge.,Provides a fundamental understanding of the problems in natural language understanding by computers, and the theory and practice of current computational linguistic systems. Of interest to students of artificial intelligence, algorithms, and the computational processes of comprehension and understanding. Usually offered every year."
+    "courseDescription": "Provides a fundamental understanding of the problems in natural language understanding by computers, and the theory and practice of current computational linguistic systems. Of interest to students of artificial intelligence, algorithms, and the computational processes of comprehension and understanding. Usually offered every year."
   },
   {
     "course": "COSI 116A",

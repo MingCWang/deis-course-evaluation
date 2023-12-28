@@ -35,7 +35,7 @@ function Content({ data, loading, lastCourseRef }) {
         );
     }
     if (loading) {
-        return <Loading />;
+        return <Loading page />;
     }
     if (data.length === 0) {
         return <div className={styles.NotFoundContainer}>No Courses Found</div>;

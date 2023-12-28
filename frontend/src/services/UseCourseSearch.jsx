@@ -33,7 +33,7 @@ export default function UseCourseSearch(course, page) {
                     console.log(`retrieved course data`);
                     console.log(res.courses);
                     storeData(res.courses);
-                    setHasmore(res.end);
+                    setHasmore(res.hasmore);
                     setLoading(false);
                 }
             })
