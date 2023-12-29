@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 *.cjs
+
+
+/favicon_package_v0.16

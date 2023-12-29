@@ -1,68 +1,38 @@
-.footer {
-	margin-top: auto;
-	height: 60px;
+/**********
+Footer
+**********/
+
+/* .container{
+	display: flex;
+	justify-content: center;
 	width: 100%;
+	height: 100%;
+} */
+
+.footer{
+	font-family: Kite One;
+	font-size: 16px;
+	/* width: 500px; */
+	width: 100%;
+	height: 50px;
+	z-index: 2;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border-top: 1px solid rgba(0, 0, 0, 0.198);
+	justify-content: space-around;
+	margin-top: auto;
 }
-
-
-.footerLinks {
-	padding-right: 30px;
-}
-
-.footerLink {
-	padding: 0 10px;
-	align-items: center;
-	text-decoration: none;
-	color: black;
-}
-
-
-.icon {
-	vertical-align: middle;
-	font-size: 30px;
-}
-
-
-
-.copyright {
-	padding: 0 10px 0 40px;
-	font-size: 15px;
-
-}
-
-.logo {
-	display: flex;
-	align-items: center;
-}
-
-.logoText {
-	vertical-align: middle;
-	font-weight: 200;
-}
-
-.logoTextBold {
-	font-weight: 700;
-}
-
-/*******
-main page footer
-********/
-
-.footerMain {
+.footerMain{
 	composes: footer;
-	color: #FFFFFF;
-	background-color: transparent;
-	position: fixed;
-	bottom: 0;
-	border-top: none;
-	z-index: 1000;
+	left: 10px;
+	bottom: 10px;
+	position: absolute;
+
+
+}
+.link{
+	text-decoration: none;
+	color: #000;
 }
 
-.iconMain {
-	composes: icon;
-	color: #FFFFFF;
+.year{
+		
 }

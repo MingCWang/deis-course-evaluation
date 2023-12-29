@@ -1,0 +1,100 @@
+
+/* .searchReview {
+	width: 100%;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+
+} */
+
+
+.searchBar {
+	/* display: flex; */
+	/* flex-direction: column;
+	justify-content: space-around; */
+	position: absolute;	
+	top: 100px;
+	width: 100%;
+}
+
+
+
+.search {
+	width: 60%;
+	height: 100px;
+	background-color: transparent;
+	/* border: 1px solid #3A7BD5; */
+	border: none;
+	font-family: Lexend Tera;
+	padding-left: 30px;
+	font-size: 120px;
+	font-weight: 400;
+	z-index: 2;
+	text-transform: uppercase;
+	color: #3A7BD5;
+}
+.search:focus {
+	outline: none;
+	cursor: pointer;
+}
+.search::placeholder {
+    opacity: 0.3;
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    50% {
+        opacity: 0;
+    }
+}
+
+.searchWrapper {
+	height: 100%;
+	position: absolute;
+	top: 400px;
+	width: 100%;
+	left: 20%;
+}
+
+.searchInput {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	transform: translate(-40px, 20px);
+}
+
+.searchIcon {
+	vertical-align: middle;
+	font-size: 20px;
+	color: #3A7BD5;
+
+}
+
+
+.searchButton {
+	/* composes: search; */
+	width: auto;
+	text-align: center;
+	margin-top: 530px;
+	border: none;
+	font-size: 30px;
+	color: #000;
+	cursor: pointer;
+	font-family: Kite One;
+	background-color: transparent;
+	position: absolute;
+	/* right: 100px; */
+	right: 5%;
+
+}
+
+.searchButton:hover {
+	opacity: 0.8;
+}
+
+.searchButtonHidden {
+	display: none;
+}

@@ -1,45 +1,35 @@
-import { useLocation } from 'react-router-dom';
-
-import { BiLogoGithub, BiLogoLinkedin, BiLogoInstagram } from 'react-icons/bi';
+import {Link, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
-    const location = useLocation();
+	const location = useLocation();
     const pathIsHome = location.pathname === '/';
 
     let footerStyles;
-    let iconStyles;
     if (pathIsHome) {
         footerStyles = styles.footerMain;
-        iconStyles = styles.iconMain;
     } else {
         footerStyles = styles.footer;
-        iconStyles = styles.icon;
     }
 
     return (
-        <footer className={footerStyles}>
-            <div className={styles.logo}>
-                <span className={styles.copyright}>© 2023</span>
-                <span className={styles.logoText}>
-                    Deis
-                    <span className={styles.logoTextBold}>Evaluation</span>
-                </span>
-            </div>
-            <div className={styles.footerLinks}>
-                <a
-                    href='https://github.com/MingCWang/deis-course-evaluation'
-                    className={styles.footerLink}
-                >
-                    <BiLogoGithub className={iconStyles} />
-                </a>
-                {/* <a href='' className={styles.footerLink}>
-                    <BiLogoLinkedin className={iconStyles} />
-                </a>
-                <a href='' className={styles.footerLink}>
-                    <BiLogoInstagram className={iconStyles} />
-                </a> */}
-            </div>
-        </footer>
+		<div className={styles.container}>	
+
+			<div className={footerStyles}>
+					<Link className={styles.link} to='/'>
+						TERMS & CONDITIONS
+					</Link>
+					<Link className={styles.link} to='/'>
+						PRIVACY POLICIY
+					</Link>
+					<Link className={styles.link} to='/'>
+						FAQ
+					</Link>
+					<p className={styles.year}>2023</p>
+
+				</div>
+		</div>
+
+		        
     );
 }
