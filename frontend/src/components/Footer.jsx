@@ -1,8 +1,8 @@
-import {Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
-	const location = useLocation();
+    const location = useLocation();
     const pathIsHome = location.pathname === '/';
 
     let footerStyles;
@@ -13,23 +13,19 @@ export default function Footer() {
     }
 
     return (
-		<div className={styles.container}>	
-
-			<div className={footerStyles}>
-					<Link className={styles.link} to='/'>
-						TERMS & CONDITIONS
-					</Link>
-					<Link className={styles.link} to='/'>
-						PRIVACY POLICIY
-					</Link>
-					<Link className={styles.link} to='/'>
-						FAQ
-					</Link>
-					<p className={styles.year}>2023</p>
-
-				</div>
-		</div>
-
-		        
+        <div className={styles.container}>
+            <div className={footerStyles}>
+                <Link className={styles.link} to='/'>
+                    TERMS & CONDITIONS
+                </Link>
+                <Link className={styles.link} to='/'>
+                    PRIVACY POLICIY
+                </Link>
+                <Link className={styles.link} to='/'>
+                    FAQ
+                </Link>
+                <p className={styles.year}>2023</p>
+            </div>
+        </div>
     );
 }

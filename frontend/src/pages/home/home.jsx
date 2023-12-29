@@ -28,32 +28,31 @@ export default function Home() {
                 <div className={styles.titleContainer}>
                     <p className={styles.title}>DEIS EVAL</p>
                 </div>
-				<div className={styles.searchContainer}>
-					<div className={styles.topLine} />
-					<div className={styles.bottomLine} />
-					<div
-						className={
-							hidden
-								? styles.shiftContainerHidden
-								: styles.shiftContainer
-						}
-						role='button'
-						tabIndex={0}
-						// onClick={handleClick}
-						onKeyDown={(event) => {
-							if (event.key === 'Enter' || event.key === ' ') {
-								handleClick();
-							}
-						}}
-					>
-						<div className={styles.shiftText1}>SEARCH</div>
-						<div className={styles.shiftText2}>A</div>
-						<div className={styles.shiftText3}>COURSE</div>
-					</div>
+                <div className={styles.searchContainer}>
+                    <div className={styles.topLine} />
+                    <div className={styles.bottomLine} />
+                    <div
+                        className={
+                            hidden
+                                ? styles.shiftContainerHidden
+                                : styles.shiftContainer
+                        }
+                        role='button'
+                        tabIndex={0}
+                        // onClick={handleClick}
+                        onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                                handleClick();
+                            }
+                        }}
+                    >
+                        <div className={styles.shiftText1}>SEARCH</div>
+                        <div className={styles.shiftText2}>A</div>
+                        <div className={styles.shiftText3}>COURSE</div>
+                    </div>
 
-					<SearchBar handleClick={handleClick} />
-				</div>
-             
+                    <SearchBar handleClick={handleClick} />
+                </div>
             </div>
         </>
     );

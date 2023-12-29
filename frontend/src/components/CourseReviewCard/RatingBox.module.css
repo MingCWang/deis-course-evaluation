@@ -2,18 +2,20 @@
 /* ratings section */
 .rating {
 	width: 110px;
-	height: 200px;
+	height: 160px;
 	background-color: rgba(164, 164, 164, 0.797);
 	display: flex;
 	justify-content: center;
 	position: absolute;
+	/* border-radius: 10px; */
 }
 
 
 
 .ratingScoreContainer {
 	position: absolute;
-	top: 70px;
+	top: 50px;
+	background: transparent;
 }
 
 /* ratingbox for reviews */
@@ -31,6 +33,7 @@
 	font-weight: 700;
 	color: black;
 	margin-right: 1px;
+	background: transparent;
 }
 
 .ratingCount {
@@ -38,6 +41,7 @@
 	bottom: 25px;
 	font-size: 15px;
 	font-weight: 400;
+	background: transparent;
 }
 
 .red {

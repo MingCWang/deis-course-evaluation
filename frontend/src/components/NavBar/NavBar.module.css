@@ -18,3 +18,27 @@ Header
 	text-decoration: none;
 	color: #000;
 }
+
+.back{
+	position: fixed;
+	left: 20px;
+
+}
+
+.backIcon{
+	font-size: 40px;
+	vertical-align: middle;
+	margin-top: -5px;
+	margin-right: 10px;
+}
+
+.backWrapper{
+	display: flex;
+	justify-content: space-around;
+	margin-left: 20px;	
+	margin-top: 20px;
+}
+
+.backWrapper:hover{
+	cursor: pointer;
+}
