@@ -72,7 +72,8 @@ async function getEvalWithIds(req, res) {
 		const result = await Course.findById(courseId).populate('comments');
 		const evalForms = result.comments;
 		if (evalForms.length === 0) {
-			res.status(404).json({ error: 'No evaluations' });
+			// res.status(404).json({ error: 'No evaluations' });
+			res.status(200).json({error: "no evaluations"});
 			return;
 		}
 		res.status(200).json(evalForms);
