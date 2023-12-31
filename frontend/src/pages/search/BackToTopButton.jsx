@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './BackToTopButton.module.css';
 
-
 export default function BackToTopButton() {
     const [showButton, setShowButton] = useState(false);
 
@@ -21,7 +20,11 @@ export default function BackToTopButton() {
 
     return showButton ? (
         <div className={styles.container}>
-            <button className={styles.button} onClick={scrollToTop} type='button'>
+            <button
+                className={styles.button}
+                onClick={scrollToTop}
+                type='button'
+            >
                 Back to top
             </button>
         </div>

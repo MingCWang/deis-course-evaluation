@@ -35,9 +35,9 @@ export default function Course() {
         ratingAverage,
         gradeAverage,
         usefulnessAverage,
-        prerequisites,
-        professors,
-        requirements,
+        // prerequisites,
+        // professors,
+        // requirements,
     } = courseInfo || {};
 
     const { courseFormatted, courseTitleFormatted } = format(
@@ -89,43 +89,45 @@ export default function Course() {
                             </span>{' '}
                             {courseTitleFormatted}
                         </p>
+                    </div>
+                    <div className={styles.lowerHalf}>
                         <LikeButton
                             courseId={_id}
                             className={styles.likeButton}
                             isCourse
                         />
-                    </div>
-                    <div className={styles.lowerHalf}>
-                        <div className={styles.profContainer}>
-                            {/* Instructors:{' '} */}
-                            {/* {professors.map((professor, index) => (
-                                <p
-                                    className={styles.prof}
-                                    key={index.toString()}
-                                >
-                                {professor.name}
-                                </p>
-                            ))} */}
-                            {/* {professors.length === 0 ? '' : professors} */}
-                        </div>
                         <RateCourseButton course={courseInfo} isCourse />
                     </div>
                 </div>
                 <div className={styles.courseInfoContainer}>
-                    <div className={styles.left}>
-                        <div className={styles.rating}>
-                            <div className={styles.gridContainer}>
-                                <div className={color} />
-                            </div>
-                            <div className={styles.ratingTextContainer}>
-                                <span className={styles.ratingText}>
-                                    {rating}
-                                </span>{' '}
-                                <span className={styles.ratingSubText}>
-                                    / 5.0
-                                </span>
+                    <div className={styles.descriptionContainer}>
+                        <div className={styles.courseDescription}>
+                            <p className={styles.description}>Description: </p>
+                            <p className={styles.descriptionText}>
+                                {courseDescription}
+                            </p>
+                        </div>
+                    </div>
+                    <div className={styles.ratingContainer}>
+                        <div className={styles.ratingWrapper}>
+                            <span className={styles.overallText}>
+                                Overall Rating
+                            </span>
+                            <div className={styles.rating}>
+                                <div className={styles.gridContainer}>
+                                    <div className={color} />
+                                </div>
+                                <div className={styles.ratingTextContainer}>
+                                    <span className={styles.ratingText}>
+                                        {rating}
+                                    </span>{' '}
+                                    <span className={styles.ratingSubText}>
+                                        / 5.0
+                                    </span>
+                                </div>
                             </div>
                         </div>
+
                         <div className={styles.subRatings}>
                             <p className={styles.subRate}>
                                 Difficulty{' '}
@@ -144,30 +146,6 @@ export default function Course() {
                                 <span className={styles.subRateValue}>
                                     {convertToLetterGrade(gradeAverage.grade)}
                                 </span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className={styles.right}>
-                        <div className={styles.courseDescription}>
-                            <p className={styles.prerequisite}>
-                                {/* <span className={styles.bold}>
-                                    Prerequisites:{' '}
-                                </span> */}
-                                {/* {prerequisites.length === 0
-                                    ? 'None'
-                                    : prerequisites.map(
-                                          (prerequisite, index) => (
-                                              <span key={index.toString()}>
-                                                  {prerequisite}
-                                              </span>
-                                          ),
-                                      )} */}
-                                {prerequisites}
-                            </p>
-                            <p className={styles.description}>Description: </p>
-                            <p className={styles.descriptionText}>
-                                {' '}
-                                {courseDescription}
                             </p>
                         </div>
                     </div>

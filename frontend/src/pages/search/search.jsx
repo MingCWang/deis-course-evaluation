@@ -61,8 +61,6 @@ export default function Search() {
         (node) => {
             if (loading) return;
             if (observer.current) observer.current.disconnect();
-            console.log(`page: ${page}`);
-            console.log(`hasmore: ${hasmore}`);
             observer.current = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && hasmore) {
                     setPage((prevPage) => prevPage + 1);
@@ -83,7 +81,7 @@ export default function Search() {
                 loading={loading}
                 lastCourseRef={lastCourseRef}
             />
-			<BackToTopButton />
+            <BackToTopButton />
         </>
     );
 }

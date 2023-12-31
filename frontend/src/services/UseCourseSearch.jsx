@@ -31,7 +31,6 @@ export default function UseCourseSearch(course, page) {
             .then((res) => {
                 if (!res.error) {
                     console.log(`retrieved course data`);
-                    console.log(res.courses);
                     storeData(res.courses);
                     setHasmore(res.hasmore);
                     setLoading(false);

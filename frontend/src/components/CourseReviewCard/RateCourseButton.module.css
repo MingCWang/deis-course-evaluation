@@ -23,6 +23,7 @@
 
 .rateButtonCourse{
 	composes: rateButton;
+	background-color: transparent;
 	margin: 20px;
 }
 
