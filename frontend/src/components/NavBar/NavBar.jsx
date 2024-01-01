@@ -51,13 +51,11 @@ export default function NavBar() {
                     <Link className={styles.link} to='/about'>
                         ABOUT
                     </Link>
-                    <Link className={styles.link} to='/'>
+                    <Link className={styles.link} to='/contact'>
                         CONTACT
                     </Link>
                 </div>
-                {isHome ? null : 
-				<Footer />
-				}
+                {isHome ? null : <Footer />}
             </div>
             <div className={styles.burger}>
                 <input
