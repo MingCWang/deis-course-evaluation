@@ -8,6 +8,8 @@ import fetchCourse from '../../services/fetchCourse.js';
 import convertToLetterGrade from '../../utils/convertToLetterGrade.js';
 import LikeButton from '../../components/CourseReviewCard/LikeButton.jsx';
 import RateCourseButton from '../../components/CourseReviewCard/RateCourseButton.jsx';
+import Loading from '../loading/loading.jsx';
+
 
 export default function Course() {
     const [reviews, setReviews] = useState([]);
@@ -22,7 +24,7 @@ export default function Course() {
     }, []);
 
     if (loadingReviews || loadingCourse) {
-        return <div className={styles.loadingContainer}>Loading....</div>;
+        return <Loading />;
     }
 
     // Everything below will not be parsed if loading reveiw or course is true

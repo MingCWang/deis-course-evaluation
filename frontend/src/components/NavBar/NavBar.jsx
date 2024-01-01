@@ -15,20 +15,24 @@ export default function NavBar() {
     };
     return (
         <div className={styles.header}>
-            {isHome ? (
-                <div />
-            ) : (
-                <div
-                    className={`${styles.link} ${styles.back}`}
-                    onClick={handleBack}
-                    role='button'
-                    tabIndex={0}
-                >
-                    <div className={styles.backWrapper}>
-                        <IoReturnUpBack className={styles.backIcon} /> BACK
-                    </div>
-                </div>
-            )}
+{isHome ? (
+	<div />
+) : (
+	<div
+		className={`${styles.link} ${styles.back}`}
+		onClick={handleBack}
+		onKeyDown={handleBack} // Add onKeyDown event listener
+		role='button'
+		tabIndex={0}
+	>
+		<div className={styles.backWrapper}>
+			<IoReturnUpBack className={styles.backIcon} /> BACK
+		</div>
+	</div>
+)}
+  <Link className={styles.link} to='/saved-courses'>
+                SAVED
+            </Link>
             <Link className={styles.link} to='/'>
                 ABOUT
             </Link>

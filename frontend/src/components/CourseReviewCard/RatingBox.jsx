@@ -34,6 +34,7 @@ export default function RatingBox({ ratingAverage, isCourse, numRatings }) {
     } else {
         ratingStyle = styles.ratingReview;
         ratingScoreStyle = styles.ratingScoreContainerReview;
+		color = styles.transparent;
     }
 
     return (

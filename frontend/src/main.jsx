@@ -43,13 +43,18 @@ const router = createBrowserRouter([
                 path: 'loading',
                 element: <Loading />,
             },
-            {
+            // {
+            //     path: 'saved-courses',
+            //     element: (
+            //         <ProtectedRoute>
+            //             <SavedCourse />
+            //         </ProtectedRoute>
+            //     ),
+            // },
+			{
                 path: 'saved-courses',
-                element: (
-                    <ProtectedRoute>
-                        <SavedCourse />
-                    </ProtectedRoute>
-                ),
+                element: <SavedCourse />
+               
             },
             {
                 path: 'my-reviews',
@@ -65,8 +70,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <React.StrictMode>
-    <UserProvider>
+    // <UserProvider>
         <RouterProvider router={router} />
-    </UserProvider>,
+    // </UserProvider>,
     // </React.StrictMode>,
 );

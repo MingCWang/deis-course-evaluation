@@ -22,12 +22,34 @@ export default function ReviewCard({ review }) {
     //     return null;
     // };
 
+	let rating;
+	const ratingAverage = review.rate;
+	let color;
+
+    if (ratingAverage % 1 === 0) {
+        rating = ratingAverage.toFixed(1);
+    } else {
+        rating = ratingAverage;
+    }
+
+    if (rating === 5) {
+        color = styles.green;
+    } else if (rating >= 4) {
+        color = styles.lightGreen;
+    } else if (rating >= 3) {
+        color = styles.yellow;
+    } else if (rating >= 2) {
+        color = styles.orange;
+    } else if (rating >= 1) {
+        color = styles.red;
+    }
+
     if (window.location.pathname === '/my-reviews') {
         card = styles1.card;
     }
 
     return (
-        <div className={card}>
+        <div className={`${card} ${color}`}>
             <RatingBox ratingAverage={review.rate} />
             <div className={styles.body}>
                 <div className={styles.contents}>
