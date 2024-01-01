@@ -31,17 +31,15 @@ export default function LikeButton({ courseId, isCourse, reload }) {
     // }, [authenticated, localStorage.getItem('likedCourses')]);
     // *********************************************************************************************************************************************************
 
-	useEffect(() => {
+    useEffect(() => {
         const likedCourses =
             JSON.parse(localStorage.getItem('likedCourses')) || [];
 
-            if (likedCourses.includes(courseId)) {
-                setClicked(true);
-                setAdded(true);
-            }
+        if (likedCourses.includes(courseId)) {
+            setClicked(true);
+            setAdded(true);
+        }
     }, [localStorage.getItem('likedCourses')]);
-
-
 
     // fetch liked courses from local storage and update when liked/unliked
     useEffect(() => {
@@ -63,7 +61,7 @@ export default function LikeButton({ courseId, isCourse, reload }) {
         }
     }, [clicked]);
 
-	// ********************************************This function is for when liking a course requries authentication*****************************************
+    // ********************************************This function is for when liking a course requries authentication*****************************************
     // function handleLikedCourse() {
     //     if (!authenticated) {
     //         setLoggingIn(true);
@@ -72,13 +70,11 @@ export default function LikeButton({ courseId, isCourse, reload }) {
     //         if (reload) reload();
     //     }
     // }
-	// *********************************************************************************************************************************************************
+    // *********************************************************************************************************************************************************
 
-	function handleLikedCourse() {
-  
-		setClicked(!clicked);
-		if (reload) reload();
-        
+    function handleLikedCourse() {
+        setClicked(!clicked);
+        if (reload) reload();
     }
 
     /**

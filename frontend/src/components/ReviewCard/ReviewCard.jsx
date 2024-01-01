@@ -22,9 +22,9 @@ export default function ReviewCard({ review }) {
     //     return null;
     // };
 
-	let rating;
-	const ratingAverage = review.rate;
-	let color;
+    let rating;
+    const ratingAverage = review.rate;
+    let color;
 
     if (ratingAverage % 1 === 0) {
         rating = ratingAverage.toFixed(1);
@@ -53,16 +53,20 @@ export default function ReviewCard({ review }) {
             <RatingBox ratingAverage={review.rate} />
             <div className={styles.body}>
                 <div className={styles.contents}>
-				<div className={styles.top}>
-					<p className={styles.course}>
-							<span className={`${styles.courseFont} ${styles.bold}`}>
-								{review.course.name}
-							</span>{' '}
-							with professor{' '}
-							<span className={styles.bold}>{review.professor}</span>
-						</p>
-					<p className={styles.date}>{formattedDate}</p>
-				</div>
+                    <div className={styles.top}>
+                        <p className={styles.course}>
+                            <span
+                                className={`${styles.courseFont} ${styles.bold}`}
+                            >
+                                {review.course.name}
+                            </span>{' '}
+                            with professor{' '}
+                            <span className={styles.bold}>
+                                {review.professor}
+                            </span>
+                        </p>
+                        <p className={styles.date}>{formattedDate}</p>
+                    </div>
                     <div className={styles.infoContainer}>
                         <p className={styles.info}>
                             Term:{' '}
@@ -99,16 +103,25 @@ export default function ReviewCard({ review }) {
                             </span>
                         </p>
                     </div>
-					<div className={styles.commentWrapper}>
-						<p className={styles.comment}>Comment on the course: </p>
-						<p className={styles.commentText}>{review.comment}</p>
-						{review.commentProf ? <p className={styles.comment}>Comment on the instructor: </p> : null}  
-						<p className={styles.commentText}>{review.commentProf}</p>
-						{review.advice ? <p className={styles.comment}>Advice: </p> : null}
-						<p className={styles.commentText}>{review.advice}</p>
-					</div>
-						
-			
+                    <div className={styles.commentWrapper}>
+                        <p className={styles.comment}>
+                            Comment on the course:{' '}
+                        </p>
+                        <p className={styles.commentText}>{review.comment}</p>
+                        {review.commentProf ? (
+                            <p className={styles.comment}>
+                                Comment on the instructor:{' '}
+                            </p>
+                        ) : null}
+                        <p className={styles.commentText}>
+                            {review.commentProf}
+                        </p>
+                        {review.advice ? (
+                            <p className={styles.comment}>Advice: </p>
+                        ) : null}
+                        <p className={styles.commentText}>{review.advice}</p>
+                    </div>
+
                     {/* {deleteButton()} */}
                 </div>
             </div>

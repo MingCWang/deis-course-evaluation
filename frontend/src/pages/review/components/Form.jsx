@@ -6,7 +6,6 @@ import DeliveryButtons from './DeliveryButtons.jsx';
 import LetterGradeDropdown from './LetterGradeDropdown.jsx';
 import CommentSection from './CommentSection.jsx';
 
-
 const letterGrades = [
     { label: 'A+', value: 13 },
     { label: 'A', value: 12 },
@@ -47,9 +46,9 @@ export default function Form({
     commentProf,
     advice,
     error,
-	term,
-	first,
-	last,
+    term,
+    first,
+    last,
 }) {
     return (
         <form className={styles.form}>

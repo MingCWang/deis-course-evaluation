@@ -15,16 +15,16 @@ export default function Footer() {
     return (
         <div className={styles.container}>
             <div className={footerStyles}>
-                <Link className={styles.link} to='/'>
+                <Link className={styles.link} to='/terms-conditions'>
                     TERMS & CONDITIONS
                 </Link>
-                <Link className={styles.link} to='/'>
+                <Link className={styles.link} to='/privacy-policy'>
                     PRIVACY POLICIY
                 </Link>
-                <Link className={styles.link} to='/'>
+                {/* <Link className={styles.link} to='/'>
                     FAQ
-                </Link>
-                <p className={styles.year}>2023</p>
+                </Link> */}
+                <p className={styles.year}>2024</p>
             </div>
         </div>
     );

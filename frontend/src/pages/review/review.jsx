@@ -55,27 +55,27 @@ export default function Review() {
     // });
     // TO DO: should i use these default values or fetch them dynamically from the backend?
 
-	const term = [
-		{ label: 'SPRING 2024', value: 'SPRING 2024' },
-		{ label: 'FALL 2023', value: 'FALL 2023' },
-		{ label: 'SPRING 2023', value: 'SPRING 2023' },
-		{ label: 'FALL 2022', value: 'FALL 2022' },
-		{ label: 'SPRING 2022', value: 'SPRING 2022' },
-		{ label: 'FALL 2021', value: 'FALL 2021' },
-		{ label: 'SPRING 2021', value: 'SPRING 2021' },
-		{ label: 'FALL 2020', value: 'FALL 2020' },
-		{ label: 'SPRING 2020', value: 'SPRING 2020' },
-		{ label: 'FALL 2019', value: 'FALL 2019' },
-		{ label: 'SPRING 2019', value: 'SPRING 2019' },
-	];
+    const term = [
+        { label: 'SPRING 2024', value: 'SPRING 2024' },
+        { label: 'FALL 2023', value: 'FALL 2023' },
+        { label: 'SPRING 2023', value: 'SPRING 2023' },
+        { label: 'FALL 2022', value: 'FALL 2022' },
+        { label: 'SPRING 2022', value: 'SPRING 2022' },
+        { label: 'FALL 2021', value: 'FALL 2021' },
+        { label: 'SPRING 2021', value: 'SPRING 2021' },
+        { label: 'FALL 2020', value: 'FALL 2020' },
+        { label: 'SPRING 2020', value: 'SPRING 2020' },
+        { label: 'FALL 2019', value: 'FALL 2019' },
+        { label: 'SPRING 2019', value: 'SPRING 2019' },
+    ];
 
     function handleSubmit(event) {
         event.preventDefault();
         console.log('submitting form');
         const process = import.meta.env;
         const commentString = comment.comment;
-		const commentProfString = commentProf.commentProf;
-		const adviceString = advice.advice;
+        const commentProfString = commentProf.commentProf;
+        const adviceString = advice.advice;
         const courseIdName = {
             id: courseId,
             name: courseFormatted,
@@ -100,8 +100,8 @@ export default function Review() {
                 professor,
                 semester,
                 commentString,
-				commentProfString,
-				adviceString,
+                commentProfString,
+                adviceString,
             }),
         })
             .then((response) => response.json())
@@ -169,7 +169,7 @@ export default function Review() {
                     handleCommentChange={handleCommentChange}
                     handleCommentProfChange={handleCommentProfChange}
                     handleSubmit={handleSubmit}
-					handleGradeChange={handleGradeChange}
+                    handleGradeChange={handleGradeChange}
                     difficulty={difficulty}
                     setDifficulty={setDifficulty}
                     rate={rate}
@@ -184,9 +184,9 @@ export default function Review() {
                     commentProf={commentProf}
                     advice={advice}
                     error={error}
-					term={term}
-					first={first}
-					last={last}
+                    term={term}
+                    first={first}
+                    last={last}
                 />
             </div>
         </div>

@@ -10,7 +10,6 @@ import LikeButton from '../../components/CourseReviewCard/LikeButton.jsx';
 import RateCourseButton from '../../components/CourseReviewCard/RateCourseButton.jsx';
 import Loading from '../loading/loading.jsx';
 
-
 export default function Course() {
     const [reviews, setReviews] = useState([]);
     const [courseInfo, setCourseInfo] = useState({});
