@@ -1,0 +1,23 @@
+.title{
+	text-align: center;
+	font-family: Kite One;
+	font-size: 30px;
+	font-weight: 200;
+}
+
+.about{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.story{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: 2;
+	font-size: 20px;
+	margin-top: 20vh;
+}

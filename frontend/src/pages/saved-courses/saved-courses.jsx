@@ -22,7 +22,7 @@ export default function SavedCourses() {
     }, [reloadPage]);
 
     const empty = () => {
-        if (data.length === 0) return <p>No saved courses</p>;
+        if (data.length === 0) return <p className={styles.nosaved}>No courses saved yet!</p>;
         return null;
     };
 
