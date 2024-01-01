@@ -5,6 +5,8 @@ import styles from './search.module.css';
 import CourseCard from '../../components/CourseReviewCard/CourseCard.jsx';
 import UseCourseSearch from '../../services/UseCourseSearch.jsx';
 import Loading from '../loading/loading';
+import SearchBar from './SearchBar.jsx';
+import BackToTopButton from './BackToTopButton.jsx';
 
 function Error() {
     return (
@@ -59,8 +61,6 @@ export default function Search() {
         (node) => {
             if (loading) return;
             if (observer.current) observer.current.disconnect();
-            console.log(`page: ${page}`);
-            console.log(`hasmore: ${hasmore}`);
             observer.current = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && hasmore) {
                     setPage((prevPage) => prevPage + 1);
@@ -74,6 +74,14 @@ export default function Search() {
     if (error) return <Error />;
 
     return (
-        <Content data={data} loading={loading} lastCourseRef={lastCourseRef} />
+        <>
+            <SearchBar />
+            <Content
+                data={data}
+                loading={loading}
+                lastCourseRef={lastCourseRef}
+            />
+            <BackToTopButton />
+        </>
     );
 }

@@ -4,7 +4,7 @@
  * @param {Object} body - request body
  * @returns {{course: string, semester: string, professor: string, difficulty: number, rate: number, attendance: string, gradeRecieved: string, delivery: string, comment: string}} - JSON object with the parameters
  */
-export const getEvalFormParams = ({ courseIdName, semester, professor, difficulty, rate, usefulness, attendance, grade, delivery, commentString }) => {
+export const getEvalFormParams = ({ courseIdName, semester, professor, difficulty, rate, usefulness, attendance, grade, delivery, commentString, commentProfString, adviceString }) => {
 	return {
 		course: courseIdName,
 		semester,
@@ -15,7 +15,9 @@ export const getEvalFormParams = ({ courseIdName, semester, professor, difficult
 		attendance,
 		grade,
 		delivery,
-		comment: commentString
+		comment: commentString,
+		commentProf: commentProfString,
+		advice: adviceString
 	};
 };
 

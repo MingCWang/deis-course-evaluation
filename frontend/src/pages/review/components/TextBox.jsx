@@ -34,10 +34,11 @@ const StyledTextarea = styled(TextareaAutosize)(
 	padding: 12px;
 	margin: 15px 0;
 	color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-	background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
+	// background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
+	background: transparent;
 	border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
 	box-shadow: 0px 2px 2px ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
-
+	border-radius: 10px;
 	&:hover {
 	border-color: ${blue[400]};
 	}

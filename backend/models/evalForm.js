@@ -95,7 +95,15 @@ const evalFormSchema = Schema(
 		comment: {
 			type: String,
 			required: true
-		}
+		},
+		commentProf: {
+			type: String,
+			required: true
+		},
+		advice: {
+			type: String,
+			required: true
+		},
 	},
 	{
 		timestamps: true,

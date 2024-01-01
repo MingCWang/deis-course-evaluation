@@ -9,11 +9,13 @@
 
 .levelText {
 	margin: auto 0;
+	font-size: 30px;
+	font-weight: 700;
 }
 
 .ratingButton {
 	height: 35px;
-	width: 90px;
+	width: 100px;
 	border: none;
 	background-color: rgba(0, 0, 0, 0.205);
 	margin-right: 3px;
@@ -40,7 +42,7 @@
 	background-color: #3A7BD5;
 }
 
-.ratingButtonSelected:hover {
+.ratingButtonHovered {
 	background-color: #3A7BD5;
 }
 

@@ -2,33 +2,44 @@ import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './LikeButton.module.css';
-import { UserContext } from '../../contexts/UserContext.jsx';
+// import { UserContext } from '../../contexts/UserContext.jsx';
 
 export default function LikeButton({ courseId, isCourse, reload }) {
     const [clicked, setClicked] = useState(false);
     const [added, setAdded] = useState(false);
 
-    const { loggingInState, authState } = useContext(UserContext);
-    const [loggingIn, setLoggingIn] = loggingInState;
-    const [authenticated, setAuthenticated] = authState;
+    // const { loggingInState, authState } = useContext(UserContext);
+    // const [loggingIn, setLoggingIn] = loggingInState;
+    // const [authenticated, setAuthenticated] = authState;
 
-    // check if course is in liked courses when page is loaded
+    // **************************check if course is in liked courses when page is loaded, require auth version ***********************************************
+    // useEffect(() => {
+    //     const likedCourses =
+    //         JSON.parse(localStorage.getItem('likedCourses')) || [];
+
+    //     if (authenticated) {
+    //         if (likedCourses.includes(courseId)) {
+    //             setClicked(true);
+    //             setAdded(true);
+    //         }
+    //     } else {
+    //         setClicked(false);
+    //         setAdded(false);
+    //     }
+    // }, [authenticated, localStorage.getItem('likedCourses')]);
+    // *********************************************************************************************************************************************************
+
     useEffect(() => {
         const likedCourses =
             JSON.parse(localStorage.getItem('likedCourses')) || [];
 
-        if (authenticated) {
-            if (likedCourses.includes(courseId)) {
-                setClicked(true);
-                setAdded(true);
-            }
-        } else {
-            setClicked(false);
-            setAdded(false);
+        if (likedCourses.includes(courseId)) {
+            setClicked(true);
+            setAdded(true);
         }
-    }, [authenticated, localStorage.getItem('likedCourses')]);
+    }, [localStorage.getItem('likedCourses')]);
 
     // fetch liked courses from local storage and update when liked/unliked
     useEffect(() => {
@@ -50,13 +61,20 @@ export default function LikeButton({ courseId, isCourse, reload }) {
         }
     }, [clicked]);
 
+    // ********************************************This function is for when liking a course requries authentication*****************************************
+    // function handleLikedCourse() {
+    //     if (!authenticated) {
+    //         setLoggingIn(true);
+    //     } else {
+    //         setClicked(!clicked);
+    //         if (reload) reload();
+    //     }
+    // }
+    // *********************************************************************************************************************************************************
+
     function handleLikedCourse() {
-        if (!authenticated) {
-            setLoggingIn(true);
-        } else {
-            setClicked(!clicked);
-            if (reload) reload();
-        }
+        setClicked(!clicked);
+        if (reload) reload();
     }
 
     /**

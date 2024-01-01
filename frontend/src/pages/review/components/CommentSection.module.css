@@ -1,0 +1,11 @@
+.optional{
+	font-weight: 400;
+}
+
+
+/* Comment section*/
+
+.textBoxContainer{
+	display: flex;
+	justify-content: center;
+}

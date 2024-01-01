@@ -1,70 +1,59 @@
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 // import useWindowWidth from '../../utils/useWindowWidth';
-
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 // icon imports
-import { GoSearch } from 'react-icons/go';
 import styles from './home.module.css';
-
-/**
- *  This is the main search page in the main page
- *  TO DO: convert to split page main page
- * */
-function SearchCourse() {
-    const [text, setText] = useState('');
-    const navigate = useNavigate();
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        navigate(`/search?course=${text}`);
-    };
-
-    const handleOnChange = (event) => {
-        setText(event.target.value);
-    };
-
-    return (
-        <div className={styles.searchReviewContainer}>
-            <div className={styles.searchReviewWrapper}>
-                <p className={styles.searchTitle}>Search Course Reviews</p>
-                <div className={styles.searchReview}>
-                    <form
-                        action=''
-                        onSubmit={handleSubmit}
-                        className={styles.searchBar}
-                    >
-                        <div className={styles.searchWrapper}>
-                            <input
-                                type='text'
-                                placeholder='Search'
-                                className={styles.search}
-                                value={text}
-                                onChange={handleOnChange}
-                            />
-                            <button
-                                type='submit'
-                                className={styles.searchInput}
-                            >
-                                <GoSearch className={styles.searchIcon} />
-                            </button>
-                        </div>
-                        <button type='submit' className={styles.searchButton}>
-                            Search
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    );
-}
+import SearchBar from './SearchBar';
 
 export default function Home() {
     // const width = useWindowWidth();
+    const [hidden, setHidden] = useState(false);
+
+    const handleClick = () => {
+        console.log('clicked');
+        setHidden(true);
+    };
 
     return (
-        <div className={styles.background}>
-            <div className={styles.container} />
-            <SearchCourse />
-        </div>
+        <>
+            {/* <div className={styles.header}>
+                <Link className={styles.link} to='/'>
+                    ABOUT
+                </Link>
+                <Link className={styles.link} to='/'>
+                    CONTACT
+                </Link>
+            </div> */}
+            <div className={styles.background}>
+                <div className={styles.titleContainer}>
+                    <p className={styles.title}>DEIS EVAL</p>
+                </div>
+                <div className={styles.searchContainer}>
+                    <div className={styles.topLine} />
+                    <div className={styles.bottomLine} />
+                    <div
+                        className={
+                            hidden
+                                ? styles.shiftContainerHidden
+                                : styles.shiftContainer
+                        }
+                        role='button'
+                        tabIndex={0}
+                        // onClick={handleClick}
+                        onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                                handleClick();
+                            }
+                        }}
+                    >
+                        <div className={styles.shiftText1}>SEARCH</div>
+                        <div className={styles.shiftText2}>A</div>
+                        <div className={styles.shiftText3}>COURSE</div>
+                    </div>
+
+                    <SearchBar handleClick={handleClick} />
+                </div>
+            </div>
+        </>
     );
 }
