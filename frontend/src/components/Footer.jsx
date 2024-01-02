@@ -24,7 +24,8 @@ export default function Footer() {
                 {/* <Link className={styles.link} to='/'>
                     FAQ
                 </Link> */}
-                <p className={styles.year}>2024</p>
+			<p className={styles.year}>2024</p>
+           
             </div>
         </div>
     );
