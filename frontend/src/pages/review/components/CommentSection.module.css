@@ -9,3 +9,13 @@
 	display: flex;
 	justify-content: center;
 }
+
+.commentWrapper{
+	width: 100%;
+}
+
+@media screen and (max-width: 655px){
+	.commentWrapper{
+		width: 90%;
+	}
+}

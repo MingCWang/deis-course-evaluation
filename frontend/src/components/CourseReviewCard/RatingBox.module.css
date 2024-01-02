@@ -69,3 +69,10 @@
 .transparent {
 	background-color: transparent;
 }
+
+
+@media screen and (max-width: 730px) {
+	.rating {
+		height: 240px;
+	}
+}

@@ -26,3 +26,30 @@
 .ratingHeart {
 	margin-right: 10px;
 }
+
+@media (max-width: 730px) {
+	.listButton {
+		align-self: center;
+	}
+}
+
+
+
+@media (max-width: 600px) {
+	.listButton {
+		align-self: center;
+		width: auto;
+		background-color: transparent;
+		/* font-size: 0px; */
+	}
+	.addText{
+		display: none;
+	}
+	
+	.favicon{
+		transform: scale(1.3);	
+	}
+}
+
+
+
