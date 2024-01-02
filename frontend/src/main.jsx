@@ -19,6 +19,8 @@ import MyReviews from './pages/my-reviews/my-reviews.jsx';
 import Loading from './pages/oauth-loading/oauth-loading.jsx';
 import PrivacyPolicy from './pages/privacy-policy/privacy-policy.jsx';
 import TermsConditions from './pages/terms-conditions/terms-conditions.jsx';
+import About from './pages/about/about.jsx';
+import Contact from './pages/contact/contact.jsx';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
+            },
+            {
+                path: 'about',
+                element: <About />,
+            },
+            {
+                path: 'contact',
+                element: <Contact />,
             },
             {
                 path: '/course/:id',

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FaArrowTurnUp } from "react-icons/fa6";
 import styles from './BackToTopButton.module.css';
 
 export default function BackToTopButton() {
@@ -25,6 +26,8 @@ export default function BackToTopButton() {
                 onClick={scrollToTop}
                 type='button'
             >
+				<FaArrowTurnUp className={styles.icon} />
+
                 Back to top
             </button>
         </div>

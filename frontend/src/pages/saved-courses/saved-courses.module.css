@@ -26,3 +26,10 @@ p{
 	font-size: 30px;
 	font-weight: 200;
 }
+
+.nosaved{
+	text-align: center;
+	font-size: 20px;
+	font-weight: 400;
+	margin-top: 20vh;
+}

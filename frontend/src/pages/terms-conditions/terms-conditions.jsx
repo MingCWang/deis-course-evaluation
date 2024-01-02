@@ -5,7 +5,7 @@ export default function TermsConditions() {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <h1>Terms & Conditions</h1>
-				<p>Last updated: January 01, 2024</p>
+                <p>Last updated: January 01, 2024</p>
                 <p>
                     Please read these terms and conditions carefully before
                     using Our Service.

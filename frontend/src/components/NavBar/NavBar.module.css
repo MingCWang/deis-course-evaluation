@@ -11,7 +11,7 @@ Header
 .header{
 	font-family: Kite One;
 	font-size: 24px;
-	z-index: 2;
+	z-index: 3;
 	display: flex;
 	width: 100vw;	
 	height: 100vh;
@@ -27,7 +27,7 @@ Header
 .headerHidden{
 	/* visibility: hidden; */
 	composes: header;
-	transform: translateY(100%);
+	transform: translateY(300%);
 	transition: transform 0.5s ease-in-out;
 
 }
@@ -79,6 +79,12 @@ Header
 	position: absolute;
 }
 
+/* .footerWrapper{
+	background-color: #FDFFEF;
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+} */
 
 
 /* // ********** burger menu ********** // */
@@ -87,7 +93,7 @@ Header
 	position: fixed;
 	right: 40px;
 	top: 40px;
-	z-index: 2;
+	z-index: 3;
 }
 .iconmenu {
 	--gap: 5px;

@@ -1,7 +1,6 @@
 /* main page  */
 
 
-@media screen and (max-width: 1200px) {}
 
 .link{
 	text-decoration: none;
@@ -153,4 +152,55 @@ shift text
     to {
         transform: translateX(0px);
     }
+}
+
+
+@media (max-width: 955px) {
+	.title{
+		font-size: 64px;
+	}
+	.shiftContainer{
+		top: 400px;
+	}
+	.font{
+		font-size: 40px;
+	}
+
+	.topLine{
+		top: 450px;
+	}
+	.bottomLine{
+		top: 490px;
+	}
+
+
+}
+
+@media (max-width: 600px) {
+	.titleContainer{
+		top: 10%;
+	}
+
+	.shiftContainer{
+		top: 400px;
+	}
+	.title{
+		width: 80%;
+		text-align: center;
+	}
+
+	.font{
+		font-size: 40px;
+	}
+	
+	.shiftText1{
+		margin-left: 20px;
+	}
+	.shiftText2{
+		display: none;
+	}
+
+	.shiftText3{
+		display: none;
+	}
 }
