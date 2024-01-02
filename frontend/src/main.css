@@ -11,7 +11,8 @@ html {
 	/* Firefox */
 	scrollbar-width: none;
 	background-color: #FDFFEF;
-
+	padding: 0;
+	margin: 0;
 
 }
 

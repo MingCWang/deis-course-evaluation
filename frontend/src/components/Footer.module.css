@@ -13,35 +13,36 @@ Footer
 .footer{
 	font-family: Kite One;
 	font-size: 20px;
-	/* width: 500px; */
-	width: 600px;
+	width: 80%;
 	margin-bottom: 15px;
 	z-index: 2;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	margin-top: auto;
-	maring: 0 auto;
 }
 .footerMain{
 	composes: footer;
-	left: 10px;
+	width: 100%;
 	bottom: 10px;
-	margin-bottom: 0px;
 	position: absolute;
-
-
+	margin: 0;
+	justify-content: left;
 }
 .link{
 	text-decoration: none;
 	color: #000;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.year{
+	width: auto;
+	margin-left: 20px;
 }
 
 @media (max-width: 600px) {
 	.footerMain{
 		flex-direction: column-reverse;
-
+		width: 100%;	
 	}
-	.footer{
-		width: 100%;
-	}
+	
 }
