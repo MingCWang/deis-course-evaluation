@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useParams } from 'react-router-dom';
 import { useState, useContext, useEffect } from 'react';
-import { UserContext } from '../../contexts/UserContext.jsx';
+// import { UserContext } from '../../contexts/UserContext.jsx';
 import format from '../../utils/formatSentence.js';
 import styles from './review.module.css';
 import fetchCourse from '../../services/fetchCourse.js';
@@ -13,8 +13,8 @@ import Form from './components/Form.jsx';
  */
 export default function Review() {
     const { id: courseId } = useParams();
-    const { idState } = useContext(UserContext);
-    const [id, setId] = idState;
+    // const { idState } = useContext(UserContext);
+    // const [id, setId] = idState;
     const [submit, setSubmit] = useState(false);
     const [difficulty, setDifficulty] = useState(1);
     const [rate, setRate] = useState(1);

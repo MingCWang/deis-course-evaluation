@@ -27,7 +27,7 @@ Header
 .headerHidden{
 	/* visibility: hidden; */
 	composes: header;
-	transform: translateY(100%);
+	transform: translateY(300%);
 	transition: transform 0.5s ease-in-out;
 
 }

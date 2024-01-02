@@ -36,6 +36,12 @@ Footer
 	color: #000;
 }
 
-.year{
-		
+@media (max-width: 600px) {
+	.footerMain{
+		flex-direction: column-reverse;
+
+	}
+	.footer{
+		width: 100%;
+	}
 }

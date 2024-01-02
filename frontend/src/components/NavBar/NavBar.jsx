@@ -45,6 +45,9 @@ export default function NavBar() {
                     DEIS EVAL
                 </Link>
                 <div className={styles.navWrapper}>
+					<Link className={styles.link} to='/search'>
+                        SEARCH
+                    </Link>
                     <Link className={styles.link} to='/saved-courses'>
                         SAVED
                     </Link>
