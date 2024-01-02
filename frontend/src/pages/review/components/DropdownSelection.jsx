@@ -28,7 +28,7 @@ export default function ComboBox({ options, label, handleChange }) {
                         borderRadius: '10px',
                     },
 					'@media (max-width: 665px)': {
-						width: '50%', // Width for screens smaller than 665px
+						width: '70%', // Width for screens smaller than 665px
 						marginRight: '0px',
 					}
                 }}

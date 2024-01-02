@@ -26,7 +26,7 @@ export default function ComboBox({ options, label, handleGradeChange }) {
                         borderRadius: '10px',
                     },
 					'@media (max-width: 665px)': {
-						width: '90%', // Width for screens smaller than 665px
+						width: '80%', // Width for screens smaller than 665px
 					}
                 }}
                 renderInput={(params) => (

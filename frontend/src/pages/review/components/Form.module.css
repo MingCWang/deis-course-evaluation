@@ -94,7 +94,7 @@
 }
 
 .divider {
-	width: 60px;
+	width: 10%;
 	height: 3px;
 	background-color: #3A7BD5;
 	margin-top: 40px;
@@ -161,6 +161,10 @@
 }
 
 @media only screen and (max-width: 665px) {
+	.form{
+		width: 80%;
+	
+	}
 	.ratingWrapper{
 		justify-content: center;
 		align-items: center;
@@ -180,7 +184,20 @@
 		flex-direction: column;
 	}
 	.professorInput {
-		width: 300px;
+		width: 60%;
 		margin: 10px 0;
+	}	
+
+}
+
+
+
+
+@media screen and (max-width: 400px){
+	.ratingDesc{
+		font-size: 21px;
+	}
+	.professorInput {
+		width: 250px;
 	}	
 }
