@@ -105,13 +105,13 @@ export default function LikeButton({ courseId, isCourse, reload }) {
             <StyledRating
                 name='rating-heart'
                 max={1}
-                icon={<FavoriteIcon fontSize='inherit' />}
-                emptyIcon={<FavoriteBorderIcon fontSize='inherit' />}
+                icon={<FavoriteIcon fontSize='inherit'  className={styles.favicon} />}
+                emptyIcon={<FavoriteBorderIcon fontSize='40' className={styles.favicon} />}
                 className={styles.ratingHeart}
                 value={clicked ? 1 : 0}
                 readOnly
             />
-            <p>Add to list</p>
+            <p className={styles.addText}>Add to list</p>
         </button>
     );
 }

@@ -25,6 +25,9 @@ export default function ComboBox({ options, label, handleGradeChange }) {
                     '& .MuiInputBase-root': {
                         borderRadius: '10px',
                     },
+					'@media (max-width: 665px)': {
+						width: '90%', // Width for screens smaller than 665px
+					}
                 }}
                 renderInput={(params) => (
                     <TextField {...params} label={label} />

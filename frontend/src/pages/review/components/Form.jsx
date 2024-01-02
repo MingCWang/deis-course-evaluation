@@ -54,7 +54,7 @@ export default function Form({
         <form className={styles.form}>
             <div className={styles.dropdownWrapper}>
                 <div className={styles.termWrapper}>
-                    <p className={styles.prof}>Term:</p>
+                    <p className={styles.term}>Term:</p>
                     <DropdownSelection
                         options={term}
                         label='Select Term'

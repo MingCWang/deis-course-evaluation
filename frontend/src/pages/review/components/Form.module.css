@@ -1,5 +1,6 @@
 /* submit button */
 
+
 .submit{
 	margin: 40px 0;
 	width: 100%;
@@ -111,4 +112,75 @@
 	width: 40%;
 	display: flex;
 	align-items: center;
+}
+.term{
+	composes: prof;
+}
+
+@media only screen and (max-width: 1300px) {
+
+	.form {
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.professorInput {
+		width: 200px;
+	}	
+	.term{
+		margin-right: 60px;
+	}
+	.termInput {
+		width: 100%;
+	}
+	.termWrapper{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.gradeDropdown {
+		width: 100%;
+	}
+	.ratingWrapper {
+		flex-direction: column;
+		display: flex;
+		width: 100%;
+	}
+	.dropdownWrapper{
+		flex-direction: column;
+	}
+	.submit{
+		margin: 20px 0;
+	}
+
+	.form h2 {
+		margin-bottom: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 665px) {
+	.ratingWrapper{
+		justify-content: center;
+		align-items: center;
+	}
+	.term{
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.termWrapper{
+		width: 100%;
+		flex-direction: column;
+		align-items: left;
+		justify-content: left;
+	}
+	.profWrapper{
+		width: 100%;
+		flex-direction: column;
+	}
+	.professorInput {
+		width: 300px;
+		margin: 10px 0;
+	}	
 }

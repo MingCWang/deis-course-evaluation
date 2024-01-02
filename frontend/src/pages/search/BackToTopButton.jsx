@@ -28,7 +28,7 @@ export default function BackToTopButton() {
             >
 				<FaArrowTurnUp className={styles.icon} />
 
-                Back to top
+                To Top
             </button>
         </div>
     ) : null;
