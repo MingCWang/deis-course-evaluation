@@ -110,6 +110,7 @@ export default function Course() {
                         </div>
                     </div>
                     <div className={styles.ratingContainer}>
+						<div className={styles.subContainer}>
                         <div className={styles.ratingWrapper}>
                             <span className={styles.overallText}>
                                 Overall Rating
@@ -149,6 +150,7 @@ export default function Course() {
                                 </span>
                             </p>
                         </div>
+						</div>
                     </div>
                 </div>
             </div>

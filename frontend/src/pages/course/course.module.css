@@ -7,18 +7,22 @@
 }
 
 
+
+
 .courseTitleContainer{
 	width: 100%;
 	height: auto;
-	margin: 50px auto 30px;
+	margin: 50px 0 30px;
+
 	}
 
 .upperHalf{
-	width: 100%;
+	width: 80%;
 	height: auto;
 	font-size: 30px;
 	display: flex;	
 	justify-content: center;	
+	margin: 0 auto;
 }
 
 .course{
@@ -29,7 +33,7 @@
 
 .lowerHalf{
 	margin: 0 auto;
-	width: 450px;
+	width: 30%;
 	height: 90px;
 	display: flex;
 	flex-direction: row;
@@ -59,6 +63,12 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+.subContainer{
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 .ratingWrapper{
 	display: flex;
@@ -198,4 +208,67 @@
 .loadingContainer{
 	text-align: center;
 	margin-top: 100px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+	.lowerHalf{
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 1045px) {
+	.upperHalf{
+		font-size: 25px;
+
+	}
+
+	.lowerHalf{
+		width: 50%;
+	}
+	.subContainer{
+		flex-direction: column;
+	}
+	.ratingWrapper{
+		margin: 0 auto;
+		margin-top: 40px;
+	}
+	.subRatings{
+		margin: 0 auto;
+		margin-top: 40px;
+		border-top: 4px solid black;
+		border-left: none;
+		border-bottom: 4px solid black;
+
+	}
+}
+
+
+@media only screen and (max-width: 750px) {
+	.lowerHalf{
+		width: 60%;
+	}
+
+}
+
+@media only screen and (max-width: 680px) {
+	.lowerHalf{
+		width: 70%;
+	}
+
+}
+
+@media only screen and (max-width: 510px) {
+	.upperHalf{
+		font-size: 20px;
+
+	}
+
+	.lowerHalf{
+		flex-direction: column;
+		height: 170px;
+		align-items: center;
+		justify-content: center;
+	}
+
 }

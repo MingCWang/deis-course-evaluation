@@ -53,6 +53,9 @@ export default function SearchBar({ handleClick }) {
                 >
                     SEARCH
                 </button>
+				{/* <button>
+  <span className={hidden ? styles.searchButtonHidden : styles.btn2}><span className={styles.spn2}>SEARCH</span></span>
+</button> */}
             </form>
         </div>
     );

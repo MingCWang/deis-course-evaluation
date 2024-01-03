@@ -46,3 +46,9 @@
 	color: rgb(44, 32, 32);
 	/* transform: translate(-38px, -1px); */
 }
+
+@media screen and (max-width: 450px) {
+	.searchInput {
+		width: 60vw;
+	}
+}

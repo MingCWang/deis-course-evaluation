@@ -23,16 +23,21 @@ function CourseCard({ course, reload }, ref) {
             />
             <div className={styles.body}>
                 <div className={styles.contents}>
+					<LikeButton courseId={course._id} reload={reload} isSmall/>
+
                     <Link to={path} className={styles.course}>
                         {course.course}
                     </Link>
                     <p className={styles.courseTitle}>{course.courseTitle}</p>
+			
+
                 </div>
                 <div className={styles.button}>
                     <LikeButton courseId={course._id} reload={reload}/>
                     <RateCourseButton course={course} />
                 </div>
             </div>
+
         </div>
     );
 }

@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import styles from './LikeButton.module.css';
 // import { UserContext } from '../../contexts/UserContext.jsx';
 
-export default function LikeButton({ courseId, isCourse, reload }) {
+export default function LikeButton({ courseId, isCourse, reload, isSmall}) {
     const [clicked, setClicked] = useState(false);
     const [added, setAdded] = useState(false);
 
@@ -90,12 +90,29 @@ export default function LikeButton({ courseId, isCourse, reload }) {
     });
 
     let buttonStyle;
+	let addText;
+	let favicon;
     if (isCourse) {
         buttonStyle = styles.listButtonCourse;
+		addText = styles.addTextCourse;
+		favicon = styles.faviconCourse;
     } else {
         buttonStyle = styles.listButton;
+		addText = styles.addText;
+		favicon = styles.favicon;
     }
 
+	if (isSmall) {
+		if (isCourse) {
+			buttonStyle = styles.listButtonCourseSmall;
+		}else{
+			buttonStyle = styles.listButtonSmall;
+
+		}
+	}
+
+
+	
     return (
         <button
             type='button'
@@ -105,13 +122,13 @@ export default function LikeButton({ courseId, isCourse, reload }) {
             <StyledRating
                 name='rating-heart'
                 max={1}
-                icon={<FavoriteIcon fontSize='inherit'  className={styles.favicon} />}
-                emptyIcon={<FavoriteBorderIcon fontSize='40' className={styles.favicon} />}
+                icon={<FavoriteIcon fontSize='inherit'  className={favicon} />}
+                emptyIcon={<FavoriteBorderIcon fontSize='40' className={favicon} />}
                 className={styles.ratingHeart}
                 value={clicked ? 1 : 0}
                 readOnly
             />
-            <p className={styles.addText}>Add to list</p>
+            <p className={addText}>Add to list</p>
         </button>
     );
 }

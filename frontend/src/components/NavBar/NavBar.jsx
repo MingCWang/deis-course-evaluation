@@ -43,20 +43,20 @@ export default function NavBar() {
             )}
             <div className={header} onClick={() => setClicked(!clicked)}>
                 <Link className={styles.logo} to='/'>
-                    DEIS EVAL
+                    Deis Eval
                 </Link>
                 <div className={styles.navWrapper}>
 					<Link className={styles.link} to='/search'>
-                        SEARCH
+                        Search
                     </Link>
                     <Link className={styles.link} to='/saved-courses'>
-                        SAVED
+                        Saved
                     </Link>
                     <Link className={styles.link} to='/about'>
-                        ABOUT
+                        About
                     </Link>
                     <Link className={styles.link} to='/contact'>
-                        CONTACT
+                        Contact
                     </Link>
                 </div>
                 {isHome ? null : <Footer />}

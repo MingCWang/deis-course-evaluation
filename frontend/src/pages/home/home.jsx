@@ -26,7 +26,7 @@ export default function Home() {
             </div> */}
             <div className={styles.background}>
                 <div className={styles.titleContainer}>
-                    <p className={styles.title}>DEIS EVAL</p>
+                    <p className={styles.title}>Deis Eval</p>
                 </div>
                 <div className={styles.searchContainer}>
                     <div className={styles.topLine} />
@@ -46,9 +46,9 @@ export default function Home() {
                             }
                         }}
                     >
-                        <div className={styles.shiftText1}>SEARCH</div>
-                        <div className={styles.shiftText2}>A</div>
-                        <div className={styles.shiftText3}>COURSE</div>
+                        <div className={styles.shiftText1}>Search</div>
+                        <div className={styles.shiftText2}>a</div>
+                        <div className={styles.shiftText3}>Course</div>
                     </div>
 
                     <SearchBar handleClick={handleClick} />

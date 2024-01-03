@@ -12,6 +12,8 @@ Footer
 
 .footer{
 	font-family: Kite One;
+	font-family: Lexend Tera;
+	font-family: Montserrat;
 	font-size: 20px;
 	width: 80%;
 	margin-bottom: 15px;
@@ -31,6 +33,7 @@ Footer
 .link{
 	text-decoration: none;
 	color: #000;
+
 	margin-right: 20px;
 	margin-left: 20px;
 }

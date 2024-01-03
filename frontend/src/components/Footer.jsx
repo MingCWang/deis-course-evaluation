@@ -16,10 +16,10 @@ export default function Footer() {
         <div className={styles.container}>
             <div className={footerStyles}>
                 <Link className={styles.link} to='/terms-conditions'>
-                    TERMS & CONDITIONS
+                    Terms & Conditions
                 </Link>
                 <Link className={styles.link} to='/privacy-policy'>
-                    PRIVACY POLICIY
+                    Privacy Policy
                 </Link>
                 {/* <Link className={styles.link} to='/'>
                     FAQ

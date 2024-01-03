@@ -3,19 +3,20 @@ Header
 **********/
 .logo{
 	color: #000;
-	font-family: Lexend Tera;
+	font-family: PT Serif;
 	position: fixed;
 	align-self: center;
 	top: 20px;	
+	font-size: 30px;
 }
 .header{
-	font-family: Kite One;
+	/* font-family: Kite One; */
 	font-size: 24px;
 	z-index: 3;
 	display: flex;
 	width: 100vw;	
 	height: 100vh;
-	background-color: #FDFFEF;
+	background-color: #FFFFFF;
 	position: fixed;
 	flex-direction: column;
 	justify-content: center;
@@ -35,8 +36,13 @@ Header
 .link {
     text-decoration: none;
     color: #000;
+	color: #3A7BD5;
+
     margin-bottom: 20px;
     font-size: 40px;
+	font-weight: 500;
+	font-family: Montserrat;
+
     transition: transform 0.3s ease; /* Smooth transition for transform property */
 }
 
