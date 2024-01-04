@@ -6,10 +6,13 @@ export default function Footer() {
     const pathIsHome = location.pathname === '/';
 
     let footerStyles;
+	let yearStyles;
     if (pathIsHome) {
         footerStyles = styles.footerMain;
+		yearStyles = styles.yearMain;
     } else {
         footerStyles = styles.footer;
+		yearStyles = styles.year;
     }
 
     return (
@@ -30,3 +33,6 @@ export default function Footer() {
         </div>
     );
 }
+
+
+// #665555

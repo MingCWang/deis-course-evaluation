@@ -68,9 +68,11 @@
 	font-size: 20px;
 	font-weight: 300;
 	top: 28px;
-	width: 500px;
+	width: 100%;
 	/* position: absolute; */
 	text-align: left;
+	display: flex;
+	flex-direction: row;
 }
 .courseFont{
 	font-size: 25px;
@@ -79,16 +81,17 @@
 .date{
 	font-size: 20px;
 	font-weight: 600;
-	top: 25px;
-	right: 20px;
-	width: auto;
+	/* top: 25px; */
+	/* right: 20px; */
+	width: 300px;
 	/* position: absolute; */
 }
 
 .infoContainer{
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto;
 	margin-top: 20px;
+	/* width: 70%; */
 	/* position: absolute; */
 }
 .info{
@@ -110,4 +113,95 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 
+}
+
+.infoNarrow{
+	composes: info;
+	display: none;
+}
+
+.infoWide{
+	composes: info;
+}
+
+@media only screen and (max-width: 1300px) {
+	.infoContainer{
+		grid-template-columns: auto auto auto ;
+	}
+}
+
+@media only screen and (max-width: 1165px) {
+	.top{
+		flex-direction: column;
+	}
+	.date{
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (max-width: 880px) {
+	.infoContainer{
+		grid-template-columns: auto auto;
+	}
+	.info{
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 790px) {
+	.infoContainer{
+		grid-template-columns: auto auto ;
+	}
+	.info{
+		margin-top: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	.infoNarrow{
+		margin-right: 0px;
+		display: flex;
+	}	
+
+	.infoWide{
+		margin-right: 0px;
+		display: none;
+	}
+
+	.course{
+		flex-direction: column;
+	}
+	.commentText{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 630px) {
+	.card {
+		flex-direction: column;
+
+	}
+	.body {
+		/* margin-left: 110px;
+		width: calc(100% - 110px); */
+		margin-left: 0px;
+		width: 100%;
+		min-height: 250px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		justify-content: center;
+		background-color: #FDFFEF;
+		background-color: #fff;
+		align-items: center;
+		/* border-radius: 0 10px 10px 0; */
+		border-radius: 10px;
+	}
+	.contents{
+		margin-left: 0px;
+		width: 80%;
+	}
+
+	.commentText{
+		font-size: 15px;
+	}
 }

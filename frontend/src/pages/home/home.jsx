@@ -28,10 +28,12 @@ export default function Home() {
                 <div className={styles.titleContainer}>
                     <p className={styles.title}>Deis Eval</p>
                 </div>
+				{/* <span className={styles.reviewNum}> </span> */}
                 <div className={styles.searchContainer}>
-                    <div className={styles.topLine} />
-                    <div className={styles.bottomLine} />
-                    <div
+				
+                    {/* <div className={styles.topLine} />
+                    <div className={styles.bottomLine} /> */}
+                    {/* <div
                         className={
                             hidden
                                 ? styles.shiftContainerHidden
@@ -45,11 +47,11 @@ export default function Home() {
                                 handleClick();
                             }
                         }}
-                    >
-                        <div className={styles.shiftText1}>Search</div>
+                    > */}
+                        {/* <div className={styles.shiftText1}>Search</div>
                         <div className={styles.shiftText2}>a</div>
-                        <div className={styles.shiftText3}>Course</div>
-                    </div>
+                        <div className={styles.shiftText3}>Course</div> */}
+                    {/* </div> */}
 
                     <SearchBar handleClick={handleClick} />
                 </div>

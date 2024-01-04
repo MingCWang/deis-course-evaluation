@@ -36,8 +36,8 @@ Header
 .link {
     text-decoration: none;
     color: #000;
-	color: #3A7BD5;
-
+	/* color: #3A7BD5; */
+	color:  #665555;
     margin-bottom: 20px;
     font-size: 40px;
 	font-weight: 500;

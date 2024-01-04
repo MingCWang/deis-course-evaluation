@@ -32,7 +32,7 @@ export default function SearchBar({ handleClick }) {
                 <div className={styles.searchWrapper}>
                     <input
                         type='text'
-                        // placeholder='Search'
+                        placeholder='Search'
                         className={styles.search}
                         value={text}
                         onChange={handleOnChange}

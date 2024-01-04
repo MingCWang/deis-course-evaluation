@@ -37,15 +37,37 @@ Footer
 	margin-right: 20px;
 	margin-left: 20px;
 }
-.year{
+.yearMain{
 	width: auto;
 	margin-left: 20px;
 }
+
 
 @media (max-width: 600px) {
 	.footerMain{
 		flex-direction: column-reverse;
 		width: 100%;	
 	}
+	
+}
+
+@media (max-width: 620px) {
+	.container{
+		background-color: #665555;
+	}
+	.footer{
+		margin-top: 20px;
+		flex-direction: column-reverse;
+	}
+	.link{
+		margin: 10px;
+		color: #fff;
+	}
+	.year{
+		margin: 10px;
+		color: #fff;
+	}
+	
+
 	
 }

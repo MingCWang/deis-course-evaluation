@@ -59,7 +59,7 @@ export default function NavBar() {
                         Contact
                     </Link>
                 </div>
-                {isHome ? null : <Footer />}
+                {/* {isHome ? null : <Footer />} */}
             </div>
             <div className={styles.burger}>
                 <input
