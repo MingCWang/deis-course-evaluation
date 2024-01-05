@@ -25,37 +25,24 @@ export default function Home() {
                 </Link>
             </div> */}
             <div className={styles.background}>
-                <div className={styles.titleContainer}>
-                    <p className={styles.title}>Deis Eval</p>
-                </div>
-				{/* <span className={styles.reviewNum}> </span> */}
-                <div className={styles.searchContainer}>
-				
-                    {/* <div className={styles.topLine} />
-                    <div className={styles.bottomLine} /> */}
-                    {/* <div
-                        className={
-                            hidden
-                                ? styles.shiftContainerHidden
-                                : styles.shiftContainer
-                        }
-                        role='button'
-                        tabIndex={0}
-                        // onClick={handleClick}
-                        onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                                handleClick();
-                            }
-                        }}
-                    > */}
-                        {/* <div className={styles.shiftText1}>Search</div>
-                        <div className={styles.shiftText2}>a</div>
-                        <div className={styles.shiftText3}>Course</div> */}
-                    {/* </div> */}
+				<div className={styles.top}>
+					<div className={styles.titleContainer}>
+						<p className={styles.title}>Deis Eval</p>
+					</div>
+					<span className={styles.reviewText}> 
+						Reviews : <span className={styles.reviewNum}>20</span>
+					</span>
+					<div className={styles.searchContainer}>
+						<SearchBar handleClick={handleClick} />
+					</div>
+				</div>
+             
+				<div className={styles.recentReviews}>
+					<p className={styles.recentReviewsTitle}>Recent Reviews</p>
 
-                    <SearchBar handleClick={handleClick} />
-                </div>
+				</div>
             </div>
+		
         </>
     );
 }

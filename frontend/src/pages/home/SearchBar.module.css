@@ -1,185 +1,71 @@
 
-/* .searchReview {
-	width: 100%;
+
+/* New Search Bar ************************************ */
+.searchReview{
+	margin-right: 15%;
+
+}
+.container {
+	--light: rgb(255, 255, 255);
+	--dark: rgb(50, 50, 50);
+	--br: 12px;
+  }
+  
+  .container:hover .title {
+	opacity: 1;
+  }
+  
+  .input {
 	background-color: transparent;
-	display: flex;
-	justify-content: center;
-
-} */
-
-
-.searchBar {
-	/* display: flex; */
-	/* flex-direction: column;
-	justify-content: space-around; */
-	/* position: absolute;	 */
-	/* width: 100%; */
-}
-
-
-
-.search {
-	width: 60%;
-	height: 100px;
-	background-color: transparent;
-	/* border: 1px solid #3A7BD5; */
-	border: none;
-	font-family: Lexend Tera;
-	font-size: 80px;
-	font-weight: 400;
-	z-index: 2;
-	text-transform: uppercase;
-	color: #3A7BD5;
-	/* color: #272222; */
-	opacity: 0.8;
-}
-
-.searchWrapper {
-	height: 100%;
-	position: absolute;
-	top: 60%;
-	width: 100%;
-	left: 50%;
-}
-
-
-.search:focus {
+	/* border: 2px solid white; */
+	border: 5px solid black;
+	/* color: var(--light); */
+	color: var(--dark);
+	width: 400px;
+	height: 70px;
+	padding: .5rem;
+	border-radius: var(--br);
 	outline: none;
-	cursor: pointer;
-}
-.search::placeholder {
-    /* opacity: 0.3; */
-    /* animation: blink-animation 1s steps(5, start) infinite; */
-}
+	opacity: .8;
+	transition: .2s ease-in-out;
+	font-size: 40px;
+  }
+  
+  .input:focus {
+	opacity: 1;
+  }
+  
 
-
-
-.searchInput {
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	transform: translate(-40px, 20px);
-}
-
-.searchIcon {
-	vertical-align: middle;
-	font-size: 20px;
-	color: #3A7BD5;
-
-}
-
-
-.searchButton {
-	/* composes: search; */
-	width: auto;
+  .title {
+	border-radius: var(--br);
+	transform: translate(-50%, -150%);
+	background-color: var(--light);
+	background-color: var(--dark);
+	transition: .2s ease-in-out;
+	opacity: 0;
+	color: var(--light);
+	/* position: absolute; */
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	padding: .5rem;
+	/* left: 100%; */
+	width: 200px;
 	text-align: center;
-	margin-top: 530px;
-	border: none;
-	font-size: 30px;
-	color: #000;
-	cursor: pointer;
-	/* font-family: Kite One; */
-
-	background-color: transparent;
-	position: absolute;
-	/* right: 100px; */
-	right: 5%;
-
-}
-
-.searchButton:hover {
-	opacity: 0.8;
-}
-
-.searchButtonHidden {
-	display: none;
-}
-
-.btn2 {
-	margin-top: 510px;
-	right: 5%;
-	position: absolute;
-
-	display: inline-block;
-	padding: 15px 30px;
-	border: 2px solid #fefefe;
-	border: 2px solid #000;
-
-	/* text-transform: uppercase; */
-	color: #fefefe;
-	color: #000;
-	text-decoration: none;
-	font-weight: 400;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 20px;
-	transition: 0.3s;
   }
   
-  .btn2::before {
+  .title::before {
+	transform: translate(-50%, 50%) rotate(45deg);
+	background-color: var(--light);
+	background-color: var(--dark);
+	left: 80%;
+	position: absolute;
+	z-index: -1;
 	content: '';
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	width: calc(100% + 4px);
-	height: calc(100% - -2px);
-	background-color: #212121;
-	background-color: #fff;
-
-	transition: 0.3s ease-out;
-	transform: scaleY(1);
+	width: 10px;
+	height: 10px;
+	bottom: 0;
   }
-  
-  .btn2::after {
-	content: '';
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	width: calc(100% + 4px);
-	height: calc(100% - 50px);
-	background-color: #212121;
-	background-color: #fefefe;
-
-
-	transition: 0.3s ease-out;
-	transform: scaleY(1);
-  }
-  
-  .btn2:hover::before {
-	transform: translateY(-25px);
-	height: 0;
-  }
-  
-  .btn2:hover::after {
-	transform: scaleX(0);
-	transition-delay: 0.15s;
-	cursor: pointer;
-
-  }
-  
-  .btn2:hover {
-	border: 2px solid #fefefe;
-	border: 2px solid #000;
-	cursor: pointer;
-  }
-  
-  .btn2 span {
-	position: relative;
-	z-index: 3;
-  }
-  
-  button {
-	text-decoration: none;
-	border: none;
-	background-color: transparent;
-  }
-
-  .spn2{
-	  color: #000;	
-  }
-
 
 @media screen and (max-width: 955px) {
 	.search {

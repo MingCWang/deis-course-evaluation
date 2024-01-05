@@ -60,13 +60,12 @@ export default function ReviewCard({ review }) {
                             >
                                 {review.course.name}
                             </span>{' '}
-							<div className={styles.profName}>
-								with professor{' '}
-								<span className={styles.bold}>
-									{review.professor}
-								</span>
-							</div>
-                        
+                            <div className={styles.profName}>
+                                with professor{' '}
+                                <span className={styles.bold}>
+                                    {review.professor}
+                                </span>
+                            </div>
                         </p>
                         <p className={styles.date}>{formattedDate}</p>
                     </div>
@@ -83,7 +82,7 @@ export default function ReviewCard({ review }) {
                                 {review.delivery}
                             </span>
                         </p>
-						<p className={styles.infoNarrow}>
+                        <p className={styles.infoNarrow}>
                             Usefulness:{' '}
                             <span className={styles.bold}>
                                 {review.usefulness}
@@ -105,12 +104,12 @@ export default function ReviewCard({ review }) {
                                 {review.usefulness}
                             </span>
                         </p>
-						<p className={styles.infoNarrow}>
+                        <p className={styles.infoNarrow}>
                             Delivery:{' '}
                             <span className={styles.bold}>
                                 {review.delivery}
                             </span>
-                        </p> 
+                        </p>
                         <p className={styles.info}>
                             Grade:{' '}
                             <span className={styles.bold}>

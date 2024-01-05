@@ -27,26 +27,24 @@ export default function NavBar() {
         <>
             {isHome ? (
                 <div />
-            ) : (
-                // <div
-                //     className={`${styles.link} ${styles.back}`}
-                //     onClick={handleBack}
-                //     onKeyDown={handleBack} // Add onKeyDown event listener
-                //     role='button'
-                //     tabIndex={0}
-                // >
-                //     <div className={styles.backWrapper}>
-                //         <IoReturnUpBack className={styles.backIcon} /> BACK
-                //     </div>
-                // </div>
-				null
-            )}
+            ) : // <div
+            //     className={`${styles.link} ${styles.back}`}
+            //     onClick={handleBack}
+            //     onKeyDown={handleBack} // Add onKeyDown event listener
+            //     role='button'
+            //     tabIndex={0}
+            // >
+            //     <div className={styles.backWrapper}>
+            //         <IoReturnUpBack className={styles.backIcon} /> BACK
+            //     </div>
+            // </div>
+            null}
             <div className={header} onClick={() => setClicked(!clicked)}>
                 <Link className={styles.logo} to='/'>
                     Deis Eval
                 </Link>
                 <div className={styles.navWrapper}>
-					<Link className={styles.link} to='/search'>
+                    <Link className={styles.link} to='/search'>
                         Search
                     </Link>
                     <Link className={styles.link} to='/saved-courses'>

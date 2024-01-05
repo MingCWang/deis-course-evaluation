@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import styles from './LikeButton.module.css';
 // import { UserContext } from '../../contexts/UserContext.jsx';
 
-export default function LikeButton({ courseId, isCourse, reload, isSmall}) {
+export default function LikeButton({ courseId, isCourse, reload, isSmall }) {
     const [clicked, setClicked] = useState(false);
     const [added, setAdded] = useState(false);
 
@@ -90,29 +90,26 @@ export default function LikeButton({ courseId, isCourse, reload, isSmall}) {
     });
 
     let buttonStyle;
-	let addText;
-	let favicon;
+    let addText;
+    let favicon;
     if (isCourse) {
         buttonStyle = styles.listButtonCourse;
-		addText = styles.addTextCourse;
-		favicon = styles.faviconCourse;
+        addText = styles.addTextCourse;
+        favicon = styles.faviconCourse;
     } else {
         buttonStyle = styles.listButton;
-		addText = styles.addText;
-		favicon = styles.favicon;
+        addText = styles.addText;
+        favicon = styles.favicon;
     }
 
-	if (isSmall) {
-		if (isCourse) {
-			buttonStyle = styles.listButtonCourseSmall;
-		}else{
-			buttonStyle = styles.listButtonSmall;
+    if (isSmall) {
+        if (isCourse) {
+            buttonStyle = styles.listButtonCourseSmall;
+        } else {
+            buttonStyle = styles.listButtonSmall;
+        }
+    }
 
-		}
-	}
-
-
-	
     return (
         <button
             type='button'
@@ -122,8 +119,10 @@ export default function LikeButton({ courseId, isCourse, reload, isSmall}) {
             <StyledRating
                 name='rating-heart'
                 max={1}
-                icon={<FavoriteIcon fontSize='inherit'  className={favicon} />}
-                emptyIcon={<FavoriteBorderIcon fontSize='40' className={favicon} />}
+                icon={<FavoriteIcon fontSize='inherit' className={favicon} />}
+                emptyIcon={
+                    <FavoriteBorderIcon fontSize='40' className={favicon} />
+                }
                 className={styles.ratingHeart}
                 value={clicked ? 1 : 0}
                 readOnly

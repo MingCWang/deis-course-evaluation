@@ -21,7 +21,6 @@ export default function SearchBar({ handleClick }) {
             setHidden(true);
         }
     };
-
     return (
         <div className={styles.searchReview}>
             <form
@@ -29,34 +28,26 @@ export default function SearchBar({ handleClick }) {
                 onSubmit={handleSubmit}
                 className={styles.searchBar}
             >
-                <div className={styles.searchWrapper}>
+                <div className={styles.container}>
+                    <div className={styles.title}>Search a course!</div>
                     <input
+                        className={styles.input}
                         type='text'
-                        placeholder='Search'
-                        className={styles.search}
                         value={text}
                         onChange={handleOnChange}
                         onClick={handleClick}
                     />
-                    {/* <button
-				type='submit'
-				className={styles.searchInput}
-			>
-				<GoSearch className={styles.searchIcon} />
-			</button> */}
                 </div>
-                <button
+                {/* <button
                     type='submit'
                     className={
                         hidden ? styles.searchButtonHidden : styles.searchButton
                     }
                 >
                     SEARCH
-                </button>
-				{/* <button>
-  <span className={hidden ? styles.searchButtonHidden : styles.btn2}><span className={styles.spn2}>SEARCH</span></span>
-</button> */}
+                </button> */}
             </form>
         </div>
     );
+   
 }
