@@ -6,27 +6,31 @@ export default function Footer() {
     const pathIsHome = location.pathname === '/';
 
     let footerStyles;
+    let yearStyles;
     if (pathIsHome) {
         footerStyles = styles.footerMain;
+        yearStyles = styles.yearMain;
     } else {
         footerStyles = styles.footer;
+        yearStyles = styles.year;
     }
 
     return (
         <div className={styles.container}>
             <div className={footerStyles}>
                 <Link className={styles.link} to='/terms-conditions'>
-                    TERMS & CONDITIONS
+                    Terms & Conditions
                 </Link>
                 <Link className={styles.link} to='/privacy-policy'>
-                    PRIVACY POLICIY
+                    Privacy Policy
                 </Link>
                 {/* <Link className={styles.link} to='/'>
                     FAQ
                 </Link> */}
-			<p className={styles.year}>2024</p>
-           
+                <p className={styles.year}>2024</p>
             </div>
         </div>
     );
 }
+
+// #665555

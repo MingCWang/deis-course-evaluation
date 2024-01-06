@@ -3,19 +3,20 @@ Header
 **********/
 .logo{
 	color: #000;
-	font-family: Lexend Tera;
+	font-family: PT Serif;
 	position: fixed;
 	align-self: center;
 	top: 20px;	
+	font-size: 30px;
 }
 .header{
-	font-family: Kite One;
+	/* font-family: Kite One; */
 	font-size: 24px;
 	z-index: 3;
 	display: flex;
 	width: 100vw;	
 	height: 100vh;
-	background-color: #FDFFEF;
+	background-color: #FFFFFF;
 	position: fixed;
 	flex-direction: column;
 	justify-content: center;
@@ -35,8 +36,13 @@ Header
 .link {
     text-decoration: none;
     color: #000;
+	/* color: #3A7BD5; */
+	color:  #665555;
     margin-bottom: 20px;
     font-size: 40px;
+	font-weight: 500;
+	font-family: Montserrat;
+
     transition: transform 0.3s ease; /* Smooth transition for transform property */
 }
 
@@ -155,4 +161,35 @@ Header
   
   
   
-  
+  /**********
+Title
+**********/
+.titleContainer{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	display: flex;
+	position: absolute;
+	position: fixed;
+	top: 20%;
+	top: 20px;
+	left: 25px;
+	z-index: 2;
+}
+.title{
+	/* color: #003478; */
+	color: #272222;
+	color: #3A7BD5;
+	color:  #003478;
+	/* font-family: Lexend Tera; */
+	font-family: PT Serif;
+	font-size: 128px;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+
+}
+.titleContainer:hover{
+	cursor: pointer;
+}

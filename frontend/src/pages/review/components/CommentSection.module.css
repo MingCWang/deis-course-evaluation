@@ -14,8 +14,15 @@
 	width: 100%;
 }
 
+
 @media screen and (max-width: 655px){
 	.commentWrapper{
 		width: 90%;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.ratingDesc{
+		font-size: 21px;
 	}
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useParams } from 'react-router-dom';
-import { useState, useContext, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 // import { UserContext } from '../../contexts/UserContext.jsx';
 import format from '../../utils/formatSentence.js';
 import styles from './review.module.css';
@@ -32,6 +32,7 @@ export default function Review() {
     const [error, setError] = useState(false);
     const [courseInfo, setCourseInfo] = useState({});
     const [loadingCourse, setLoadingCourse] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchCourse(setCourseInfo, setLoadingCourse, courseId);
@@ -89,7 +90,7 @@ export default function Review() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                userId: id || 'anonymous',
+                userId: 'anonymous',
                 courseIdName,
                 difficulty,
                 rate,
@@ -149,6 +150,15 @@ export default function Review() {
                 <h1 className={styles.submittedText}>
                     Thank you for your submission!
                 </h1>
+                <div className={styles.backContainer}>
+                    <button
+                        type='button'
+                        onClick={() => navigate(`/course/${courseId}`)}
+                        className={styles.back}
+                    >
+                        Back
+                    </button>
+                </div>
             </div>
         );
     }

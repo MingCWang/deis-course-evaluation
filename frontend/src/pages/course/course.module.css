@@ -7,18 +7,22 @@
 }
 
 
+
+
 .courseTitleContainer{
 	width: 100%;
 	height: auto;
-	margin: 50px auto 30px;
+	margin: 50px 0 30px;
+
 	}
 
 .upperHalf{
-	width: 100%;
+	width: 80%;
 	height: auto;
 	font-size: 30px;
 	display: flex;	
 	justify-content: center;	
+	margin: 0 auto;
 }
 
 .course{
@@ -29,7 +33,7 @@
 
 .lowerHalf{
 	margin: 0 auto;
-	width: 450px;
+	width: 30%;
 	height: 90px;
 	display: flex;
 	flex-direction: row;
@@ -60,10 +64,17 @@
 	flex-direction: row;
 	justify-content: center;
 }
+.subContainer{
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 .ratingWrapper{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	width: 100%;
 }
 .overallText{
 	font-weight: 700;
@@ -71,18 +82,22 @@
 	margin-bottom: 10px;
 }
 .rating{
-	width: 370px;
+	/* width: 370px; */
+	width: 100%;
 	height: 100px;
 	background-color: #D9D9D9;
 	box-shadow: 0 2px 8px 0.5px rgb(192, 191, 191);
+	position: relative;
 }
 .ratingTextContainer{
 	display: flex;
-	width: 350px;
+	/* width: 350px; */
+	width: 100%;
 	height: 100%;
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-end;
+	/* margin-right: 0px; */
 }
 .ratingText{
 	font-size: 55px;
@@ -95,6 +110,7 @@
 	font-size: 30px;
 	font-weight: 300;
 	z-index: 1;
+	margin-right: 10px;
 }
 .gridContainer{
 	composes: rating;
@@ -131,7 +147,7 @@
 }
 
 .subRatings{
-	width: 400px;
+	width: 100%;
 	height: 200px;
 	margin-top: 40px;
 	border-left: 4px solid black;
@@ -198,4 +214,67 @@
 .loadingContainer{
 	text-align: center;
 	margin-top: 100px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+	.lowerHalf{
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 1045px) {
+	.upperHalf{
+		font-size: 25px;
+
+	}
+
+	.lowerHalf{
+		width: 50%;
+	}
+	.subContainer{
+		flex-direction: column;
+	}
+	.ratingWrapper{
+		margin: 0 auto;
+		margin-top: 40px;
+	}
+	.subRatings{
+		margin: 0 auto;
+		margin-top: 40px;
+		border-top: 4px solid black;
+		border-left: none;
+		border-bottom: 4px solid black;
+
+	}
+}
+
+
+@media only screen and (max-width: 750px) {
+	.lowerHalf{
+		width: 60%;
+	}
+
+}
+
+@media only screen and (max-width: 680px) {
+	.lowerHalf{
+		width: 70%;
+	}
+
+}
+
+@media only screen and (max-width: 510px) {
+	.upperHalf{
+		font-size: 20px;
+
+	}
+
+	.lowerHalf{
+		flex-direction: column;
+		height: 170px;
+		align-items: center;
+		justify-content: center;
+	}
+
 }

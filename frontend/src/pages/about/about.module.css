@@ -1,8 +1,10 @@
 .title{
 	text-align: center;
 	font-family: Kite One;
+	font-family: Montserrat;
+
 	font-size: 30px;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 .about{
@@ -20,4 +22,10 @@
 	line-height: 2;
 	font-size: 20px;
 	margin-top: 20vh;
+}
+
+@media screen and (max-width: 600px){
+	.story{
+		margin-top: 10vh;
+	}
 }

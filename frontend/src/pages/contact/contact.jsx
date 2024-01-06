@@ -47,7 +47,7 @@ export default function Contact() {
                     <p className={styles.desc}>
                         Find any bugs or typo? <br />
                         Want to add a course or ask questions? <br />
-						Have suggestions for us? <br />
+                        Have suggestions for us? <br />
                         Let us know!
                         <br />
                         <br />
@@ -55,13 +55,13 @@ export default function Contact() {
                             Or email us directly at: deiseval26@gmail.com
                         </span>
                     </p>
-					{error && <p>Something went wrong :(, try again later.</p>}
-            {sent && (
-                <p className={styles.thankyou}>
-                    Thank you for your input :) We will get back to you as soon
-                    as possible.
-                </p>
-            )}
+                    {error && <p>Something went wrong :(, try again later.</p>}
+                    {sent && (
+                        <p className={styles.thankyou}>
+                            Thank you for your input :) We will get back to you
+                            as soon as possible.
+                        </p>
+                    )}
                 </div>
 
                 <form onSubmit={onSubmit} className={styles.form}>
@@ -113,7 +113,6 @@ export default function Contact() {
                     <div className={styles.jimuprimaryloading} />
                 </div>
             )}
-
         </div>
     );
 }

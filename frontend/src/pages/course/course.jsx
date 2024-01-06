@@ -110,44 +110,48 @@ export default function Course() {
                         </div>
                     </div>
                     <div className={styles.ratingContainer}>
-                        <div className={styles.ratingWrapper}>
-                            <span className={styles.overallText}>
-                                Overall Rating
-                            </span>
-                            <div className={styles.rating}>
-                                <div className={styles.gridContainer}>
-                                    <div className={color} />
-                                </div>
-                                <div className={styles.ratingTextContainer}>
-                                    <span className={styles.ratingText}>
-                                        {rating}
-                                    </span>{' '}
-                                    <span className={styles.ratingSubText}>
-                                        / 5.0
-                                    </span>
+                        <div className={styles.subContainer}>
+                            <div className={styles.ratingWrapper}>
+                                <span className={styles.overallText}>
+                                    Overall Rating
+                                </span>
+                                <div className={styles.rating}>
+                                    <div className={styles.gridContainer}>
+                                        <div className={color} />
+                                    </div>
+                                    <div className={styles.ratingTextContainer}>
+                                        <span className={styles.ratingText}>
+                                            {rating}
+                                        </span>{' '}
+                                        <span className={styles.ratingSubText}>
+                                            / 5.0
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className={styles.subRatings}>
-                            <p className={styles.subRate}>
-                                Difficulty{' '}
-                                <span className={styles.subRateValue}>
-                                    {difficulty}
-                                </span>
-                            </p>
-                            <p className={styles.subRate}>
-                                Usefulness{' '}
-                                <span className={styles.subRateValue}>
-                                    {usefulness}
-                                </span>
-                            </p>
-                            <p className={styles.subRate}>
-                                Average grade{' '}
-                                <span className={styles.subRateValue}>
-                                    {convertToLetterGrade(gradeAverage.grade)}
-                                </span>
-                            </p>
+                            <div className={styles.subRatings}>
+                                <p className={styles.subRate}>
+                                    Difficulty{' '}
+                                    <span className={styles.subRateValue}>
+                                        {difficulty}
+                                    </span>
+                                </p>
+                                <p className={styles.subRate}>
+                                    Usefulness{' '}
+                                    <span className={styles.subRateValue}>
+                                        {usefulness}
+                                    </span>
+                                </p>
+                                <p className={styles.subRate}>
+                                    Average grade{' '}
+                                    <span className={styles.subRateValue}>
+                                        {convertToLetterGrade(
+                                            gradeAverage.grade,
+                                        )}
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

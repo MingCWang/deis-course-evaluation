@@ -114,20 +114,25 @@
 
 @media (max-width: 665px) {
 	.ratingButtonsWrapper {
-		width: 80%;
-	}
-	.attendanceButtonsWrapper {
-	}
-	.deliveryButtonsWrapper {
+		width: 90%;
 	}
 	.levelText {
 		margin: 0 10px;
 	}
 	.ratingButton {
-		/* width: 15%; */
+		width: 30vw;
 	}
-	/* .attendanceButton {
+	.attendanceButton {
+		width: 50%;
 	}
 	.deliveryButton {
-	} */
+		width: 33%;
+		height: 40px;
+	} 
+}
+
+@media screen and (max-width: 400px){
+	.ratingButtonsWrapper {
+		width: 100%;
+	}
 }

@@ -1,59 +1,41 @@
 // import useWindowWidth from '../../utils/useWindowWidth';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+import ReviewCard from '../../components/ReviewCard/ReviewCard.jsx';
+import UseRecentReviews from '../../services/UseRecentReviews.jsx';
 // icon imports
 import styles from './home.module.css';
 import SearchBar from './SearchBar';
 
 export default function Home() {
     // const width = useWindowWidth();
-    const [hidden, setHidden] = useState(false);
-
-    const handleClick = () => {
-        console.log('clicked');
-        setHidden(true);
-    };
+    const { reviews, error } = UseRecentReviews();
 
     return (
-        <>
-            {/* <div className={styles.header}>
-                <Link className={styles.link} to='/'>
-                    ABOUT
-                </Link>
-                <Link className={styles.link} to='/'>
-                    CONTACT
-                </Link>
-            </div> */}
-            <div className={styles.background}>
-                <div className={styles.titleContainer}>
-                    <p className={styles.title}>DEIS EVAL</p>
+        <div className={styles.background}>
+            <div className={styles.top}>
+                <div className={styles.reviewNumContainer}>
+                    <span className={styles.reviewText}>
+                        <span>Reviews </span>
+                        <span className={styles.reviewNum}>2000</span>
+                    </span>
                 </div>
-                <div className={styles.searchContainer}>
-                    <div className={styles.topLine} />
-                    <div className={styles.bottomLine} />
-                    <div
-                        className={
-                            hidden
-                                ? styles.shiftContainerHidden
-                                : styles.shiftContainer
-                        }
-                        role='button'
-                        tabIndex={0}
-                        // onClick={handleClick}
-                        onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                                handleClick();
-                            }
-                        }}
-                    >
-                        <div className={styles.shiftText1}>SEARCH</div>
-                        <div className={styles.shiftText2}>A</div>
-                        <div className={styles.shiftText3}>COURSE</div>
-                    </div>
 
-                    <SearchBar handleClick={handleClick} />
+                <div className={styles.searchContainer}>
+                    <SearchBar />
                 </div>
             </div>
-        </>
+
+            <div className={styles.recentReviews}>
+                <p className={styles.recentReviewsTitle}>
+                    Recent Reviews{' '}
+                    <AiOutlineArrowDown className={styles.arrowDown} />
+                </p>
+
+                {reviews.map((review) => (
+                    <ReviewCard key={review._id} review={review} />
+                ))}
+            </div>
+        </div>
     );
 }
