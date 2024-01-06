@@ -6,10 +6,12 @@ import UseRecentReviews from '../../services/UseRecentReviews.jsx';
 // icon imports
 import styles from './home.module.css';
 import SearchBar from './SearchBar';
+import UseTotalReveiws from '../../services/UseTotalReviews.jsx';
 
 export default function Home() {
     // const width = useWindowWidth();
     const { reviews, error } = UseRecentReviews();
+	const { totalReviews } = UseTotalReveiws();
 
     return (
         <div className={styles.background}>
@@ -17,7 +19,7 @@ export default function Home() {
                 <div className={styles.reviewNumContainer}>
                     <span className={styles.reviewText}>
                         <span>Reviews </span>
-                        <span className={styles.reviewNum}>2000</span>
+                        <span className={styles.reviewNum}>{totalReviews}</span>
                     </span>
                 </div>
 
