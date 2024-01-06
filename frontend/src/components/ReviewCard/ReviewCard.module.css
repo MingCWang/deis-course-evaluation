@@ -7,6 +7,13 @@
 	/* border: 2px solid #00000093; */
 	box-shadow: 0px 0px 10px 0px #00000024;
 }
+
+.cardHome{
+	composes: card;
+	width: 80%;
+}
+
+
 .bold{
 	font-weight: 600;
 }
@@ -16,7 +23,7 @@
 	width: calc(100% - 110px);
 	min-height: 250px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	background-color: #FDFFEF;
 	background-color: #fff;
@@ -124,6 +131,94 @@
 	composes: info;
 }
 
+/* like button ************************************* */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+  }
+  
+  .likes{
+	margin-left: 10px;
+  }
+  .container {
+	display: flex;
+	position: relative;
+	cursor: pointer;
+	font-size: 25px;
+	user-select: none;
+	transition: 100ms;
+	margin-left: 80%;
+	margin-bottom: 20px;
+	align-items: center;
+	font-weight: 600;
+	font-size: 20px;
+  }
+  
+  .checkmark {
+	top: 0;
+	left: 0;
+	height: 1.5em;
+	width: 1.5em;
+	transition: 100ms;
+	animation: dislike_401 400ms ease;
+	/* background-color: #000; */
+  }
+  /* Default stroke color for the path */
+	.container .checkmark path {
+		stroke: #000; 
+		stroke-width: 1;
+
+	}
+  .container input:checked ~ .checkmark path {
+	fill: #3A7BD5;
+	stroke-width: 1;
+	stroke: #fff;
+   /*same background color*/
+  }
+  
+  .container input:checked ~ .checkmark {
+	animation: like_401 400ms ease;
+  }
+  
+  .container:hover {
+	transform: scale(1.1);
+  }
+  
+  @keyframes like_401 {
+	0% {
+	  transform: scale(0);
+	}
+  
+	50% {
+	  transform: scale(1.2);
+	}
+  
+	100% {
+	  transform: scale(1);
+	}
+  }
+  
+  @keyframes dislike_401 {
+	0% {
+	  transform: scale(0);
+	}
+  
+	50% {
+	  transform: scale(1.2);
+	}
+  
+	100% {
+	  transform: scale(1);
+	}
+  }
+
+
+
+
+  
 @media only screen and (max-width: 1300px) {
 	.infoContainer{
 		grid-template-columns: auto auto auto ;
@@ -187,7 +282,7 @@
 		width: 100%;
 		min-height: 250px;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: space-between;
 		justify-content: center;
 		background-color: #FDFFEF;
@@ -203,5 +298,9 @@
 
 	.commentText{
 		font-size: 15px;
+	}
+
+	.container{
+		margin-left: 0px;
 	}
 }

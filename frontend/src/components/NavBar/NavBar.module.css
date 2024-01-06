@@ -161,4 +161,35 @@ Header
   
   
   
-  
+  /**********
+Title
+**********/
+.titleContainer{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	display: flex;
+	position: absolute;
+	position: fixed;
+	top: 20%;
+	top: 20px;
+	left: 25px;
+	z-index: 2;
+}
+.title{
+	/* color: #003478; */
+	color: #272222;
+	color: #3A7BD5;
+	color:  #003478;
+	/* font-family: Lexend Tera; */
+	font-family: PT Serif;
+	font-size: 128px;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+
+}
+.titleContainer:hover{
+	cursor: pointer;
+}

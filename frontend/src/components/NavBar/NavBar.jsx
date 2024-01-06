@@ -1,19 +1,15 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { IoReturnUpBack } from 'react-icons/io5';
 import styles from './NavBar.module.css';
-import Footer from '../Footer.jsx';
 
 export default function NavBar() {
-    const location = useLocation();
     const navigate = useNavigate();
-    const isHome = location.pathname === '/';
     const [clicked, setClicked] = useState(false);
 
     const handleBack = () => {
-        navigate(-1);
-        console.log('back');
+        navigate('/');
+        console.log('clicked');
     };
 
     let header = '';
@@ -25,20 +21,15 @@ export default function NavBar() {
 
     return (
         <>
-            {isHome ? (
-                <div />
-            ) : // <div
-            //     className={`${styles.link} ${styles.back}`}
-            //     onClick={handleBack}
-            //     onKeyDown={handleBack} // Add onKeyDown event listener
-            //     role='button'
-            //     tabIndex={0}
-            // >
-            //     <div className={styles.backWrapper}>
-            //         <IoReturnUpBack className={styles.backIcon} /> BACK
-            //     </div>
-            // </div>
-            null}
+            <div
+                className={styles.titleContainer}
+                onClick={handleBack}
+                role='button'
+                tabIndex={0}
+            >
+                <p className={styles.title}>Deis Eval</p>
+            </div>
+
             <div className={header} onClick={() => setClicked(!clicked)}>
                 <Link className={styles.logo} to='/'>
                     Deis Eval

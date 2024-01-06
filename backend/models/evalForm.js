@@ -98,11 +98,13 @@ const evalFormSchema = Schema(
 		},
 		commentProf: {
 			type: String,
-			required: true
 		},
 		advice: {
 			type: String,
-			required: true
+		},
+		likes: {
+			type: Number,
+			default: 0
 		},
 	},
 	{

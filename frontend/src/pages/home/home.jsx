@@ -1,48 +1,41 @@
 // import useWindowWidth from '../../utils/useWindowWidth';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+import ReviewCard from '../../components/ReviewCard/ReviewCard.jsx';
+import UseRecentReviews from '../../services/UseRecentReviews.jsx';
 // icon imports
 import styles from './home.module.css';
 import SearchBar from './SearchBar';
 
 export default function Home() {
     // const width = useWindowWidth();
-    const [hidden, setHidden] = useState(false);
-
-    const handleClick = () => {
-        console.log('clicked');
-        setHidden(true);
-    };
+    const { reviews, error } = UseRecentReviews();
 
     return (
-        <>
-            {/* <div className={styles.header}>
-                <Link className={styles.link} to='/'>
-                    ABOUT
-                </Link>
-                <Link className={styles.link} to='/'>
-                    CONTACT
-                </Link>
-            </div> */}
-            <div className={styles.background}>
-				<div className={styles.top}>
-					<div className={styles.titleContainer}>
-						<p className={styles.title}>Deis Eval</p>
-					</div>
-					<span className={styles.reviewText}> 
-						Reviews : <span className={styles.reviewNum}>20</span>
-					</span>
-					<div className={styles.searchContainer}>
-						<SearchBar handleClick={handleClick} />
-					</div>
-				</div>
-             
-				<div className={styles.recentReviews}>
-					<p className={styles.recentReviewsTitle}>Recent Reviews</p>
+        <div className={styles.background}>
+            <div className={styles.top}>
+                <div className={styles.reviewNumContainer}>
+                    <span className={styles.reviewText}>
+                        <span>Reviews </span>
+                        <span className={styles.reviewNum}>2000</span>
+                    </span>
+                </div>
 
-				</div>
+                <div className={styles.searchContainer}>
+                    <SearchBar />
+                </div>
             </div>
-		
-        </>
+
+            <div className={styles.recentReviews}>
+                <p className={styles.recentReviewsTitle}>
+                    Recent Reviews{' '}
+                    <AiOutlineArrowDown className={styles.arrowDown} />
+                </p>
+
+                {reviews.map((review) => (
+                    <ReviewCard key={review._id} review={review} />
+                ))}
+            </div>
+        </div>
     );
 }

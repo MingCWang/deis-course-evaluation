@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { GoSearch } from 'react-icons/go';
 import styles from './SearchBar.module.css';
 
-export default function SearchBar({ handleClick }) {
+export default function SearchBar() {
     const [text, setText] = useState('');
     const navigate = useNavigate();
-    const [hidden, setHidden] = useState(true);
+    // const [hidden, setHidden] = useState(true);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -15,11 +14,11 @@ export default function SearchBar({ handleClick }) {
 
     const handleOnChange = (event) => {
         setText(event.target.value);
-        if (event.target.value.length > 0) {
-            setHidden(false);
-        } else {
-            setHidden(true);
-        }
+        // if (event.target.value.length > 0) {
+        //     setHidden(false);
+        // } else {
+        //     setHidden(true);
+        // }
     };
     return (
         <div className={styles.searchReview}>
@@ -35,19 +34,9 @@ export default function SearchBar({ handleClick }) {
                         type='text'
                         value={text}
                         onChange={handleOnChange}
-                        onClick={handleClick}
                     />
                 </div>
-                {/* <button
-                    type='submit'
-                    className={
-                        hidden ? styles.searchButtonHidden : styles.searchButton
-                    }
-                >
-                    SEARCH
-                </button> */}
             </form>
         </div>
     );
-   
 }

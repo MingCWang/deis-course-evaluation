@@ -111,4 +111,72 @@ async function readWithIds(req, res) {
 	}
 }
 
-export { create, read, readWithIds };
+/**
+ * @summary GET api/v1/evaluations/recent
+ * @description Get most recent evaluations 
+ * @MingCWang
+ * @async
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+async function readRecent(req, res) {
+	try {
+        // const limit = parseInt(req.query.limit) || 10; // Limit the number of results (default to 10)
+        const reviews = await EvalForm.find().sort({ createdAt: -1 }).limit(5);
+        res.status(200).json(reviews);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+
+}
+
+/**
+ * @summary POST api/v1/evaluations/recent
+ * @description Get most recent evaluations 
+ * @MingCWang
+ * @async
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+async function addLikes(req, res) {
+    try {
+        const { evalId, isLike } = req.body;
+        // Retrieve the updated document
+		if (isLike === null) {  
+			const currentEvalForm = await EvalForm.findById(evalId);
+			if (!currentEvalForm) {
+                return res.status(404).json({ message: "Document not found" });
+            }
+			if (currentEvalForm.likes <= 0) {
+                // If likes are already at zero, don't decrement further
+
+                return res.status(200).json({ likes: 0 });
+            }
+			return res.status(200).json({ likes: currentEvalForm.likes });
+		}
+		
+        const updatedEvalForm = await EvalForm.findByIdAndUpdate(
+            evalId,
+            { $inc: { likes: isLike ? 1 : -1 } },
+            { new: true }
+        );
+
+        // Check if the document was found and updated
+        if (updatedEvalForm) {
+            // Send the number of likes in the response
+
+            res.status(200).json({ likes: updatedEvalForm.likes });
+        } else {
+            // Handle the case where no document was found for the given ID
+            res.status(404).json({ message: "Document not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
+
+
+
+
+export { create, read, readWithIds, readRecent, addLikes};
