@@ -35,3 +35,12 @@ p{
 	font-weight: 400;
 	margin-top: 20vh;
 }
+
+@media screen and (max-width: 600px) {
+	.title{
+		margin-top: 50px;
+	}
+	.nosaved{
+		font-size: 15px;
+	}
+}
