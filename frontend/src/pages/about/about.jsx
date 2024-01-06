@@ -12,7 +12,7 @@ export default function About() {
                 others make informed decisions when choosing courses. <br />
                 <br /> Not sure if the class is right for you or if the
                 professor is a red flag? DeisEval got you. <br />
-                <br /> More features coming, stay tuned.
+                <br /> More features coming, stay tuned!
             </p>
         </div>
     );

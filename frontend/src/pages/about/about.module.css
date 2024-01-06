@@ -12,6 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 50px;
 }
 
 .story{
@@ -21,11 +22,17 @@
 	align-items: center;
 	line-height: 2;
 	font-size: 20px;
-	margin-top: 20vh;
+	margin-top: 70px;
 }
 
 @media screen and (max-width: 600px){
+	.title{
+		margin-top: 5vh;
+	}
 	.story{
-		margin-top: 10vh;
+		margin-top: 5vh;
+		font-size: 20px;
+		width: 75%;
+		margin-bottom: 10vh;
 	}
 }
