@@ -15,13 +15,16 @@ Always welcome for any feedbacks and suggestions! email: deiseval26@gmail.com
 - Advanced Search Bar : search by course name, course ID, department.
 - Course Evaluation : view course evaluations from other users and submit your own evaluations
 - Ratings: view analyzed data of the course such as: average rating, average grade, average difficulty, etc.
-
-**Sign In Features**
-- User Authentication : sign in with username/password or google OAuth2.0
-- Liked Courses : view the list of courses that you have liked
-- Evaluations: view the evaluations that you have submitted
+- Like button: upvote the comments that you agree with.
+- Save button: save the course that you want to keep track on.
+  
 
 More features coming soon!
+
+[comment]: # (**Sign In Features**)
+[comment]: # (- User Authentication : sign in with username/password or google OAuth2.0)
+[comment]: # (- Liked Courses : view the list of courses that you have liked)
+[comment]: # (- Evaluations: view the evaluations that you have submitted)
 
 
 ## REST API Routes
@@ -38,6 +41,8 @@ More features coming soon!
 - POST api/evaluations/forms - Create a new evaluation submission
 - GET api/evaluations - Get all evaluations
 - POST api/evaluations/user - Get user evaluations with the given user id
+- POST api/evaluations/likes - increment or decrement the likes of an evaluation
+- GET api/evaluations/recent - retrieve the most recent reviews
 ### Liked Courses
 - POST api/liked-courses - Get all liked courses with the given user id
 - POST api/liked-courses/add - Add a new liked course
@@ -54,7 +59,7 @@ More features coming soon!
 ### To generate the jsdoc documentation website
 1. Check that you've installed jsdoc globally: `npm install -g jsdoc`
 2. Run `npm run doc` in the root directory of the project
-3. Open `docs/index.html` in your browser with live servere
+3. Open `docs/index.html` in your browser with live server
 ### To reformat the code
 1. /frontend `npm run format`
 ## Start contributing
@@ -63,4 +68,4 @@ More features coming soon!
 3. Running the project: 
 	- Run `npm start` in the /backend directory of the project
 	- Run `npm run dev` in the /frontend directory of the project
-4. Please email mingshihwang@brandeis.edu for the .env files
+4. Please email deiseval26@gmail.com for the .env files
