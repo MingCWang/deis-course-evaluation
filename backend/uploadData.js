@@ -28,7 +28,7 @@ mongoose.
 import Course from './models/course.js';
 import EvalForm from './models/evalForm.js';
 import User from './models/user.js';
-import courseData from './data/sorted.json'  assert { type: 'json' };
+import courseData from './data/final.json'  assert { type: 'json' };
 
 const data = courseData.courses;
 
