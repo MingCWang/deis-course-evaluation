@@ -166,7 +166,7 @@ Title
 **********/
 .titleContainer{
 	position: absolute;
-	width: 100%;
+	width: auto;
 	height: auto;
 	display: flex;
 	position: absolute;
