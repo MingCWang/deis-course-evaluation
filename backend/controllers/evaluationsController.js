@@ -131,7 +131,7 @@ async function readRecent(req, res) {
 }
 
 /**
- * @summary POST api/v1/evaluations/recent
+ * @summary POST api/v1/evaluations/likes
  * @description Get most recent evaluations 
  * @MingCWang
  * @async
@@ -176,7 +176,25 @@ async function addLikes(req, res) {
 }
 
 
+/**
+ * @summary GET api/v1/evaluations/totalReviews
+ * @description Get most recent evaluations 
+ * @MingCWang
+ * @async
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ */
+async function totalReviews(req, res) {
+	try {
+		const reviews = await EvalForm.find();
+		const total = reviews.length;
+        res.status(200).json({total});
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+
+}
 
 
 
-export { create, read, readWithIds, readRecent, addLikes};
+export { create, read, readWithIds, readRecent, addLikes, totalReviews};
