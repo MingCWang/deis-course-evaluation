@@ -11,7 +11,7 @@ export default function About() {
                 their experiences with courses and professors, and to help
                 others make informed decisions when choosing courses. <br />
                 <br /> Not sure if the class is right for you or if the
-                professor is a red flag? DeisEval got you. <br />
+                professor is a good fit? DeisEval got you. <br />
                 <br /> More features coming, stay tuned!
             </p>
         </div>
