@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useRef, useCallback } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import styles from './search.module.css';
 import CourseCard from '../../components/CourseReviewCard/CourseCard.jsx';
 import UseCourseSearch from '../../services/UseCourseSearch.jsx';
@@ -36,12 +36,16 @@ function Content({ data, loading, lastCourseRef }) {
             </>
         );
     }
-    if (loading) {
-        return <Loading page />;
-    }
-    if (data.length === 0) {
-        return <div className={styles.NotFoundContainer}>No Courses Found</div>;
-    }
+	if (loading) {
+		return <Loading page />;
+	}
+	if (data.length === 0) {
+		return (
+			<div className={styles.NotFoundContainer}>
+					Can't find the course you're looking for? <Link to="/contact">Let us know!</Link>
+				</div>
+		);
+	}
 }
 
 export default function Search() {
