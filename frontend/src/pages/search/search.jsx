@@ -42,7 +42,7 @@ function Content({ data, loading, lastCourseRef }) {
 	if (data.length === 0) {
 		return (
 			<div className={styles.NotFoundContainer}>
-					Can't find the course you're looking for? <Link to="/contact">Let us know!</Link>
+					Can't find the course you're looking for? <br /><br /><Link to="/contact">Let us know!</Link>
 				</div>
 		);
 	}

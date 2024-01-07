@@ -48,7 +48,6 @@ export default function Contact() {
                         Find any bugs or typo? <br />
                         Want to add a course or ask questions? <br />
                         Have suggestions for us? <br />
-                        Let us know!
                         <br />
                         <br />
                         <span className={styles.email}>
