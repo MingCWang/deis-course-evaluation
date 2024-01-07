@@ -53,17 +53,17 @@
 		transform: scale(1.3);	
 	}
 	.listButtonSmall{
-		align-self: right;
-		width: auto;
+		width: 100%;
 		background-color: transparent;
 		border: none;
 		/* font-size: 0px; */
 		/* transform: translate(800%, -150px); */
 		display: flex;
 		flex-direction: row;
-		position: absolute;
-		right: 0;
-		top: 15px;
+		justify-content: flex-end;
+		/* position: absolute; */
+		margin-top: 15px;
+
 	}
 	.listButtonSmall:hover{
 		cursor: pointer;

@@ -19,17 +19,24 @@
 .searchInput {
 	width: 40vw;
 	height: 20px;
-	padding: 8px 8px 8px 32px;
+	padding: 8px 8px 10px 32px;
 	border: none;
 	border-bottom: 1px solid #000;
+	border-radius: 0;
 	background-color: transparent;
 	font-family: Lexend Tera, sans-serif;
 	font-size: 30px;
 	text-transform: uppercase;
+	outline: none;
 }
 
 .searchInput:focus {
 	outline: none;
+
+}
+
+.searchInput::placeholder {
+	overflow: visible;
 }
 
 .searchButton {

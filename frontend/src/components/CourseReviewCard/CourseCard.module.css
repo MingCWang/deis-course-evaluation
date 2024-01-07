@@ -3,7 +3,7 @@
 	/* width: 1035px; */
 	max-width: 1035px;
 	width: 90%;
-	height: 160px;
+	min-height: 160px;
 	margin: 30px auto;
 }
 
@@ -24,14 +24,16 @@
 	position: relative;
 	height: 100%;
 	width: calc(100% - 45px);
+	margin-top: 15px;
+
 }
 
 .course {
 	color: #000;
 	font-size: 30px;
 	font-weight: 700;
-	top: 28px;
-	position: absolute;
+	/* position: absolute; */
+	height: 100%;
 }
 
 .course:hover {
@@ -39,7 +41,7 @@
 }
 
 .courseTitle {
-	margin-top: 90px;
+	margin-top: 10px;
 	text-align: left;
 }
 
@@ -70,6 +72,9 @@
 	.body{
 		flex-direction: column;
 	}
+	.contents{
+		margin-top: 40px;
+	}
 	.button{
 		flex-direction: row;	
 		align-items: center;
@@ -80,6 +85,34 @@
 }
 
 @media screen and (max-width: 600px) {
+	.contents {
+		margin-top: 15px;
+		margin-left: 40px;
+		width: calc(100% - 40px);
+	}
+	.course{
+		font-size: 25px;
+	}
+	.button{
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.contents {
+		margin-left: 20px;
+		width: calc(100% - 20px);
+	}
+	.card{
+		height: 240px;
+
+	}
+	.course{
+		font-size: 22px;
+	}
+	.courseTitle{
+		font-size: 15px;
+	}
 
 
 }
