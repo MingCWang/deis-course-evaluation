@@ -84,6 +84,14 @@
 .courseFont{
 	font-size: 25px;
 	margin-right: 20px;
+	text-decoration: none;
+	color: #000;
+}
+.courseFontHome{
+	composes: courseFont;
+}
+.courseFontHome:hover{
+	color: #3A7BD5;
 }
 .date{
 	font-size: 20px;
