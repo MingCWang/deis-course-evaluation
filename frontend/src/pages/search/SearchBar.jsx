@@ -22,7 +22,7 @@ export default function SearchBar() {
                     className={styles.searchInput}
                     onChange={handleOnChange}
                     placeholder='SEARCH'
-					value={text}
+                    value={text}
                 />
                 <button
                     type='submit'

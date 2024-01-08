@@ -1,5 +1,4 @@
 // import useWindowWidth from '../../utils/useWindowWidth';
-// import { useState, useEffect } from 'react';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import ReviewCard from '../../components/ReviewCard/ReviewCard.jsx';
 import UseRecentReviews from '../../services/UseRecentReviews.jsx';
@@ -11,7 +10,7 @@ import UseTotalReveiws from '../../services/UseTotalReviews.jsx';
 export default function Home() {
     // const width = useWindowWidth();
     const { reviews, error } = UseRecentReviews();
-	const { totalReviews } = UseTotalReveiws();
+    const { totalReviews } = UseTotalReveiws();
 
     return (
         <div className={styles.background}>

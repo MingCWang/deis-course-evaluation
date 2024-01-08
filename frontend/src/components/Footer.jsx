@@ -18,6 +18,7 @@ export default function Footer() {
     return (
         <div className={styles.container}>
             <div className={footerStyles}>
+                <p className={styles.year}> © 2024 Deis Eval</p>
                 <Link className={styles.link} to='/terms-conditions'>
                     Terms & Conditions
                 </Link>
@@ -25,9 +26,8 @@ export default function Footer() {
                     Privacy Policy
                 </Link>
                 {/* <Link className={styles.link} to='/'>
-                    FAQ
+                    Site regulations
                 </Link> */}
-                <p className={styles.year}>2024</p>
             </div>
         </div>
     );

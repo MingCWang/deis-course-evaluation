@@ -8,7 +8,7 @@ import convertToLetterGrade from '../../utils/convertToLetterGrade';
 import RatingBox from '../CourseReviewCard/RatingBox.jsx';
 import UseLikeReview from '../../services/UseLikeReview.jsx';
 
-export default function ReviewCard({ review}) {
+export default function ReviewCard({ review }) {
     const [isChecked, setIsChecked] = useState(null);
     const { likes, error } = UseLikeReview({ isChecked, reviewId: review._id });
     const formattedDate = format(new Date(review.createdAt), 'MMMM do, yyyy');
@@ -33,7 +33,7 @@ export default function ReviewCard({ review}) {
     let rating;
     const ratingAverage = review.rate;
     let color;
-	let courseName = styles.courseFont;
+    let courseName = styles.courseFont;
 
     if (ratingAverage % 1 === 0) {
         rating = ratingAverage.toFixed(1);
@@ -53,13 +53,11 @@ export default function ReviewCard({ review}) {
         color = styles.red;
     }
 
-
-
     if (location === '/my-reviews') {
         card = styles1.card;
     } else if (location === '/') {
         card = styles.cardHome;
-		courseName = styles.courseFontHome;
+        courseName = styles.courseFontHome;
     }
 
     const handleCheckboxChange = () => {
@@ -73,19 +71,21 @@ export default function ReviewCard({ review}) {
                 <div className={styles.contents}>
                     <div className={styles.top}>
                         <p className={styles.course}>
-							{location === '/' ? (
-								  <Link
-								  to={`/course/${review.course.id}`}
-								  className={`${courseName} ${styles.bold}`}
-							  >
-								  {review.course.name}
-							  </Link>
-							): (
-								<span className={`${courseName} ${styles.bold}`}>	
-									{review.course.name}
-								</span>
-							)}
-                          
+                            {location === '/' ? (
+                                <Link
+                                    to={`/course/${review.course.id}`}
+                                    className={`${courseName} ${styles.bold}`}
+                                >
+                                    {review.course.name}
+                                </Link>
+                            ) : (
+                                <span
+                                    className={`${courseName} ${styles.bold}`}
+                                >
+                                    {review.course.name}
+                                </span>
+                            )}
+
                             <div className={styles.profName}>
                                 with professor{' '}
                                 <span className={styles.bold}>

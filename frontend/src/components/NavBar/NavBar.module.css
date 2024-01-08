@@ -1,3 +1,27 @@
+.container{
+	background-color: #ffffff00;
+	width: 100vw;
+	height: 100px;
+	position: fixed;
+	z-index: 3;
+
+
+	/* background-image: linear-gradient(#ffffff); */
+	/* background-position: left; */
+	transition: background-color .5s;
+
+}
+
+.containerScrolled{
+	composes: container;
+	background-color: #ffffffdc;
+	border-bottom: 0.5px solid #00000030;
+	transition: background-color .5s;
+
+
+}
+
+
 /**********
 Header
 **********/
@@ -50,34 +74,6 @@ Header
     transform: translateY(-5px); /* Moves the link up 5 pixels on hover */
 }
 
-.back{
-	position: fixed;
-	left: 20px;
-	top: 20px;
-	font-family: Kite One;
-	font-size: 24px;
-	z-index: 2;
-
-}
-
-.backIcon{
-	font-size: 40px;
-	vertical-align: middle;
-	margin-top: -5px;
-	margin-right: 10px;
-}
-
-.backWrapper{
-	display: flex;
-	justify-content: space-around;
-	margin-left: 20px;	
-	margin-top: 20px;
-}
-
-.backWrapper:hover{
-	cursor: pointer;
-}
-
 .navWrapper{
 	display: flex;
 	flex-direction: column;
@@ -85,12 +81,6 @@ Header
 	position: absolute;
 }
 
-/* .footerWrapper{
-	background-color: #FDFFEF;
-	position: fixed;
-	bottom: 0;
-	width: 100vw;
-} */
 
 
 /* // ********** burger menu ********** // */

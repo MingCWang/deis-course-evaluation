@@ -1,16 +1,40 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './NavBar.module.css';
 
 export default function NavBar() {
     const navigate = useNavigate();
     const [clicked, setClicked] = useState(false);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if (offset > 500) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const handleBack = () => {
         navigate('/');
         console.log('clicked');
     };
+    let { container } = styles;
+
+    if (isScrolled) {
+        container = styles.containerScrolled;
+    }
 
     let header = '';
     if (clicked) {
@@ -20,7 +44,7 @@ export default function NavBar() {
     }
 
     return (
-        <>
+        <div className={container}>
             <div
                 className={styles.titleContainer}
                 onClick={handleBack}
@@ -66,6 +90,6 @@ export default function NavBar() {
                     <div className={`${styles.bar} ${styles.bar3}`} />
                 </label>
             </div>
-        </>
+        </div>
     );
 }
