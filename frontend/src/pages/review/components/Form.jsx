@@ -105,7 +105,7 @@ export default function Form({
                 <RatingButtons state={rate} setState={setRate} />
             </div>
             <div className={styles.ratingWrapper}>
-                <h2 className={styles.ratingDesc}>Attendance is requried</h2>
+                <h2 className={styles.ratingDesc}>Attendance is required</h2>
                 <AttendanceButtons
                     state={attendance}
                     setState={setAttendance}
