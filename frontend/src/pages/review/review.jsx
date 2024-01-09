@@ -82,7 +82,12 @@ export default function Review() {
             name: courseFormatted,
         };
 
-        const professor = `${first} ${last}`;
+        let professor;
+        if (first === '' || last === '') {
+            professor = null;
+        } else {
+            professor = `${first} ${last}`;
+        }
 
         fetch(`${process.VITE_BASE_URL}api/evaluations/forms`, {
             method: 'POST',

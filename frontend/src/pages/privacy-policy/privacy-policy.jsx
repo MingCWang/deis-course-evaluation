@@ -564,7 +564,16 @@ export default function PrivacyPolicy() {
                     contact us:
                 </p>
                 <ul>
-                    <li>By email: deiseval26@gmail.com</li>
+                    <li>
+                        By visiting this page on our website:{' '}
+                        <a
+                            href='https://www.deiseval.com/contact'
+                            rel='external nofollow noopener noreferrer'
+                            target='_blank'
+                        >
+                            https://www.deiseval.com/contact
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

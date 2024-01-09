@@ -21,6 +21,7 @@ import PrivacyPolicy from './pages/privacy-policy/privacy-policy.jsx';
 import TermsConditions from './pages/terms-conditions/terms-conditions.jsx';
 import About from './pages/about/about.jsx';
 import Contact from './pages/contact/contact.jsx';
+import SiteRegulations from './pages/site-regulations/site-regulations.jsx';
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: 'terms-conditions',
                 element: <TermsConditions />,
+            },
+            {
+                path: 'site-regulations',
+                element: <SiteRegulations />,
             },
             // {
             //     path: 'saved-courses',

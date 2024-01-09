@@ -326,9 +326,6 @@ export default function TermsConditions() {
                     You can contact us:
                 </p>
                 <ul>
-                    <li>By email: deiseval26@gmail.com</li>
-                </ul>
-                {/* <ul>
                     <li>
                         By visiting this page on our website:{' '}
                         <a
@@ -336,10 +333,10 @@ export default function TermsConditions() {
                             rel='external nofollow noopener noreferrer'
                             target='_blank'
                         >
-                            https://www.ratemycourses.io/contact
+                            https://www.deiseval.com/contact
                         </a>
                     </li>
-                </ul> */}
+                </ul>
             </div>
         </div>
     );
