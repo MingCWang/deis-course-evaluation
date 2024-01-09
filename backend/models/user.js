@@ -75,6 +75,7 @@ userSchema.methods.toAuthJSON = function () {
 		name: this.name.first,
 		id: this._id,
 		token: this.generateJWT(),
+		likedCourses: this.likedCourses,
 	};
 };
 

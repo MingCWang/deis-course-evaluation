@@ -81,6 +81,22 @@ Header
 	position: absolute;
 }
 
+.auth{
+	font-family: Montserrat;
+	text-decoration: none;
+	color: #000;
+	top: 30px;
+	font-size: 20px;
+	position: fixed;
+	right: 100px;
+	border: none;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0);
+	box-shadow: none;
+}
+.auth:hover{
+	cursor: pointer;
+}
 
 
 /* // ********** burger menu ********** // */

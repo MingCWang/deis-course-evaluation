@@ -1,17 +1,20 @@
 /* eslint-disable react/prop-types */
 import { format } from 'date-fns';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './ReviewCard.module.css';
 import styles1 from './MyReviewCard.module.css';
 import convertToLetterGrade from '../../utils/convertToLetterGrade';
 import RatingBox from '../CourseReviewCard/RatingBox.jsx';
 import UseLikeReview from '../../services/UseLikeReview.jsx';
+import UseValidateJWT from '../../services/UseValidateJWT.jsx';
 
 export default function ReviewCard({ review }) {
     const [isChecked, setIsChecked] = useState(null);
     const { likes, error } = UseLikeReview({ isChecked, reviewId: review._id });
+	const {validated, setValidated }= UseValidateJWT();
     const formattedDate = format(new Date(review.createdAt), 'MMMM do, yyyy');
+	const navigate = useNavigate();
     let location = useLocation();
     location = location.pathname;
 
@@ -59,9 +62,13 @@ export default function ReviewCard({ review }) {
         card = styles.cardHome;
         courseName = styles.courseFontHome;
     }
-
+	
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+		if (!validated) {
+			navigate('/login');
+		}else{
+			setIsChecked(!isChecked);
+		}
     };
 
     return (

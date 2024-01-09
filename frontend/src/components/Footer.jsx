@@ -15,6 +15,10 @@ export default function Footer() {
         yearStyles = styles.year;
     }
 
+    if (location.pathname === '/login') {
+        return null;
+    }
+
     return (
         <div className={styles.container}>
             <div className={footerStyles}>

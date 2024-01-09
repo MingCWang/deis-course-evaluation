@@ -8,8 +8,8 @@ export default function Layout() {
 
     let mainstyle = styles.main;
 
-    if (location.pathname === '/contact') {
-        mainstyle = styles.contactMain;
+    if (location.pathname === '/login') {
+        mainstyle = styles.loginMain;
     }
 
     return (

@@ -22,6 +22,7 @@ import TermsConditions from './pages/terms-conditions/terms-conditions.jsx';
 import About from './pages/about/about.jsx';
 import Contact from './pages/contact/contact.jsx';
 import SiteRegulations from './pages/site-regulations/site-regulations.jsx';
+import Login from './pages/login/login.jsx';
 
 const router = createBrowserRouter([
     {
@@ -77,17 +78,21 @@ const router = createBrowserRouter([
             //     ),
             // },
             {
+                path: 'login',
+                element: <Login />,
+            },
+            {
                 path: 'saved-courses',
                 element: <SavedCourse />,
             },
-            {
-                path: 'my-reviews',
-                element: (
-                    <ProtectedRoute>
-                        <MyReviews />
-                    </ProtectedRoute>
-                ),
-            },
+            // {
+            //     path: 'my-reviews',
+            //     element: (
+            //         <ProtectedRoute>
+            //             <MyReviews />
+            //         </ProtectedRoute>
+            //     ),
+            // },
         ],
     },
 ]);

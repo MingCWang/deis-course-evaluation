@@ -1,20 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { useEffect } from 'react';
+import UseValidateJWT from '../services/UseValidateJWT.jsx';
 
 export default function ProtectedRoute({ children }) {
-    const { loggingInState } = useContext(UserContext);
-    const [loggingIn, setLoggingIn] = loggingInState;
     const navigate = useNavigate();
-
-    const authenticated = localStorage.getItem('authenticated');
+    const validated = UseValidateJWT();
 
     useEffect(() => {
-        if (!authenticated) {
-            setLoggingIn(true);
-            navigate('/');
+        if (!validated) {
+            navigate('/login');
         }
-    }, [authenticated]);
+    }, [validated]);
 
     return children;
 }
