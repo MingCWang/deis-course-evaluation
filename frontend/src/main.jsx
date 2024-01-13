@@ -5,17 +5,17 @@ import './main.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// import UserProvider from './contexts/UserContext.jsx';
+import UserProvider from './context/UserContext.jsx';
 // Pages import
 import ErrorPage from './error-page.jsx';
 import Layout from './components/Layout.jsx';
-import ProtectedRoute from './components/ProtectedRoute';
+// import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/home/home.jsx';
 import Course from './pages/course/course.jsx';
 import Review from './pages/review/review.jsx';
 import Search from './pages/search/search.jsx';
 import SavedCourse from './pages/saved-courses/saved-courses.jsx';
-import MyReviews from './pages/my-reviews/my-reviews.jsx';
+// import MyReviews from './pages/my-reviews/my-reviews.jsx';
 import Loading from './pages/oauth-loading/oauth-loading.jsx';
 import PrivacyPolicy from './pages/privacy-policy/privacy-policy.jsx';
 import TermsConditions from './pages/terms-conditions/terms-conditions.jsx';
@@ -99,8 +99,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <React.StrictMode>
-    // <UserProvider>
-    <RouterProvider router={router} />,
-    // </UserProvider>,
+    <UserProvider>
+    	<RouterProvider router={router} />,
+    </UserProvider>,
     // </React.StrictMode>,
 );

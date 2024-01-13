@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect , useContext } from 'react';
 import styles from './NavBar.module.css';
-import UseValidateJWT from '../../services/UseValidateJWT.jsx';
+// import UseValidateJWT from '../../services/UseValidateJWT.jsx';
 import storeLikedCourses from '../../services/storeLikedCourse';
+import { UserContext } from '../../context/UserContext.jsx';
 
 export default function NavBar() {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const [clicked, setClicked] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
-
-	const {validated, setValidated }= UseValidateJWT();
+	const { authState } = useContext(UserContext);
+	const [validated, setValidated] = authState;
+	// const {validated, setValidated }= UseValidateJWT();
 	console.log(validated);
 
 	useEffect(() => {

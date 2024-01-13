@@ -140,36 +140,68 @@ async function readRecent(req, res) {
  */
 async function addLikes(req, res) {
     try {
-        const { evalId, isLike } = req.body;
+        const { evalId, isLike, userId } = req.body;
+
+		const user = await User.findById(userId);
+		let updatedEvalForm;
         // Retrieve the updated document
 		if (isLike === null) {  
 			const currentEvalForm = await EvalForm.findById(evalId);
 			if (!currentEvalForm) {
                 return res.status(404).json({ message: "Document not found" });
             }
+
 			if (currentEvalForm.likes <= 0) {
-                // If likes are already at zero, don't decrement further
-
-                return res.status(200).json({ likes: 0 });
+				// updatedEvalForm = await EvalForm.findByIdAndUpdate(
+				// 	evalId,
+				// 	{ likes: 0 },
+				// 	{ new: true }
+				// 	);
+                return res.status(200).json({ likes: 0, isLiked: false});
             }
-			return res.status(200).json({ likes: currentEvalForm.likes });
+			// if user is logged in, show them the courses that they upvoted
+			if(user){
+				if(user.upvotedCourses.includes(evalId)){
+					return res.status(200).json({ likes: currentEvalForm.likes, isLiked: true});
+				}
+			}
+			return res.status(200).json({ likes: currentEvalForm.likes, isLiked: false});
 		}
+
+
+		if (!isLike) {
 		
-        const updatedEvalForm = await EvalForm.findByIdAndUpdate(
-            evalId,
-            { $inc: { likes: isLike ? 1 : -1 } },
-            { new: true }
-        );
-
-        // Check if the document was found and updated
-        if (updatedEvalForm) {
-            // Send the number of likes in the response
-
-            res.status(200).json({ likes: updatedEvalForm.likes });
-        } else {
-            // Handle the case where no document was found for the given ID
-            res.status(404).json({ message: "Document not found" });
-        }
+			// Add courseId to upvotedCourses if it's not already there
+			if (!user.upvotedCourses.includes(evalId)) {
+				user.upvotedCourses.push(evalId);
+				await user.save();
+				// Increment likes count
+				updatedEvalForm = await EvalForm.findByIdAndUpdate(
+					evalId,
+					{ $inc: { likes: 1 } },
+					{ new: true }
+					);
+			}else{
+				updatedEvalForm = await EvalForm.findById(evalId);
+				return res.status(200).json({ likes: updatedEvalForm.likes, isLiked: true});
+			}
+			return res.status(200).json({ likes: updatedEvalForm.likes, isLiked: true});
+		} else {
+				
+			// Remove userId from likedID if it's there
+			const index = user.upvotedCourses.indexOf(evalId);
+			if (index !== -1) {
+				user.upvotedCourses.splice(index, 1);
+				await user.save();
+				// Decrement likes count
+				updatedEvalForm = await EvalForm.findByIdAndUpdate(
+					evalId,
+					{ $inc: { likes: -1 } },
+					{ new: true }
+				);
+			}
+			return res.status(200).json({ likes: updatedEvalForm.likes, isLiked: false});
+		}
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

@@ -31,6 +31,13 @@ const userSchema = Schema(
 			}],
 			default: []
 		},
+		upvotedCourses: {
+			type: [{
+				type: Schema.Types.ObjectId, 
+				ref: 'Course'
+			}],
+			default: []
+		},
 		provider: String,
 		hash: String,
 		salt: String,
