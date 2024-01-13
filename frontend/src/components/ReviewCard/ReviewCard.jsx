@@ -14,7 +14,6 @@ export default function ReviewCard({ review }) {
 	const [clicked, setClicked] = useState(false);
 	const { authState } = useContext(UserContext);
 	const [validated, setValidated] = authState;
-
 	const { likes, isChecked } = UseLikeReview({ reviewId: review._id, clicked, setClicked});
 
 	// const {validated, setValidated }= UseValidateJWT();
@@ -70,7 +69,6 @@ export default function ReviewCard({ review }) {
     }
 
     const handleCheckboxChange = () => {
-		console.log('validated', validated);
 		if (!validated) {
 			navigate('/login');
 		}else{
@@ -180,9 +178,9 @@ export default function ReviewCard({ review }) {
 
                     {/* {deleteButton()} */}
                 </div>
-                <label className={styles.container} htmlFor='checkbox'>
+                <label className={styles.container} htmlFor={review._id}>
                     <input
-						id='checkbox'
+						id={review._id}
                         type='checkbox'
                         checked={isChecked}
                         onChange={handleCheckboxChange}

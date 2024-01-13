@@ -44,7 +44,7 @@ export default function NavBar() {
 		localStorage.removeItem('authenticated');
 		setValidated(false);
 		storeLikedCourses();
-		navigate('/');
+		navigate(-4);
 	}
 
 	// *****************************************************

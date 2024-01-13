@@ -152,11 +152,11 @@ async function addLikes(req, res) {
             }
 
 			if (currentEvalForm.likes <= 0) {
-				// updatedEvalForm = await EvalForm.findByIdAndUpdate(
-				// 	evalId,
-				// 	{ likes: 0 },
-				// 	{ new: true }
-				// 	);
+				updatedEvalForm = await EvalForm.findByIdAndUpdate(
+					evalId,
+					{ likes: 0 },
+					{ new: true }
+					);
                 return res.status(200).json({ likes: 0, isLiked: false});
             }
 			// if user is logged in, show them the courses that they upvoted

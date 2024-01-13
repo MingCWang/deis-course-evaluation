@@ -23,6 +23,7 @@ import About from './pages/about/about.jsx';
 import Contact from './pages/contact/contact.jsx';
 import SiteRegulations from './pages/site-regulations/site-regulations.jsx';
 import Login from './pages/login/login.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 const router = createBrowserRouter([
     {
@@ -47,7 +48,10 @@ const router = createBrowserRouter([
             },
             {
                 path: 'review/:id',
-                element: <Review />,
+                element: 
+				<ProtectedRoute>
+					<Review />
+				</ProtectedRoute>,
             },
             {
                 path: 'search',

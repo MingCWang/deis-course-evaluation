@@ -1,14 +1,15 @@
+import { useEffect , useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import UseValidateJWT from '../services/UseValidateJWT.jsx';
+import { UserContext } from '../context/UserContext.jsx';
 
 export default function ProtectedRoute({ children }) {
-    const navigate = useNavigate();
-    const validated = UseValidateJWT();
-
+	const { authState } = useContext(UserContext);
+	const [validated, setValidated] = authState;
+	const navigate = useNavigate();
+	
     useEffect(() => {
         if (!validated) {
-            navigate('/login');
+            // navigate('/login');
         }
     }, [validated]);
 

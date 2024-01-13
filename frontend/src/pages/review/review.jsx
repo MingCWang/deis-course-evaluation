@@ -89,13 +89,20 @@ export default function Review() {
             professor = `${first} ${last}`;
         }
 
+		let userId;
+		try{
+			userId = JSON.parse(localStorage.getItem('userInfo')).id;
+		}catch{
+			userId = null;
+		}
+
         fetch(`${process.VITE_BASE_URL}api/evaluations/forms`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                userId: 'anonymous',
+                userId,
                 courseIdName,
                 difficulty,
                 rate,

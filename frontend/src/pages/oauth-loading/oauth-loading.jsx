@@ -22,7 +22,7 @@ export default function OauthLoading() {
                 setError(true);
             }
 			setTimeout(() => {
-				navigate('/');
+				navigate(-4);
 			}, 2000);
         
         });

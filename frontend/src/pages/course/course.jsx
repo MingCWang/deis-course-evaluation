@@ -17,6 +17,7 @@ export default function Course() {
     const [loadingCourse, setLoadingCourse] = useState(true);
     const { id } = useParams();
 
+
     useEffect(() => {
         fetchReviews(setReviews, setLoadingReviews, id);
         fetchCourse(setCourseInfo, setLoadingCourse, id);
