@@ -12,7 +12,17 @@ const theme = createTheme({
     },
 });
 
-export default function ComboBox({ options, label, handleGradeChange }) {
+export default function ComboBox({ value, options, label, handleGradeChange }) {
+	
+
+		for (let i = 0; i < options.length; i++) {
+			if (options[i].value === value) {
+				value = options[i];
+			}
+		}
+	
+	
+
     return (
         <ThemeProvider theme={theme}>
             <Autocomplete
@@ -32,6 +42,7 @@ export default function ComboBox({ options, label, handleGradeChange }) {
                 renderInput={(params) => (
                     <TextField {...params} label={label} />
                 )}
+				value={value}
             />
         </ThemeProvider>
     );

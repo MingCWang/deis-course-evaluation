@@ -1,7 +1,7 @@
 
 import express from 'express';
 const router = express.Router();
-import { create, read, readWithIds, readRecent, addLikes, totalReviews} from '../controllers/evaluationsController.js';
+import { create, remove, update, read, readWithIds, readRecent, addLikes, totalReviews} from '../controllers/evaluationsController.js';
 
 /**
  * Evaluations API routes
@@ -15,5 +15,7 @@ router.post('/user', readWithIds);
 router.get('/recent', readRecent);
 router.post('/likes', addLikes);
 router.get('/totalReviews', totalReviews);
+router.put('/forms/:id', update);
+router.delete('/forms/:id', remove);
 
 export default router; 

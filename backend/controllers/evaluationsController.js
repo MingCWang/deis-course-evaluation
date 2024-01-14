@@ -36,7 +36,7 @@ async function create(req, res) {
 		const {courseIdName, userId} = req.body;
 		console.log({courseIdName})
 		// save evalform with the req aruguments 
-		const newEvalForm = new EvalForm(getEvalFormParams(req.body));
+		const newEvalForm = new EvalForm(getEvalFormParams(req.body, userId));
 		const savedEvalForm = await newEvalForm.save();
 		// add evalform id to course comments with the matching course id 
 		const evalFormId = savedEvalForm._id;
@@ -59,6 +59,75 @@ async function create(req, res) {
 		console.log(err);
 	}
 }
+
+/** @MingCWang 
+ * @async
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ * @returns {Object} 201 - JSON object with the updated EvalForm
+ * @returns {Object} 500 - JSON object with the error message
+ */
+async function update(req, res) {
+	try {
+		// ******************************************
+		// TODO: Update the course by removing the old evalForm and adding the new one
+		//********************************************* */
+		const {courseIdName, userId} = req.body;
+		console.log({courseIdName})
+		// save evalform with the req aruguments 
+		const evalForm = await EvalForm.findByIdAndUpdate(req.params.id, getEvalFormParams(req.body, userId), {new: true});
+		const savedEvalForm = await evalForm.save();
+		// add evalform id to course comments with the matching course id 
+		const course = await Course.findById(courseIdName.id);
+		console.log({course})
+		try{
+			await updateCourseAverages(course, savedEvalForm);
+		}catch(err){
+			throw err;
+		}
+		res.status(201).json(savedEvalForm);
+
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+		console.log(err);
+	}
+} 
+
+/** 
+ * @async
+ * @param {Object} req - request object
+ * @param {Object} res - response object
+ * @returns {Object} 201 - JSON object with the deleted EvalForm
+ * @returns {Object} 500 - JSON object with the error message
+ */
+async function remove(req, res) {
+	try {
+		const {courseId, userId} = req.body;
+		const evalForm = await EvalForm.findByIdAndDelete(req.params.id);
+		// remove evalform id to course comments with the matching course id
+		const course = await Course.findById(courseId);
+		const evalFormId = evalForm._id;
+		const index = course.comments.indexOf(evalFormId);
+		if (index !== -1) {
+			course.comments.splice(index, 1);
+			await course.save();
+		}
+		// remove evalform id to user evals with the matching user id
+		if (userId){
+			const user = await User.findById(userId);
+			const index = user.evals.indexOf(evalFormId);
+			if (index !== -1) {
+				user.evals.splice(index, 1);
+				await user.save();
+			}
+		}
+		res.status(201).json(evalForm);
+
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+		console.log(err);
+	}
+} 
 
 /**
  * @todo Implement error handling for edge cases
@@ -87,6 +156,7 @@ async function read(req, res) {
 		res.status(500).json({ error: err.message });
 	}
 }
+
 
 /**
  * @summary POST api/v1/evaluations/user
@@ -229,4 +299,4 @@ async function totalReviews(req, res) {
 
 
 
-export { create, read, readWithIds, readRecent, addLikes, totalReviews};
+export { remove, create, update, read, readWithIds, readRecent, addLikes, totalReviews};

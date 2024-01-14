@@ -24,6 +24,10 @@ const evalFormSchema = Schema(
 				name:{
 					type: String,
 					requried: true
+				},
+				title:{
+					type: String,
+					requried: true
 				}
 			}
 			

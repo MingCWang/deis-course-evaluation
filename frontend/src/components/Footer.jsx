@@ -15,8 +15,8 @@ export default function Footer() {
     //     yearStyles = styles.year;
     // }
 
-	footerStyles = styles.footerMain;
-	yearStyles = styles.yearMain;
+    footerStyles = styles.footerMain;
+    yearStyles = styles.yearMain;
 
     if (location.pathname === '/login') {
         return null;

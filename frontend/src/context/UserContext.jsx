@@ -12,7 +12,7 @@ export const UserContext = createContext(null);
  */
 export default function UserProvider({ children }) {
     // const {validated, setValidated}= UseValidateJWT();
-    const [validated, setValidated] = useState(false);
+    const [validated, setValidated] = useState(null);
 
     useEffect(() => {
         const jwt = localStorage.getItem('jwt');
@@ -50,7 +50,7 @@ export default function UserProvider({ children }) {
                 authState: [validated, setValidated],
             }}
         >
-            {children}
+            {validated === null ? null : children}
         </UserContext.Provider>
     );
 }

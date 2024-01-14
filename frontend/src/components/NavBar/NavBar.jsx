@@ -17,12 +17,11 @@ export default function NavBar() {
     const [profileClicked, setProfileClicked] = useState(false);
 
     // const {validated, setValidated }= UseValidateJWT();
-    console.log(validated);
 
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
-            if (offset > 500) {
+            if (offset > 200) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
@@ -38,7 +37,6 @@ export default function NavBar() {
 
     const handleBack = () => {
         navigate('/');
-        console.log('clicked');
     };
 
     function handleOnClick() {
@@ -92,9 +90,7 @@ export default function NavBar() {
             )}
 
             {profileClicked && (
-                <ProfileDropdown
-                    handleOnClick={handleOnClick}
-                />
+                <ProfileDropdown handleOnClick={handleOnClick} />
             )}
             <div
                 className={header}
@@ -110,10 +106,12 @@ export default function NavBar() {
                     <Link className={styles.link} to='/search'>
                         Search
                     </Link>
-					{!validated ?     <Link className={styles.link} to='/saved-courses'>
-                        Saved
-                    </Link> : null }
-               
+                    {!validated ? (
+                        <Link className={styles.link} to='/saved-courses'>
+                            Saved
+                        </Link>
+                    ) : null}
+
                     <Link className={styles.link} to='/about'>
                         About
                     </Link>

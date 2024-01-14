@@ -13,7 +13,6 @@ export default async function fetchUserReviews(id, setReviews) {
         .then((res) => res.json())
         .then((data) => {
             if (!data.error) {
-                console.log(data);
                 setReviews(data);
             }
         })

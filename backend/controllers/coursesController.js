@@ -69,6 +69,9 @@ async function getCourse(req, res) {
 async function getEvalWithIds(req, res) {
 	const { courseId } = req.body;
 	try {
+		console.log(courseId);
+		const course = await Course.findById(courseId);
+		console.log(course);
 		const result = await Course.findById(courseId).populate('comments');
 		const evalForms = result.comments;
 		if (evalForms.length === 0) {

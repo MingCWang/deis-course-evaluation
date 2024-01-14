@@ -56,6 +56,7 @@ const StyledTextarea = styled(TextareaAutosize)(
 );
 
 export default function TextBox({
+	comment,
     handleCommentChange,
     row = 5,
     placeholder = '. . . . . .',
@@ -66,6 +67,7 @@ export default function TextBox({
             aria-label='minimum height'
             minRows={row}
             placeholder={placeholder}
+			defaultValue={comment}
         />
     );
 }

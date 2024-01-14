@@ -13,7 +13,7 @@ export default function convertToLetterGrade(grade) {
         3: 'D',
         2: 'D-',
         1: 'F',
-        0: 'N/A',
+		0: 'N/A',
     };
     return letterGrades[grade];
 }

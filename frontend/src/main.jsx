@@ -90,11 +90,19 @@ const router = createBrowserRouter([
                     </ProtectedRoute>
                 ),
             },
-			{
+            {
                 path: 'manage-account',
                 element: (
                     <ProtectedRoute>
                         <ManageAccount />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: 'edit/:id',
+                element: (
+                    <ProtectedRoute>
+                        <Review edit />
                     </ProtectedRoute>
                 ),
             },

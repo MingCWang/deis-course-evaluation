@@ -225,7 +225,25 @@
 	}
   }
 
+/* edit button ************************************* */
 
+.edit{
+	/* position: absolute; */
+	/* right: 70px; */
+	transform: scale(2.5);
+}
+
+.edit:hover{
+	transform: scale(2.7);
+	cursor: pointer;
+}
+
+.editButton{
+	position: absolute;
+	right: 70px;
+	text-decoration: none;
+	color: #000;
+}
 
 
   
@@ -312,5 +330,9 @@
 
 	.container{
 		margin-left: 0px;
+	}
+
+	.edit{
+		right: 0px;
 	}
 }

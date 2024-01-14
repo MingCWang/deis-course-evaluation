@@ -8,18 +8,19 @@ import styles from './my-reviews.module.css';
 
 export default function MyReviews() {
     const [reviews, setReviews] = useState([]);
-	const { authState } = useContext(UserContext);
-	const [validated] = authState;
+    const { authState } = useContext(UserContext);
+    const [validated] = authState;
 
     useEffect(() => {
         if (validated) {
-			const {id} = JSON.parse(localStorage.getItem('userInfo'));
+            const { id } = JSON.parse(localStorage.getItem('userInfo'));
             fetchUserReviews(id, setReviews);
         }
     }, [validated]);
 
     const empty = () => {
-        if (reviews.length === 0) return <p className={styles.noreviews}>No reviews yet</p>;
+        if (reviews.length === 0)
+            return <p className={styles.noreviews}>No reviews yet</p>;
         return null;
     };
 

@@ -13,9 +13,9 @@ export default function Login() {
                         Login to <span className={styles.logo}>Deis Eval</span>
                     </p>
                     <p className={styles.loginText}>
-                        Upvote comments. <br />
-                        Save your favorite courses. <br />
-                        {/* Edit, save, and delete your ratings */}
+                        Leave and upvote ratings <br />
+                        Edit, save, and delete your ratings <br />
+						And more!
                     </p>
                     <a href={getGoogleUrl()} className={styles.googleButton}>
                         <FcGoogle className={styles.googleIcon} />

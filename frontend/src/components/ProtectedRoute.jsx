@@ -8,9 +8,11 @@ export default function ProtectedRoute({ children }) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!validated) {
-            navigate('/login', { replace: true });
-        }
+        setTimeout(() => {
+            if (!validated) {
+                navigate('/login', { replace: true });
+            }
+        }, 1000);
     }, [validated]);
 
     return children;
