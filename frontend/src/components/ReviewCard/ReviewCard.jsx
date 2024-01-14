@@ -48,12 +48,11 @@ export default function ReviewCard({ review }) {
         attendance = 'Mandatory';
     }
 
-    let { card } = styles;
+	const	{card} = styles;
 
     let rating;
     const ratingAverage = review.rate;
     let color;
-    let courseName = styles.courseFont;
 
     if (ratingAverage % 1 === 0) {
         rating = ratingAverage.toFixed(1);
@@ -73,8 +72,6 @@ export default function ReviewCard({ review }) {
         color = styles.red;
     }
 
-    card = styles.cardHome;
-    courseName = styles.courseFontHome;
 
     const handleCheckboxChange = () => {
         if (!validated) {
@@ -88,6 +85,8 @@ export default function ReviewCard({ review }) {
         localStorage.setItem('reviewInfo', JSON.stringify(review));
     };
 
+	const isCoursePage = location.includes('/course/');
+
     return (
         <div className={`${card} ${color}`}>
             <RatingBox ratingAverage={review.rate} />
@@ -95,16 +94,16 @@ export default function ReviewCard({ review }) {
                 <div className={styles.contents}>
                     <div className={styles.top}>
                         <div className={styles.course}>
-                            {location !== '/course' ? (
+                            {!isCoursePage ? (
                                 <Link
                                     to={`/course/${review.course.id}`}
-                                    className={`${courseName} ${styles.bold}`}
+                                    className={`${styles.courseFontLink} ${styles.bold}`}
                                 >
                                     {review.course.name}
                                 </Link>
                             ) : (
                                 <span
-                                    className={`${courseName} ${styles.bold}`}
+                                    className={`${styles.courseFont} ${styles.bold}`}
                                 >
                                     {review.course.name}
                                 </span>

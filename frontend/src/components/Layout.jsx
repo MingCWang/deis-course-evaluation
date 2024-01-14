@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import NavBar from './NavBar/NavBar.jsx';
 import Footer from './Footer.jsx';
 import styles from './Layout.module.css';
+import ScrollToTop from './ScrollToTop.jsx';
 
 export default function Layout() {
     const location = useLocation();
@@ -15,6 +16,7 @@ export default function Layout() {
     return (
         <>
             <NavBar />
+			<ScrollToTop />
             <main className={mainstyle}>
                 <Outlet />
             </main>
