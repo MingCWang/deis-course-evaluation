@@ -65,8 +65,8 @@ export default function Review({ edit }) {
             setLast(lastName);
             setSemester(fetchedSemester);
 			setComment(fetchedComment)
-			setCommentProf(fetchedCommentProf)
-			setAdvice(fetchedAdvice)
+			setCommentProf(fetchedCommentProf || '')
+			setAdvice(fetchedAdvice || '')
 			setCourseInfo({
 				course: fetchedCourse.name,
 				courseTitle: fetchedCourse.title,
@@ -138,6 +138,7 @@ export default function Review({ edit }) {
     };
 
 	const handleConfirm = (event) => {
+		event.preventDefault();
         const confirmation = window.confirm(
             'Are you sure you want to delete this review?',
         );

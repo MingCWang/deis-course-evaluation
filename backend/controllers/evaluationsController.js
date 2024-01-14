@@ -4,7 +4,7 @@
 import EvalForm from '../models/evalForm.js';
 import Course from '../models/course.js';
 import User from '../models/user.js';
-import { updateCourseAverages, getEvalFormParams } from '../utils/evaluationUtils.js';
+import { calcAverage, getEvalFormParams } from '../utils/evaluationUtils.js';
 
 /**
  * @summary POST api/v1/evaluations/forms
@@ -48,7 +48,7 @@ async function create(req, res) {
 		}
 		console.log({savedEvalForm})
 		try{
-			await updateCourseAverages(course, savedEvalForm);
+			await calcAverage(course);
 		}catch(err){
 			throw err;
 		}
@@ -75,13 +75,14 @@ async function update(req, res) {
 		const {courseIdName, userId} = req.body;
 		console.log({courseIdName})
 		// save evalform with the req aruguments 
+		const oldEvalForm = await EvalForm.findById(req.params.id);
 		const evalForm = await EvalForm.findByIdAndUpdate(req.params.id, getEvalFormParams(req.body, userId), {new: true});
 		const savedEvalForm = await evalForm.save();
 		// add evalform id to course comments with the matching course id 
 		const course = await Course.findById(courseIdName.id);
 		console.log({course})
 		try{
-			await updateCourseAverages(course, savedEvalForm);
+			await calcAverage(course);
 		}catch(err){
 			throw err;
 		}
@@ -103,9 +104,10 @@ async function update(req, res) {
 async function remove(req, res) {
 	try {
 		const {courseId, userId} = req.body;
+		const course = await Course.findById(courseId);
+
 		const evalForm = await EvalForm.findByIdAndDelete(req.params.id);
 		// remove evalform id to course comments with the matching course id
-		const course = await Course.findById(courseId);
 		const evalFormId = evalForm._id;
 		const index = course.comments.indexOf(evalFormId);
 		if (index !== -1) {
@@ -121,7 +123,16 @@ async function remove(req, res) {
 				await user.save();
 			}
 		}
+
+
 		res.status(201).json(evalForm);
+
+		try{
+			await calcAverage(course);
+		}catch(err){
+			throw err;
+		}
+
 
 	} catch (err) {
 		res.status(500).json({ error: err.message });

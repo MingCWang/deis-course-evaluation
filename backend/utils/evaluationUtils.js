@@ -1,3 +1,6 @@
+import EvalForm from '../models/evalForm.js';
+
+
 /**
  * Gets the parameters from the request body and returns them in an JSON object
  * @MingCWang
@@ -23,31 +26,42 @@ export const getEvalFormParams = ({ userId, courseIdName, semester, professor, d
 	};
 };
 
-function calcAverage(prev, curr, numComments) {
-	console.log(prev, curr, numComments)
-	return (Math.round(((prev * (numComments - 1) + curr) / numComments)*10)/10);
-}
-
-export const updateCourseAverages = async (course, savedEvalForm) => {
-	// Do the score calculations here. Note: calculate after the request is sent to the client
-	console.log(course)
-	console.log(course.ratingAverage)
-	console.log(course.difficultyAverage)
-	console.log(course.usefulnessAverage)
-
+export async function calcAverage(course){
 	const numComments = course.comments.length;
+	let ratingSum = 0;
+	let difficultySum = 0;
+	let usefulnessSum = 0;
+	let gradeSum = 0;	
+	let numGrades = 0;
 
-	course.ratingAverage = calcAverage(course.ratingAverage, savedEvalForm.rate, numComments);
-	course.difficultyAverage = calcAverage(course.difficultyAverage, savedEvalForm.difficulty, numComments);
-	course.usefulnessAverage = calcAverage(course.usefulnessAverage, savedEvalForm.usefulness, numComments);
+	for(let i = 0; i < numComments; i++){
+		const evalForm = await EvalForm.findById(course.comments[i]);
+		ratingSum += evalForm.rate;
+		difficultySum += evalForm.difficulty;
+		usefulnessSum += evalForm.usefulness;
+		if(evalForm.grade !== 0){
+			gradeSum += evalForm.grade;
+			numGrades++;
+		}
+	}
 
-	// If the grade is not null, then update the gradeAverage
-	if (savedEvalForm.grade !== 0) {
-		const numGrades = course.gradeAverage.numGrades;
-		course.gradeAverage.grade = Math.round((course.gradeAverage.grade * numGrades + savedEvalForm.grade) / (numGrades + 1));
+	console.log(numComments)
+	console.log(course.comments[0])
+
+
+	course.ratingAverage = Math.round((ratingSum / numComments)*10)/10;
+	course.difficultyAverage = Math.round((difficultySum / numComments)*10)/10;
+	course.usefulnessAverage = Math.round((usefulnessSum / numComments)*10)/10;
+	if(numGrades !== 0){
+		course.gradeAverage.grade = Math.round((gradeSum / numGrades)*10)/10;
 		course.gradeAverage.numGrades = numGrades + 1;
-	}	
-	const savedCourse = await course.save();
-	console.log({ savedCourse });
+	}else{
+		course.gradeAverage.grade = 0;
+		course.gradeAverage.numGrades = 0;
+	
+	}
 
+	const savedCourse = await course.save();
+
+	console.log({ savedCourse });
 }
