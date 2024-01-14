@@ -11,9 +11,8 @@ export const UserContext = createContext(null);
  * @returns UserContext.Provider component
  */
 export default function UserProvider({ children }) {
-	// const {validated, setValidated}= UseValidateJWT();
-	const [validated, setValidated] = useState(false);
-
+    // const {validated, setValidated}= UseValidateJWT();
+    const [validated, setValidated] = useState(false);
 
     useEffect(() => {
         const jwt = localStorage.getItem('jwt');
@@ -24,24 +23,26 @@ export default function UserProvider({ children }) {
                 headers: {
                     Authorization: `Bearer ${jwt}`,
                 },
-            }).then((response) => {
-                if (response.ok) {
-                    setValidated(true);
-                }else{
-					localStorage.removeItem('userInfo');
-					localStorage.removeItem('authenticated');
-					localStorage.removeItem('jwt');
-					localStorage.removeItem('likedCourses');
-					setValidated(false);
-				}
-            }).catch((error) => {
-				console.log(error);
-				setValidated(false);
-			});
-        }else setValidated(false)
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        setValidated(true);
+                    } else {
+                        localStorage.removeItem('userInfo');
+                        localStorage.removeItem('authenticated');
+                        localStorage.removeItem('jwt');
+                        localStorage.removeItem('likedCourses');
+                        setValidated(false);
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setValidated(false);
+                });
+        } else setValidated(false);
     }, [validated, localStorage.getItem('jwt')]);
 
-	// return { validated, setValidated };
+    // return { validated, setValidated };
 
     return (
         <UserContext.Provider

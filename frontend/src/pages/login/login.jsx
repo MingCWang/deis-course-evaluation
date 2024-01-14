@@ -14,7 +14,7 @@ export default function Login() {
                     </p>
                     <p className={styles.loginText}>
                         Upvote comments. <br />
-						Save your favorite courses. <br />
+                        Save your favorite courses. <br />
                         {/* Edit, save, and delete your ratings */}
                     </p>
                     <a href={getGoogleUrl()} className={styles.googleButton}>

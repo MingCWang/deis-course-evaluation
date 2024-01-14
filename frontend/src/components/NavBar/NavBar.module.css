@@ -98,6 +98,22 @@ Header
 	cursor: pointer;
 }
 
+.profileButton {
+	top: 23px;
+	position: fixed;
+	right: 100px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-weight: 400;
+	text-decoration: none;
+	color: #000;
+	margin: 10px;
+}
+.profileIcon {
+	vertical-align: middle;
+	font-size: 30px;
+}
 
 /* // ********** burger menu ********** // */
 

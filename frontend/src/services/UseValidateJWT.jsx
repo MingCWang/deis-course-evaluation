@@ -9,7 +9,6 @@
 // export default function validateJWT() {
 // 	const [validated, setValidated] = useState(false);
 
-
 //     useEffect(() => {
 //         const jwt = localStorage.getItem('jwt');
 //         if (jwt) {

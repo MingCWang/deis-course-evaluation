@@ -26,18 +26,21 @@ export default async function setJWT() {
             })
             .then((data) => {
                 window.location.href = window.location.pathname;
-                const { name, id, email, token, likedCourses} = data.userJSON;
+                const { name, id, email, token, likedCourses } = data.userJSON;
                 const userInfo = {
                     name,
                     id,
                     email,
-					likedCourses
+                    likedCourses,
                 };
                 // then store in localStorage to persist data accross page refresh
                 localStorage.setItem('userInfo', JSON.stringify(userInfo));
                 localStorage.setItem('authenticated', true);
                 localStorage.setItem('jwt', token);
-				localStorage.setItem('likedCourses', JSON.stringify(likedCourses));
+                localStorage.setItem(
+                    'likedCourses',
+                    JSON.stringify(likedCourses),
+                );
             })
             .catch(() => false);
     }

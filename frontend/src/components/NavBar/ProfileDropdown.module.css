@@ -9,10 +9,11 @@
 .container {
 	min-width: 200px;
 	width: auto;
-	height: 160px;
+	height: auto;
+	/* height: 160px; */
 	border-radius: 8px;
 	position: absolute;
-	top: 50px;
+	top: 70px;
 	right: 90px;
 	background-color: #FFFFFF;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -82,3 +83,4 @@
 	text-align: left;
 	padding-top: 5px;
 }
+

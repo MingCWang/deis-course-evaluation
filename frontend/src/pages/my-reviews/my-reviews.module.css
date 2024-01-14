@@ -8,14 +8,40 @@ p{
 /* Divider */
 .dividerContainer {
 	display: flex;
-	justify-content: left;
-	width: 98%;
+	justify-content: center;
+	width: 100%;
 	margin: 0 auto;
 }
 
 .divider {
-	width: 60px;
+	width: 10%;
 	height: 3px;
 	background-color: #3A7BD5;
-	margin: 20px 0 20px 20px;
+	margin: 20px 0 20px 0;
+}
+
+.title{
+	text-align: center;
+	font-family: Kite One;
+	font-family: Montserrat;
+
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.noreviews{
+	text-align: center;
+	font-size: 20px;
+	font-weight: 400;
+	margin-top: 20vh;
+}
+
+
+@media screen and (max-width: 600px) {
+	.title{
+		margin-top: 50px;
+	}
+	.noreviews{
+		font-size: 15px;
+	}
 }

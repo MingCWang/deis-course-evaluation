@@ -21,10 +21,9 @@ export default function OauthLoading() {
             if (success === false) {
                 setError(true);
             }
-			setTimeout(() => {
-				navigate(-4);
-			}, 2000);
-        
+            setTimeout(() => {
+                navigate(-4);
+            }, 2000);
         });
     }, [loading]);
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { format } from 'date-fns';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState , useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import styles from './ReviewCard.module.css';
 import styles1 from './MyReviewCard.module.css';
 import convertToLetterGrade from '../../utils/convertToLetterGrade';
@@ -11,15 +11,19 @@ import UseLikeReview from '../../services/UseLikeReview.jsx';
 import { UserContext } from '../../context/UserContext.jsx';
 
 export default function ReviewCard({ review }) {
-	const [clicked, setClicked] = useState(false);
-	const { authState } = useContext(UserContext);
-	const [validated, setValidated] = authState;
-	const { likes, isChecked } = UseLikeReview({ reviewId: review._id, clicked, setClicked});
+    const [clicked, setClicked] = useState(false);
+    const { authState } = useContext(UserContext);
+    const [validated, setValidated] = authState;
+    const { likes, isChecked } = UseLikeReview({
+        reviewId: review._id,
+        clicked,
+        setClicked,
+    });
 
-	// const {validated, setValidated }= UseValidateJWT();
+    // const {validated, setValidated }= UseValidateJWT();
 
     const formattedDate = format(new Date(review.createdAt), 'MMMM do, yyyy');
-	const navigate = useNavigate();
+    const navigate = useNavigate();
     let location = useLocation();
     location = location.pathname;
 
@@ -61,22 +65,20 @@ export default function ReviewCard({ review }) {
         color = styles.red;
     }
 
-    if (location === '/my-reviews') {
-        card = styles1.card;
-    } else if (location === '/') {
+    // if (location === '/my-reviews') {
+    //     card = styles1.card;
+    // } else if (location === '/') {
         card = styles.cardHome;
         courseName = styles.courseFontHome;
-    }
+    // }
 
     const handleCheckboxChange = () => {
-		if (!validated) {
-			navigate('/login');
-		}else{
-			setClicked(true);
-		}
+        if (!validated) {
+            navigate('/login');
+        } else {
+            setClicked(true);
+        }
     };
-
-
 
     return (
         <div className={`${card} ${color}`}>
@@ -180,7 +182,7 @@ export default function ReviewCard({ review }) {
                 </div>
                 <label className={styles.container} htmlFor={review._id}>
                     <input
-						id={review._id}
+                        id={review._id}
                         type='checkbox'
                         checked={isChecked}
                         onChange={handleCheckboxChange}

@@ -89,12 +89,12 @@ export default function Review() {
             professor = `${first} ${last}`;
         }
 
-		let userId;
-		try{
-			userId = JSON.parse(localStorage.getItem('userInfo')).id;
-		}catch{
-			userId = null;
-		}
+        let userId;
+        try {
+            userId = JSON.parse(localStorage.getItem('userInfo')).id;
+        } catch {
+            userId = null;
+        }
 
         fetch(`${process.VITE_BASE_URL}api/evaluations/forms`, {
             method: 'POST',

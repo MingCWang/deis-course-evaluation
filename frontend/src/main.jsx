@@ -9,13 +9,12 @@ import UserProvider from './context/UserContext.jsx';
 // Pages import
 import ErrorPage from './error-page.jsx';
 import Layout from './components/Layout.jsx';
-// import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/home/home.jsx';
 import Course from './pages/course/course.jsx';
 import Review from './pages/review/review.jsx';
 import Search from './pages/search/search.jsx';
 import SavedCourse from './pages/saved-courses/saved-courses.jsx';
-// import MyReviews from './pages/my-reviews/my-reviews.jsx';
+import MyReviews from './pages/my-reviews/my-reviews.jsx';
 import Loading from './pages/oauth-loading/oauth-loading.jsx';
 import PrivacyPolicy from './pages/privacy-policy/privacy-policy.jsx';
 import TermsConditions from './pages/terms-conditions/terms-conditions.jsx';
@@ -24,6 +23,7 @@ import Contact from './pages/contact/contact.jsx';
 import SiteRegulations from './pages/site-regulations/site-regulations.jsx';
 import Login from './pages/login/login.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+import ManageAccount from './pages/manage-account/manage-account.jsx';
 
 const router = createBrowserRouter([
     {
@@ -48,10 +48,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'review/:id',
-                element: 
-				<ProtectedRoute>
-					<Review />
-				</ProtectedRoute>,
+                element: (
+                    <ProtectedRoute>
+                        <Review />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: 'search',
@@ -73,14 +74,6 @@ const router = createBrowserRouter([
                 path: 'site-regulations',
                 element: <SiteRegulations />,
             },
-            // {
-            //     path: 'saved-courses',
-            //     element: (
-            //         <ProtectedRoute>
-            //             <SavedCourse />
-            //         </ProtectedRoute>
-            //     ),
-            // },
             {
                 path: 'login',
                 element: <Login />,
@@ -89,14 +82,22 @@ const router = createBrowserRouter([
                 path: 'saved-courses',
                 element: <SavedCourse />,
             },
-            // {
-            //     path: 'my-reviews',
-            //     element: (
-            //         <ProtectedRoute>
-            //             <MyReviews />
-            //         </ProtectedRoute>
-            //     ),
-            // },
+            {
+                path: 'my-reviews',
+                element: (
+                    <ProtectedRoute>
+                        <MyReviews />
+                    </ProtectedRoute>
+                ),
+            },
+			{
+                path: 'manage-account',
+                element: (
+                    <ProtectedRoute>
+                        <ManageAccount />
+                    </ProtectedRoute>
+                ),
+            },
         ],
     },
 ]);
@@ -104,7 +105,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <React.StrictMode>
     <UserProvider>
-    	<RouterProvider router={router} />,
+        <RouterProvider router={router} />,
     </UserProvider>,
     // </React.StrictMode>,
 );
