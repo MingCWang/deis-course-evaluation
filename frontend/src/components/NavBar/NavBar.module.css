@@ -1,14 +1,16 @@
 .container{
-	background-color: #ffffff00;
+	background-color: #ffffff;
 	width: 100vw;
-	height: 100px;
-	position: fixed;
-	z-index: 3;
-
+	height: 80px;
+	/* position: fixed; */
+	/* z-index: 3; */
 
 	/* background-image: linear-gradient(#ffffff); */
 	/* background-position: left; */
 	transition: background-color .5s;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 
 }
 
@@ -17,8 +19,12 @@
 	background-color: #ffffffdc;
 	border-bottom: 0.5px solid #00000030;
 	transition: background-color .5s;
+}
 
-
+.right{
+	display: flex;
+	flex-direction: row;
+	margin-right: 20px;
 }
 
 
@@ -83,12 +89,13 @@ Header
 
 .auth{
 	font-family: Montserrat;
+	font-family: PT Serif;
 	text-decoration: none;
 	color: #000;
-	top: 30px;
+	margin-top: 20px;
+	margin-right: 20px;
 	font-size: 20px;
-	position: fixed;
-	right: 100px;
+	/* position: fixed; */
 	border: none;
 	padding: 5px;
 	background-color: rgba(255, 255, 255, 0);
@@ -99,9 +106,7 @@ Header
 }
 
 .profileButton {
-	top: 23px;
-	position: fixed;
-	right: 100px;
+	/* position: fixed; */
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
@@ -109,6 +114,8 @@ Header
 	text-decoration: none;
 	color: #000;
 	margin: 10px;
+	margin-right: 23px;
+	margin-top: 8px;
 }
 .profileIcon {
 	vertical-align: middle;
@@ -118,9 +125,9 @@ Header
 /* // ********** burger menu ********** // */
 
 .burger{
-	position: fixed;
+	/* position: fixed; */
+	margin-top: 30px;
 	right: 40px;
-	top: 40px;
 	z-index: 3;
 }
 .iconmenu {
@@ -187,15 +194,11 @@ Header
 Title
 **********/
 .titleContainer{
-	position: absolute;
 	width: auto;
 	height: auto;
 	display: flex;
-	position: absolute;
-	position: fixed;
-	top: 20%;
-	top: 20px;
-	left: 25px;
+	margin-top: 20px;
+	margin-left: 25px;
 	z-index: 2;
 }
 .title{
@@ -206,7 +209,7 @@ Title
 	/* font-family: Lexend Tera; */
 	font-family: PT Serif;
 	font-size: 128px;
-	font-size: 40px;
+	font-size: 30px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;

@@ -28,13 +28,16 @@ export default function SearchBar() {
                 className={styles.searchBar}
             >
                 <div className={styles.container}>
-                    <div className={styles.title}>Search a course!</div>
+                    {/* <div className={styles.title}>Search a course!</div> */}
                     <input
                         className={styles.input}
                         type='text'
                         value={text}
                         onChange={handleOnChange}
+						placeholder='search'
                     />
+
+
                 </div>
             </form>
         </div>

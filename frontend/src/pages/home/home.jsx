@@ -13,30 +13,40 @@ export default function Home() {
     const { totalReviews } = UseTotalReveiws();
 
     return (
-        <div className={styles.background}>
-            <div className={styles.top}>
-                <div className={styles.reviewNumContainer}>
-                    <span className={styles.reviewText}>
+		<>
+	
+		<div className={styles.image}>
+			<div className={styles.shade} />
+		</div>
+		<div className={styles.background}>
+        
+                {/* <div className={styles.reviewNumContainer}> */}
+                    {/* <span className={styles.reviewText}>
                         <span>Reviews </span>
                         <span className={styles.reviewNum}>{totalReviews}</span>
-                    </span>
-                </div>
+                    </span> */}
+                {/* </div> */}
 
-                <div className={styles.searchContainer}>
+			<div className={styles.block} />
+			<div className={styles.searchContainer}>
+					<span className={styles.description}>Make Your Voice Heard <br />
+					<i>A course evaluation website for Brandeis</i>
+					</span>
                     <SearchBar />
-                </div>
             </div>
-
             <div className={styles.recentReviews}>
-                <p className={styles.recentReviewsTitle}>
-                    Recent Reviews{' '}
-                    <AiOutlineArrowDown className={styles.arrowDown} />
-                </p>
+				<div className={styles.recentReviewContainer}>
+					<p className={styles.recentReviewsTitle}>
+						<i> Recent Reviews</i> 
+						{/* <AiOutlineArrowDown className={styles.arrowDown} /> */}
+					</p>
+				</div>
 
                 {reviews.map((review) => (
                     <ReviewCard key={review._id} review={review} />
                 ))}
             </div>
         </div>
+		</>
     );
 }

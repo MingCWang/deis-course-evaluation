@@ -7,9 +7,57 @@
 	color: #000;
 }
 
-.top{
-	height: 80vh;
+.block{
+	height: calc(60vh - 80px);
+}
+
+.image{
+	height: calc(60vh + 80px);
 	width: 100%;
+	background-image: url(/statue.jpg);
+	background-size: cover;
+	/* background-position: 0 -150px; */
+	background-repeat: no-repeat;
+	position: fixed;
+	filter: contrast(1.2);
+	top: -80px;
+	z-index: -1;
+
+}
+
+@media (max-width: 1100px) {
+	.image{
+		/* background-position: 0 -100px; */
+		/* height: 50vh; */
+	}
+	.block{
+		/* height: 50vh; */
+	}
+}
+
+@media (max-width: 900px) {
+	.image{
+		height: 50vh;
+	}
+}
+
+@media (max-width: 800px) {
+	.image{
+		height: 40vh;
+	}
+	.block{
+		height: 40vh;
+	}
+}
+
+@media (max-width: 700px) {
+	.image{
+		background-position: 0 0;
+		height: 30vh;
+	}
+	.block{
+		height: 30vh;
+	}
 }
 
 /**********
@@ -20,14 +68,18 @@ background image
 	width: 100%;
 	height: auto;
 	/* z-index: 1; */
-	background-color: #fff;
+	/* background-color: #fff; */
 	background-size: cover;
 	display: flex;
 	flex-direction: column;	
-
 }
 
-
+.shade{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.27);
+	z-index: 0;
+}
 
 /**********
 shift text
@@ -57,15 +109,26 @@ shift text
 .searchContainer{
 	display: flex;
 	justify-content: center;
-	/* position: absolute; */
+	position: absolute;
 	/* top: 30%; */
-	margin-top: 200px;
-	z-index: 0;
+	/* top: 0; */
+	/* margin-top: 200px; */
+	z-index: 1;
 	width: 100%;
 	align-items: center;
+	flex-direction: column;
 }
 .arrowDown{
 	transform: scale(0.7);
+}
+
+.description{
+	font-size: 50px;
+	font-family: PT serif;
+	margin-top: 5%;
+	color: #fff;
+	font-weight: 0;
+	margin-bottom: 60px;
 }
 
 
@@ -81,20 +144,30 @@ recent review
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.recentReviewContainer{
+	width: 80%;
+	margin: 30px auto;
+
 }
 
 .recentReviewsTitle{
 	font-family: Lexend Tera;
+	font-family: PT Serif;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
 	color: #272222;
 
-	margin-bottom: 80px;
+	/* margin: 40px; */
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	/* justify-content: center; */
+	/* align-items: center; */
+	
 }
 
 

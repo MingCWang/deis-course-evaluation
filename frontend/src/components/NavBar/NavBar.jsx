@@ -74,7 +74,7 @@ export default function NavBar() {
             >
                 <p className={styles.title}>Deis Eval</p>
             </div>
-
+			<div className={styles.right}>
             {!validated ? (
                 <Link className={styles.auth} to='/login'>
                     Login
@@ -119,7 +119,6 @@ export default function NavBar() {
                         Contact
                     </Link>
                 </div>
-                {/* {isHome ? null : <Footer />} */}
             </div>
             <div className={styles.burger}>
                 <input
@@ -138,6 +137,7 @@ export default function NavBar() {
                     <div className={`${styles.bar} ${styles.bar3}`} />
                 </label>
             </div>
+			</div>
         </div>
     );
 }
