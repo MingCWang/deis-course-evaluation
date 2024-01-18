@@ -8,11 +8,11 @@
 }
 
 .block{
-	height: calc(60vh - 80px);
+	height: 420px;
 }
 
 .image{
-	height: calc(60vh + 80px);
+	height: calc(500px + 80px);
 	width: 100%;
 	background-image: url(/statue.jpg);
 	background-size: cover;
@@ -22,43 +22,11 @@
 	filter: contrast(1.2);
 	top: -80px;
 	z-index: -1;
+	/* overflow: hidden; */
 
 }
 
-@media (max-width: 1100px) {
-	.image{
-		/* background-position: 0 -100px; */
-		/* height: 50vh; */
-	}
-	.block{
-		/* height: 50vh; */
-	}
-}
 
-@media (max-width: 900px) {
-	.image{
-		height: 50vh;
-	}
-}
-
-@media (max-width: 800px) {
-	.image{
-		height: 40vh;
-	}
-	.block{
-		height: 40vh;
-	}
-}
-
-@media (max-width: 700px) {
-	.image{
-		background-position: 0 0;
-		height: 30vh;
-	}
-	.block{
-		height: 30vh;
-	}
-}
 
 /**********
 background image
@@ -140,7 +108,8 @@ recent review
 .recentReviews{
 	width: 100%;
 	height: auto;
-	margin-bottom: 100px;
+	padding-bottom: 100px;
+	/* margin-bottom: 100px; */
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -182,42 +151,54 @@ recent review
 
 
 @media (max-width: 955px) {
-	.title{
-		/* font-size: 64px; */
+	.description{
+		font-size: 40px;
+		margin-top: 70px;
 	}
 	
 }
 
-@media (max-width: 615px) {
-	/* .titleContainer{
-		top: 10%;
-	} */
-
-
-	/* .title{
-		width: 80%;
-		text-align: center;
-	} */
-
-	.reviewNum{
-		font-size: 80px;
-		margin-top: 0;
-		margin-left: 0;
+@media (max-width: 750px) {
+	.description{
+		font-size: 30px;
+		margin-top: 70px;
 	}
-
-	.reviewText{
-		width: 80%;
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-	}
-	.recentReviewsTitle{
-		width: 80%;
-		margin: 0 auto;
-	}
-
-	.searchContainer{
-		margin-top: 300px;
+	.image{
+		height: calc(800px + 80px);
 	}
 	
+}
+
+
+@media (max-width: 615px) {
+	.image{
+		height: calc(800px + 80px);
+	}
+	.block{
+		height: 500px;
+	}
+	
+	.description{
+		font-size: 40px;
+		/* margin-top: 70px; */
+		margin: 70px 20px 70px 70px; 
+	}
+
+
+	
+}
+
+@media (max-width: 510px) {
+	.image{
+		height: calc(800px + 80px);
+	}
+	.block{
+		height: 600px;
+	}
+	.description{
+		font-size: 40px;
+		/* margin-top: 70px; */
+		margin: 70px 20px 70px 50px; 
+	}
+
 }

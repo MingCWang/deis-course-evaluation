@@ -42,17 +42,20 @@ Header
 .header{
 	/* font-family: Kite One; */
 	font-size: 24px;
-	z-index: 3;
+	z-index: 4;
 	display: flex;
 	width: 100vw;	
 	height: 100vh;
 	background-color: #FFFFFF;
+	/* position: absolute; */
 	position: fixed;
 	flex-direction: column;
 	justify-content: center;
 	transform: translateY(0%); 
+	left: 0;
 	transition: transform 0.5s ease-in-out;
 	/* visibility: visible; */
+	/* overflow: hidden;	 */
 }
 
 .headerHidden{
@@ -60,6 +63,7 @@ Header
 	composes: header;
 	transform: translateY(300%);
 	transition: transform 0.5s ease-in-out;
+	overflow: hidden;
 
 }
 
