@@ -9,7 +9,7 @@ async function getGoogleOAuthTokens(code) {
 	console.log('process.env.GOOGLE_CLIENT_ID: ', process.env.GOOGLE_CLIENT_ID);
 	console.log('process.env.GOOGLE_CLIENT_SECRET: ', process.env.GOOGLE_CLIENT_SECRET);
 	console.log('process.env.GOOGLE_OAUTH_REDIRECT_URI: ', process.env.GOOGLE_OAUTH_REDIRECT_URI);
-	
+
 	const values = {
 		code: code,
 		client_id: process.env.GOOGLE_CLIENT_ID,
@@ -18,7 +18,7 @@ async function getGoogleOAuthTokens(code) {
 		grant_type: 'authorization_code'
 	};
 	const queryParams = new URLSearchParams(values).toString();
-
+	console.log('queryParams: ', queryParams);
 	//  the token request parameters should be sent in the POST request body. 
 	try {
 		const options = {
@@ -30,6 +30,7 @@ async function getGoogleOAuthTokens(code) {
 		}
 		const response = await fetch(url, options);
 		const data = await response.json();
+		console.log('data: ', data);
 		return data;
 	} catch (err) {
 		console.log(err);
