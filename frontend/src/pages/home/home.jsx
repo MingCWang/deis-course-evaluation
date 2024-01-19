@@ -19,13 +19,6 @@ export default function Home() {
 			<div className={styles.shade} />
 		</div>
 		<div className={styles.background}>
-        
-                {/* <div className={styles.reviewNumContainer}> */}
-                    {/* <span className={styles.reviewText}>
-                        <span>Reviews </span>
-                        <span className={styles.reviewNum}>{totalReviews}</span>
-                    </span> */}
-                {/* </div> */}
 
 			<div className={styles.block} />
 			<div className={styles.searchContainer}>
@@ -38,7 +31,6 @@ export default function Home() {
 				<div className={styles.recentReviewContainer}>
 					<p className={styles.recentReviewsTitle}>
 						<i> Recent Reviews</i> 
-						{/* <AiOutlineArrowDown className={styles.arrowDown} /> */}
 					</p>
 				</div>
 
@@ -46,6 +38,11 @@ export default function Home() {
                     <ReviewCard key={review._id} review={review} />
                 ))}
             </div>
+			<div className={styles.reviewNumContainer}><span className={styles.reviewText}>
+                        <span><em>Total Reviews: </em></span>
+                        <span className={styles.reviewNum}>{totalReviews}</span>
+            </span></div>
+			
         </div>
 		</>
     );
