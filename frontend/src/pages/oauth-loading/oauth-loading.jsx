@@ -23,7 +23,7 @@ export default function OauthLoading() {
             }
             setTimeout(() => {
                 navigate(-4);
-            }, 500);
+            }, 1000);
         });
     }, [loading]);
 
