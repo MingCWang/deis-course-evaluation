@@ -46,7 +46,6 @@
 
 .font {
 	color: #000;
-	font-family: Montserrat;
 	font-size: 12px;
 	font-weight: 400;
 }
@@ -64,8 +63,8 @@
 }
 
 .text {
-
 	border-bottom: 1px solid transparent;
+	font-family: PT Serif;
 }
 
 .text:hover {
@@ -85,3 +84,15 @@
 	padding-top: 5px;
 }
 
+
+@media (max-width: 500px) {
+	.container {
+		width: 60%;
+		right: 0;
+	}
+	.font {
+		font-size: 20px;
+		font-weight: 400;
+	}
+	
+}

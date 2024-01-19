@@ -103,6 +103,9 @@ export default function NavBar() {
                     Deis Eval
                 </Link>
                 <div className={styles.navWrapper}>
+					{/* <Link className={styles.link} to='/'>
+                        Home
+                    </Link> */}
                     <Link className={styles.link} to='/search'>
                         Search
                     </Link>
@@ -118,6 +121,7 @@ export default function NavBar() {
                     <Link className={styles.link} to='/contact'>
                         Contact
                     </Link>
+				
                 </div>
             </div>
             <div className={styles.burger}>

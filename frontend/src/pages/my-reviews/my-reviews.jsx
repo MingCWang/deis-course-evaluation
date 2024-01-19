@@ -26,7 +26,7 @@ export default function MyReviews() {
 
     return (
         <div>
-            <h1 className={styles.title}>MY REVIEWS</h1>
+            <h1 className={styles.title}>My Reviews</h1>
             <div className={styles.dividerContainer}>
                 <div className={styles.divider} />
             </div>

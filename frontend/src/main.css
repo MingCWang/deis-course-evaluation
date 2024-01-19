@@ -9,6 +9,7 @@
 
 html {
 	font-family: Montserrat;
+	font-family: PT Serif;
 	/* Firefox */
 	scrollbar-width: none;
 	background-color: #FDFFEF;
@@ -21,7 +22,9 @@ html {
 
 
 }
-
+body {   
+	/* overscroll-behavior: none; */
+}
 ::-webkit-scrollbar {
 	display: none;
 }

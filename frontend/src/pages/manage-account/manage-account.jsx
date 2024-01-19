@@ -45,7 +45,7 @@ export default function ManageAccount() {
 
     return (
         <>
-            <h1 className={styles.title}>ACCOUNT SETTINGS</h1>
+            <h1 className={styles.title}>Account Settings</h1>
             <div className={styles.dividerContainer}>
                 <div className={styles.divider} />
             </div>

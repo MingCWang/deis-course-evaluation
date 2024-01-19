@@ -1,10 +1,9 @@
 .container{
 	background-color: #ffffff;
 	width: 100vw;
-	height: 80px;
-	/* position: fixed; */
-	/* z-index: 3; */
-
+	height: 60px;
+	position: fixed;
+	z-index: 3;
 	/* background-image: linear-gradient(#ffffff); */
 	/* background-position: left; */
 	transition: background-color .5s;
@@ -18,7 +17,11 @@
 	composes: container;
 	background-color: #ffffffdc;
 	border-bottom: 0.5px solid #00000030;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 	transition: background-color .5s;
+	/* transition: position .5s; */
+	/* position: fixed; */
+	z-index: 3;
 }
 
 .right{
@@ -75,7 +78,7 @@ Header
     margin-bottom: 20px;
     font-size: 40px;
 	font-weight: 500;
-	font-family: Montserrat;
+	/* font-family: Montserrat; */
 
     transition: transform 0.3s ease; /* Smooth transition for transform property */
 }
@@ -96,7 +99,7 @@ Header
 	font-family: PT Serif;
 	text-decoration: none;
 	color: #000;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-right: 20px;
 	font-size: 20px;
 	/* position: fixed; */
@@ -130,9 +133,9 @@ Header
 
 .burger{
 	/* position: fixed; */
-	margin-top: 30px;
+	margin-top: 20px;
 	right: 40px;
-	z-index: 3;
+	z-index: 4;
 }
 .iconmenu {
 	--gap: 5px;
@@ -201,7 +204,7 @@ Title
 	width: auto;
 	height: auto;
 	display: flex;
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-left: 25px;
 	z-index: 2;
 }

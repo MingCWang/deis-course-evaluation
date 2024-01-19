@@ -29,7 +29,7 @@ export default function SavedCourses() {
 
     return (
         <div>
-            <h1 className={styles.title}>MY SAVED COURSES</h1>
+            <h1 className={styles.title}>My Saved Courses</h1>
             <div className={styles.dividerContainer}>
                 <div className={styles.divider} />
             </div>

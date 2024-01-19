@@ -8,11 +8,12 @@
 }
 
 .block{
-	height: 420px;
+	height: 440px;
 }
 
 .image{
-	height: calc(500px + 80px);
+	/* height: calc(550px + 80px); */
+	height: 90%;
 	width: 100%;
 	background-image: url(/statue.jpg);
 	background-size: cover;
@@ -40,6 +41,7 @@ background image
 	background-size: cover;
 	display: flex;
 	flex-direction: column;	
+
 }
 
 .shade{
@@ -78,6 +80,7 @@ shift text
 	display: flex;
 	justify-content: center;
 	position: absolute;
+	/* position: fixed; */
 	/* top: 30%; */
 	/* top: 0; */
 	/* margin-top: 200px; */
@@ -85,6 +88,7 @@ shift text
 	width: 100%;
 	align-items: center;
 	flex-direction: column;
+
 }
 .arrowDown{
 	transform: scale(0.7);
@@ -97,6 +101,7 @@ shift text
 	color: #fff;
 	font-weight: 0;
 	margin-bottom: 60px;
+
 }
 
 
@@ -115,6 +120,7 @@ recent review
 	flex-direction: column;
 	background-color: #fff;
 	z-index: 2;
+
 }
 
 .recentReviewContainer{

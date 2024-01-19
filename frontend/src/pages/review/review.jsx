@@ -246,7 +246,7 @@ export default function Review({ edit }) {
         return (
             <div className={styles.submittedTextContainer}>
                 <h1 className={styles.submittedText}>
-                    {edit ? 'Edit success' : 'Thank you for your submission!'}
+                    {edit ? 'Edit success ^^' : 'Thank you for your submission!'}
                 </h1>
                 <div className={styles.backContainer}>
                     <button

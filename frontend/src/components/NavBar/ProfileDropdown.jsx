@@ -33,7 +33,7 @@ export default function ProfileDropdown({ handleOnClick }) {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <p className={styles.title}>
-                        {name ? `Welcome ${name}!` : 'Welcome!'}
+                        {name ? `Hi ${name}!` : 'Welcome!'}
                     </p>
                     <p className={styles.email}>{email}</p>
                     <div className={styles.links}>

@@ -1,11 +1,11 @@
 .main {
 	position: relative;
-	/* padding-top: 80px; */
+	padding-top: 80px;
 	width: 100%;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	min-height: calc(100vh - 105px);
+	min-height: calc(100vh - 124px);
 }
 
 .loginMain{
