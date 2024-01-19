@@ -42,6 +42,7 @@ async function getAndSaveGoogleUser({ id_token, access_token }) {
 				Authorization: `Bearer ${id_token}`,
 			}
 		});
+		console.log('userData: ', userData);
 		const user = {
 			name: { first: userData.data.given_name, last: userData.data.family_name },
 			email: userData.data.email,
@@ -63,8 +64,10 @@ export async function googleOauthHandler(req, res) {
 		const code = req.body.code;
 
 		const { id_token, access_token } = await getGoogleOAuthTokens(code);
+		console.log('id_token: ', id_token);
+		console.log('access_token: ', access_token);
 		const googleUser = await getAndSaveGoogleUser({ id_token, access_token });
-		console.log('googleUser: ', googleUser);
+		
 		if (!googleUser.data.verified_email) {
 			return res.status(403).json({ message: 'Google account is not verified' });
 		}
