@@ -9,6 +9,7 @@ export default function CommentSection({
     handleCommentProfChange,
     handleAdviceChange,
 }) {
+
     return (
         <>
             <div className={styles.commentWrapper}>

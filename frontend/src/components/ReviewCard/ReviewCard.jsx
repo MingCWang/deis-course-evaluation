@@ -1,17 +1,43 @@
 /* eslint-disable react/prop-types */
-import { format } from 'date-fns';
-import { useLocation, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { format, set } from 'date-fns';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState, useContext } from 'react';
+import { LiaEditSolid } from 'react-icons/lia';
 import styles from './ReviewCard.module.css';
-import styles1 from './MyReviewCard.module.css';
 import convertToLetterGrade from '../../utils/convertToLetterGrade';
 import RatingBox from '../CourseReviewCard/RatingBox.jsx';
 import UseLikeReview from '../../services/UseLikeReview.jsx';
+// import UseValidateJWT from '../../services/UseValidateJWT.jsx';
+import { UserContext } from '../../context/UserContext.jsx';
 
 export default function ReviewCard({ review }) {
-    const [isChecked, setIsChecked] = useState(null);
-    const { likes, error } = UseLikeReview({ isChecked, reviewId: review._id });
+    const [clicked, setClicked] = useState(false);
+    const { authState } = useContext(UserContext);
+    const [validated, setValidated] = authState;
+    const [edit, setEdit] = useState(false);
+    const { likes, isChecked } = UseLikeReview({
+        reviewId: review._id,
+        clicked,
+        setClicked,
+    });
+
+    useEffect(() => {
+        if (validated) {
+            // console.log(JSON.parse(localStorage.getItem('userInfo')).id);
+            // console.log(review);
+            if (
+                JSON.parse(localStorage.getItem('userInfo')).id ===
+                review.userId
+            ) {
+                setEdit(true);
+            }
+        } else {
+            setEdit(false);
+        }
+    }, [validated]);
+
     const formattedDate = format(new Date(review.createdAt), 'MMMM do, yyyy');
+    const navigate = useNavigate();
     let location = useLocation();
     location = location.pathname;
 
@@ -22,18 +48,11 @@ export default function ReviewCard({ review }) {
         attendance = 'Mandatory';
     }
 
-    let { card } = styles;
-    // const deleteButton = () => {
-    //     if (window.location.pathname === '/my-reviews') {
-    //         return <button className={styles1.deleteButton}>Delete</button>;
-    //     }
-    //     return null;
-    // };
+	const	{card} = styles;
 
     let rating;
     const ratingAverage = review.rate;
     let color;
-    let courseName = styles.courseFont;
 
     if (ratingAverage % 1 === 0) {
         rating = ratingAverage.toFixed(1);
@@ -53,16 +72,20 @@ export default function ReviewCard({ review }) {
         color = styles.red;
     }
 
-    if (location === '/my-reviews') {
-        card = styles1.card;
-    } else if (location === '/') {
-        card = styles.cardHome;
-        courseName = styles.courseFontHome;
-    }
 
     const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+        if (!validated) {
+            navigate('/login');
+        } else {
+            setClicked(true);
+        }
     };
+
+    const storeReviewInfo = () => {
+        localStorage.setItem('reviewInfo', JSON.stringify(review));
+    };
+
+	const isCoursePage = location.includes('/course/');
 
     return (
         <div className={`${card} ${color}`}>
@@ -70,17 +93,17 @@ export default function ReviewCard({ review }) {
             <div className={styles.body}>
                 <div className={styles.contents}>
                     <div className={styles.top}>
-                        <p className={styles.course}>
-                            {location === '/' ? (
+                        <div className={styles.course}>
+                            {!isCoursePage ? (
                                 <Link
                                     to={`/course/${review.course.id}`}
-                                    className={`${courseName} ${styles.bold}`}
+                                    className={`${styles.courseFontLink} ${styles.bold}`}
                                 >
                                     {review.course.name}
                                 </Link>
                             ) : (
                                 <span
-                                    className={`${courseName} ${styles.bold}`}
+                                    className={`${styles.courseFont} ${styles.bold}`}
                                 >
                                     {review.course.name}
                                 </span>
@@ -92,8 +115,17 @@ export default function ReviewCard({ review }) {
                                     {review.professor}
                                 </span>
                             </div>
-                        </p>
+                        </div>
                         <p className={styles.date}>{formattedDate}</p>
+                        {edit && (
+                            <Link
+                                to={`/edit/${review._id}`}
+                                className={styles.editButton}
+                                onClick={storeReviewInfo}
+                            >
+                                <LiaEditSolid className={styles.edit} />
+                            </Link>
+                        )}
                     </div>
                     <div className={styles.infoContainer}>
                         <p className={styles.info}>
@@ -164,8 +196,9 @@ export default function ReviewCard({ review }) {
 
                     {/* {deleteButton()} */}
                 </div>
-                <label className={styles.container}>
+                <label className={styles.container} htmlFor={review._id}>
                     <input
+                        id={review._id}
                         type='checkbox'
                         checked={isChecked}
                         onChange={handleCheckboxChange}

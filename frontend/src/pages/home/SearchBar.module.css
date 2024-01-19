@@ -8,7 +8,7 @@
 .container {
 	--light: rgb(255, 255, 255);
 	--dark: rgb(50, 50, 50);
-	--br: 12px;
+	--br: 0;
   }
   
   .container:hover .title {
@@ -17,10 +17,10 @@
   
   .input {
 	background-color: transparent;
-	/* border: 2px solid white; */
-	border: 5px solid black;
-	/* color: var(--light); */
-	color: var(--dark);
+	border: 5px solid white;
+	/* border: 5px solid black; */
+	color: var(--light);
+	/* color: var(--dark); */
 	width: 400px;
 	height: 70px;
 	padding: .5rem;
@@ -29,17 +29,24 @@
 	opacity: .8;
 	transition: .2s ease-in-out;
 	font-size: 40px;
+	font-family: PT serif;
   }
   
   .input:focus {
 	opacity: 1;
 	width: 700px;
   }
+
+  .input::placeholder{
+	  color: var(--light);
+	  color: transparent;
+  }
   
 
   .title {
 	border-radius: var(--br);
-	transform: translate(-50%, -150%);
+	transform: translate(0, -50%);
+	margin: 0 auto;
 	background-color: var(--light);
 	background-color: var(--dark);
 	transition: .2s ease-in-out;
@@ -53,14 +60,15 @@
 	/* left: 100%; */
 	width: 200px;
 	text-align: center;
+	margin-top: -20px;
   }
   
   .title::before {
 	transform: translate(-50%, 50%) rotate(45deg);
 	background-color: var(--light);
 	background-color: var(--dark);
-	left: 80%;
-	position: absolute;
+	/* left: 100%; */
+	/* position: absolute; */
 	z-index: -1;
 	content: '';
 	width: 10px;
@@ -68,16 +76,6 @@
 	bottom: 0;
   }
 
-@media screen and (max-width: 1000px) {
-	.title{
-		transform: translate(50%, -150%);
-
-	}
-	.title::before{
-
-		left: 50%;
-	}
-}
 
 @media screen and (max-width: 750px) {
 	.input{
@@ -93,22 +91,8 @@
 	
 }
 
-/* @media screen and (max-width: 600px) {
-	.search {
-		font-size: 40px;
-	}
-	.searchButton {
-		font-size: 35px;
-		margin-top: 350px;
-		width: 100%;
-	}
-} */
 
 @media screen and (max-width: 600px) {
-	.title{
-		transform: translate(25%, -150%);
-
-	}
 	.input{
 		width: 300px;
 		font-size: 30px;

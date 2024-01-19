@@ -32,6 +32,7 @@ export default function Form({
     handleCommentProfChange,
     handleAdviceChange,
     handleSubmit,
+	handleConfirm,
     difficulty,
     setDifficulty,
     rate,
@@ -49,31 +50,27 @@ export default function Form({
     term,
     first,
     last,
+	semester,
+	grade,
+    edit,
 }) {
+
+
+
+
+
     return (
         <form className={styles.form}>
             <div className={styles.dropdownWrapper}>
                 <div className={styles.termWrapper}>
                     <p className={styles.term}>Term:</p>
                     <DropdownSelection
+						value={semester}
                         options={term}
                         label='Select Term'
                         handleChange={handleSemesterChange}
                     />
                 </div>
-
-                {/* <DropdownSelection
-                            options={professorsArray}
-                            label='Select Professor'
-                            handleChange={handleProfessorChange}
-                        /> */}
-                {/* <TextBox
-							comment={professor}
-							handleCommentChange={handleProfessorChange}
-							row={1}
-							placeholder='Professor'
-					
-						/> */}
                 <div className={styles.profWrapper}>
                     <p className={styles.prof}>Instructor:</p>
                     <input
@@ -119,6 +116,7 @@ export default function Form({
             <div className={styles.ratingWrapper}>
                 <h2 className={styles.ratingDesc}>Your grade (optional)</h2>
                 <LetterGradeDropdown
+					value={grade}
                     options={letterGrades}
                     label='grade'
                     handleGradeChange={handleGradeChange}
@@ -140,15 +138,40 @@ export default function Form({
             {error && (
                 <div className={styles.error}>Please answer all questions*</div>
             )}
-            <div className={styles.submit}>
-                <button
-                    className={styles.submitButton}
-                    type='submit'
-                    onClick={handleSubmit}
-                >
-                    Submit
-                </button>
-            </div>
+            {!edit && (
+                <div className={styles.submit}>
+                    <button
+                        className={styles.submitButton}
+                        type='submit'
+                        onClick={handleSubmit}
+                    >
+                        Submit
+                    </button>
+                </div>
+            )}
+            {edit && (
+				<div className={styles.editoptions}>
+				                <div className={styles.submit}>
+                    <button
+                        className={styles.submitButton}
+                        type='submit'
+                        onClick={(e) => handleSubmit(e, true)}
+                    >
+                        Update
+                    </button>
+                </div>
+				or
+				         <div className={styles.submit}>
+						 <button
+							 className={styles.deleteButton}
+							 type='submit'
+							 onClick={handleConfirm}>
+							 Delete
+						 </button>
+					 </div>
+				</div>
+
+            )}
         </form>
     );
 }

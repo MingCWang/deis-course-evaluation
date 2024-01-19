@@ -1,14 +1,15 @@
 .main {
 	position: relative;
-	padding-top: 65px;
+	padding-top: 80px;
 	width: 100%;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	min-height: calc(100vh - 105px);
+	min-height: calc(100vh - 124px);
 }
 
-.contactMain{
+.loginMain{
 	composes: main;
+	padding-top: 0;
 	/* background-color: #7da3fc; */
 }

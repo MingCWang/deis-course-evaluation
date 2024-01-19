@@ -43,16 +43,16 @@ export default function Contact() {
         <div className={styles.wrapper}>
             <div className={styles.contact}>
                 <div className={styles.descContainer}>
-                    <p className={styles.title}>CONTACT</p>
+                    <p className={styles.title}><i>CONTACT</i></p>
                     <p className={styles.desc}>
-                        Find any bugs or typo? <br />
-                        Want to add a course or ask questions? <br />
-                        Have suggestions for us? <br />
+                        Want to add a course?<br />
+						have suggestions for us? 
+                        <br />
                         Fill out the form!
                         <br />
                         <br />
                         <span className={styles.email}>
-                            Or email us directly at: deiseval26@gmail.com
+                            Or email us directly at: <i>deiseval26@gmail.com</i>
                         </span>
                     </p>
                     {error && <p>Something went wrong :(, try again later.</p>}
@@ -74,6 +74,7 @@ export default function Contact() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className={styles.input}
+						placeholder='optional, to get back to you'
                     />
                     <label htmlFor='subject' className={styles.label}>
                         Subject
@@ -94,6 +95,7 @@ export default function Contact() {
                         onChange={(e) => setMessage(e.target.value)}
                         className={styles.inputMessage}
                         rows={10}
+						placeholder='If you are requesting a course, please include the course name and number. Ex: COSI 21A, Data Structures and Algorithms'
                     />
                     <div className={styles.buttonWrapper}>
                         <div className={styles.buttonborders}>

@@ -1,8 +1,10 @@
 const process = import.meta.env;
 
-export default function storeLikedCourses(id) {
+export default function storeLikedCourses() {
     // TO DO: sometimes null is stored into user's likedcourses why?
     let likedCoursesIds;
+    const { id } = JSON.parse(localStorage.getItem('userInfo'));
+
     try {
         likedCoursesIds = JSON.parse(localStorage.getItem('likedCourses'));
         if (likedCoursesIds === null) {
@@ -22,6 +24,7 @@ export default function storeLikedCourses(id) {
             .then((res) => {
                 if (!res.error) {
                     localStorage.removeItem('likedCourses');
+                    localStorage.removeItem('userInfo');
                 } else {
                     console.log(res.error);
                 }

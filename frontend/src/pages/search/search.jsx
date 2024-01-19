@@ -44,7 +44,7 @@ function Content({ data, loading, lastCourseRef }) {
             <div className={styles.NotFoundContainer}>
                 Can't find the course you're looking for? <br />
                 <br />
-                <Link to='/contact'>Let us know!</Link>
+                <Link to='/contact'>Request to add a course!</Link>
             </div>
         );
     }

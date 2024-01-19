@@ -31,6 +31,13 @@ const userSchema = Schema(
 			}],
 			default: []
 		},
+		upvotedCourses: {
+			type: [{
+				type: Schema.Types.ObjectId, 
+				ref: 'Course'
+			}],
+			default: []
+		},
 		provider: String,
 		hash: String,
 		salt: String,
@@ -75,6 +82,7 @@ userSchema.methods.toAuthJSON = function () {
 		name: this.name.first,
 		id: this._id,
 		token: this.generateJWT(),
+		likedCourses: this.likedCourses,
 	};
 };
 

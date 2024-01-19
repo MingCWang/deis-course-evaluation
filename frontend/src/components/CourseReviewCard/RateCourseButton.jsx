@@ -1,14 +1,19 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
 import styles from './RateCourseButton.module.css';
+import { UserContext } from '../../context/UserContext.jsx';
 
 export default function RateCourseButton({ course, isCourse }) {
     const navigate = useNavigate();
+    const { authState } = useContext(UserContext);
+    const [validated, setValidated] = authState;
 
     function handleRateCourse() {
-        const courseInfo = `${course.course} ${course.courseTitle}`;
-        sessionStorage.setItem('courseInfo', JSON.stringify(course));
-
-        navigate(`/review/${course._id}`);
+        if (!validated) {
+            navigate('/login');
+        } else {
+            navigate(`/review/${course._id}`);
+        }
     }
 
     let rateButtonStyle;

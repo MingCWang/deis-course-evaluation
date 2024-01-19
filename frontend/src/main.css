@@ -4,10 +4,12 @@
 	padding: 0;
 	margin: 0;
 	text-decoration: none;
+	/* border: 1px solid red; */
 }
 
 html {
 	font-family: Montserrat;
+	font-family: PT Serif;
 	/* Firefox */
 	scrollbar-width: none;
 	background-color: #FDFFEF;
@@ -17,8 +19,12 @@ html {
 	margin: 0;
 
 
-}
 
+
+}
+body {   
+	/* overscroll-behavior: none; */
+}
 ::-webkit-scrollbar {
 	display: none;
 }

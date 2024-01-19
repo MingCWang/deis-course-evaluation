@@ -12,7 +12,7 @@ const theme = createTheme({
     },
 });
 
-export default function ComboBox({ options, label, handleChange }) {
+export default function ComboBox({ value, options, label, handleChange }) {
     return (
         <ThemeProvider theme={theme}>
             <Autocomplete
@@ -35,6 +35,7 @@ export default function ComboBox({ options, label, handleChange }) {
                 renderInput={(params) => (
                     <TextField {...params} label={label} />
                 )}
+				value={value}
             />
         </ThemeProvider>
     );

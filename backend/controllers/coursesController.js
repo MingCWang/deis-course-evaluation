@@ -21,12 +21,33 @@ async function getCourses(req, res, next) {
 		if(!course){
 			courses = await Course.find({});
 		}else{
+
+		
+			
 			courses = await Course.find(
 				{$or: [
 					{ "course": { $regex: course, $options: "i" }},
 					{ "courseTitle": { $regex: course, $options: "i" }},
 				]},
 			);
+			if(courses.length === 0){
+				// Use regular expressions to separate letters and numbers
+				const matches = course.match(/([a-zA-Z]+)(.*)/);
+
+				if (matches) {
+					const letters = matches[1]; // Extract letters
+					const numbers = matches.slice(2, matches.length); // Extract numbers
+					// course = new RegExp(`^${letters}.*${numbers}$`, 'i'); // Create a regular expression
+					course = letters + " " + numbers;
+					console.log(course);
+				}
+				courses = await Course.find(
+					{$or: [
+						{ "course": { $regex: course, $options: "i" }},
+						{ "courseTitle": { $regex: course, $options: "i" }},
+					]},
+				);
+			}
 		}
 
 		if (courses.length <= limit) {
@@ -69,6 +90,7 @@ async function getCourse(req, res) {
 async function getEvalWithIds(req, res) {
 	const { courseId } = req.body;
 	try {
+		const course = await Course.findById(courseId);
 		const result = await Course.findById(courseId).populate('comments');
 		const evalForms = result.comments;
 		if (evalForms.length === 0) {

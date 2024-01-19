@@ -7,12 +7,19 @@ export default function Footer() {
 
     let footerStyles;
     let yearStyles;
-    if (pathIsHome) {
-        footerStyles = styles.footerMain;
-        yearStyles = styles.yearMain;
-    } else {
-        footerStyles = styles.footer;
-        yearStyles = styles.year;
+    // if (pathIsHome) {
+    //     footerStyles = styles.footerMain;
+    //     yearStyles = styles.yearMain;
+    // } else {
+    //     footerStyles = styles.footer;
+    //     yearStyles = styles.year;
+    // }
+
+    footerStyles = styles.footerMain;
+    yearStyles = styles.yearMain;
+
+    if (location.pathname === '/login') {
+        return null;
     }
 
     return (
@@ -28,9 +35,6 @@ export default function Footer() {
                 <Link className={styles.link} to='/site-regulations'>
                     Site Regulations
                 </Link>
-                {/* <Link className={styles.link} to='/'>
-                    Site regulations
-                </Link> */}
             </div>
         </div>
     );

@@ -5,11 +5,10 @@ import './main.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// import UserProvider from './contexts/UserContext.jsx';
+import UserProvider from './context/UserContext.jsx';
 // Pages import
 import ErrorPage from './error-page.jsx';
 import Layout from './components/Layout.jsx';
-import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/home/home.jsx';
 import Course from './pages/course/course.jsx';
 import Review from './pages/review/review.jsx';
@@ -22,6 +21,9 @@ import TermsConditions from './pages/terms-conditions/terms-conditions.jsx';
 import About from './pages/about/about.jsx';
 import Contact from './pages/contact/contact.jsx';
 import SiteRegulations from './pages/site-regulations/site-regulations.jsx';
+import Login from './pages/login/login.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import ManageAccount from './pages/manage-account/manage-account.jsx';
 
 const router = createBrowserRouter([
     {
@@ -46,7 +48,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'review/:id',
-                element: <Review />,
+                element: (
+                    <ProtectedRoute>
+                        <Review />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: 'search',
@@ -68,14 +74,10 @@ const router = createBrowserRouter([
                 path: 'site-regulations',
                 element: <SiteRegulations />,
             },
-            // {
-            //     path: 'saved-courses',
-            //     element: (
-            //         <ProtectedRoute>
-            //             <SavedCourse />
-            //         </ProtectedRoute>
-            //     ),
-            // },
+            {
+                path: 'login',
+                element: <Login />,
+            },
             {
                 path: 'saved-courses',
                 element: <SavedCourse />,
@@ -88,14 +90,30 @@ const router = createBrowserRouter([
                     </ProtectedRoute>
                 ),
             },
+            {
+                path: 'manage-account',
+                element: (
+                    <ProtectedRoute>
+                        <ManageAccount />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: 'edit/:id',
+                element: (
+                    <ProtectedRoute>
+                        <Review edit />
+                    </ProtectedRoute>
+                ),
+            },
         ],
     },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <React.StrictMode>
-    // <UserProvider>
-    <RouterProvider router={router} />,
-    // </UserProvider>,
+    <UserProvider>
+        <RouterProvider router={router} />,
+    </UserProvider>,
     // </React.StrictMode>,
 );

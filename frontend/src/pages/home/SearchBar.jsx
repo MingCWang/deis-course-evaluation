@@ -34,7 +34,10 @@ export default function SearchBar() {
                         type='text'
                         value={text}
                         onChange={handleOnChange}
+						placeholder='search'
                     />
+
+
                 </div>
             </form>
         </div>

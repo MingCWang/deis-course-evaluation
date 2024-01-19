@@ -17,14 +17,14 @@ p{
 	width: 10%;
 	height: 3px;
 	background-color: #3A7BD5;
-	margin: 20px 0 20px 20px;
+	margin: 20px 0 20px 0;
 }
 
 .title{
 	text-align: center;
 	font-family: Kite One;
 	font-family: Montserrat;
-
+	font-family: PT Serif;
 	font-size: 30px;
 	font-weight: 400;
 }

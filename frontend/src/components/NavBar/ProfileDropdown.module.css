@@ -1,18 +1,20 @@
 .background {
-	position: fixed;
+	/* position: fixed; */
+	/* position: absolute; */
 	background-color: transparent;
-	width: 100vw;
-	height: 100vh;
-	z-index: 3;
+	background-color: black;
+	/* width: 100vw; */
+	/* height: 100vh; */
 }
 
 .container {
 	min-width: 200px;
 	width: auto;
-	height: 160px;
+	height: auto;
+	/* height: 160px; */
 	border-radius: 8px;
 	position: absolute;
-	top: 50px;
+	top: 70px;
 	right: 90px;
 	background-color: #FFFFFF;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -44,7 +46,6 @@
 
 .font {
 	color: #000;
-	font-family: Montserrat;
 	font-size: 12px;
 	font-weight: 400;
 }
@@ -62,8 +63,8 @@
 }
 
 .text {
-
 	border-bottom: 1px solid transparent;
+	font-family: PT Serif;
 }
 
 .text:hover {
@@ -81,4 +82,17 @@
 	border-top: 1px solid rgba(216, 212, 212, 0.677);
 	text-align: left;
 	padding-top: 5px;
+}
+
+
+@media (max-width: 500px) {
+	.container {
+		width: 60%;
+		right: 0;
+	}
+	.font {
+		font-size: 20px;
+		font-weight: 400;
+	}
+	
 }

@@ -11,10 +11,8 @@ import Form from './components/Form.jsx';
  * TO DO: write api request to submit form data to backend
  * @returns {JSX.Element} Review page
  */
-export default function Review() {
+export default function Review({ edit }) {
     const { id: courseId } = useParams();
-    // const { idState } = useContext(UserContext);
-    // const [id, setId] = idState;
     const [submit, setSubmit] = useState(false);
     const [difficulty, setDifficulty] = useState(1);
     const [rate, setRate] = useState(1);
@@ -22,7 +20,6 @@ export default function Review() {
     const [attendance, setAttendance] = useState(true);
     const [delivery, setDelivery] = useState('In Person');
     const [grade, setGrade] = useState(0);
-    // const [professor, setProfessor] = useState('');
     const [first, setFirst] = useState('');
     const [last, setLast] = useState('');
     const [semester, setSemester] = useState('');
@@ -32,54 +29,143 @@ export default function Review() {
     const [error, setError] = useState(false);
     const [courseInfo, setCourseInfo] = useState({});
     const [loadingCourse, setLoadingCourse] = useState(true);
+	const [reviewId, setReviewId] = useState(null);
     const navigate = useNavigate();
+	const process = import.meta.env;
 
     useEffect(() => {
-        fetchCourse(setCourseInfo, setLoadingCourse, courseId);
+        // if review is in edit mode, pass in the original review info
+        if (edit) {
+            const {
+                difficulty: fetchedDiff,
+                rate: fetchedRate,
+                usefulness: fetchedUseful,
+                attendance: fetchedAttend,
+                delivery: fetchedDelivery,
+                grade: fetchedGrade,
+                professor: fetchedProf,
+                semester: fetchedSemester,
+                comment: fetchedComment,
+                commentProf: fetchedCommentProf,
+                advice: fetchedAdvice,
+                course: fetchedCourse,
+				_id
+            } = JSON.parse(localStorage.getItem('reviewInfo'));
+            const firstName = fetchedProf.split(' ')[0];
+            const lastName = fetchedProf.split(' ')[1];
+
+			setReviewId(_id)
+            setDifficulty(fetchedDiff);
+            setRate(fetchedRate);
+            setUsefulness(fetchedUseful);
+            setAttendance(fetchedAttend);
+            setDelivery(fetchedDelivery);
+            setGrade(fetchedGrade);
+            setFirst(firstName);
+            setLast(lastName);
+            setSemester(fetchedSemester);
+			setComment(fetchedComment)
+			setCommentProf(fetchedCommentProf || '')
+			setAdvice(fetchedAdvice || '')
+			setCourseInfo({
+				course: fetchedCourse.name,
+				courseTitle: fetchedCourse.title,
+				id: fetchedCourse.id,
+			});
+            setLoadingCourse(false);
+        } else {
+            // fetch course info if not in edit mode
+            fetchCourse(setCourseInfo, setLoadingCourse, courseId);
+        }
     }, []);
 
     if (loadingCourse) {
         return <Loading />;
     }
 
-    const { course, courseTitle, professors } = courseInfo;
+    const { course, courseTitle } = courseInfo;
     const { courseFormatted, courseTitleFormatted } = format(
         `${course} ${courseTitle}`,
     );
-    // const professorsArray = [];
-
-    // Object.keys(professors).forEach((key) => {
-    //     professorsArray[key] = {
-    //         label: professors[key].name,
-    //         value: professors[key].name,
-    //     };
-    // });
-    // TO DO: should i use these default values or fetch them dynamically from the backend?
 
     const term = [
         { label: 'SPRING 2024', value: 'SPRING 2024' },
         { label: 'FALL 2023', value: 'FALL 2023' },
+        { label: 'SUMMER 2023', value: 'SUMMER 2023' },
         { label: 'SPRING 2023', value: 'SPRING 2023' },
         { label: 'FALL 2022', value: 'FALL 2022' },
+        { label: 'SUMMER 2022', value: 'SUMMER 2022' },
         { label: 'SPRING 2022', value: 'SPRING 2022' },
         { label: 'FALL 2021', value: 'FALL 2021' },
+        { label: 'SUMMER 2021', value: 'SUMMER 2021' },
         { label: 'SPRING 2021', value: 'SPRING 2021' },
         { label: 'FALL 2020', value: 'FALL 2020' },
+        { label: 'SUMMER 2020', value: 'SUMMER 2020' },
         { label: 'SPRING 2020', value: 'SPRING 2020' },
         { label: 'FALL 2019', value: 'FALL 2019' },
+        { label: 'SUMMER 2019', value: 'SUMMER 2019' },
         { label: 'SPRING 2019', value: 'SPRING 2019' },
     ];
 
-    function handleSubmit(event) {
+
+
+	const handleDelete = (event) => {
+        const { id } = JSON.parse(localStorage.getItem('userInfo'));
+		event.preventDefault();
+        fetch(`${process.VITE_BASE_URL}api/evaluations/forms/${reviewId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+			body: JSON.stringify({
+				courseId: courseInfo.id,
+				userId: id,
+			}),
+        })
+		.then((response) => response.json())
+		.then((data) => {
+			if (!data.error) {
+				
+				setSubmit(true);
+			} else {
+				setError(true);
+				console.log(data.error);
+			}
+		})
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+	const handleConfirm = (event) => {
+		event.preventDefault();
+        const confirmation = window.confirm(
+            'Are you sure you want to delete this review?',
+        );
+        if (confirmation) {
+            handleDelete(event);
+        }
+    };
+
+
+    function handleSubmit(event, isUpdate) {
+		let method = 'POST';
+		let url = `${process.VITE_BASE_URL}api/evaluations/forms`;
+		if (isUpdate) {
+			method = 'PUT';
+			url = `${process.VITE_BASE_URL}api/evaluations/forms/${reviewId}`;
+		}
         event.preventDefault();
         console.log('submitting form');
-        const process = import.meta.env;
         const commentString = comment.comment;
         const commentProfString = commentProf.commentProf;
         const adviceString = advice.advice;
+
+
         const courseIdName = {
-            id: courseId,
+            id: edit ? courseInfo.id : courseId,
             name: courseFormatted,
+			title: courseTitleFormatted,
         };
 
         let professor;
@@ -89,13 +175,20 @@ export default function Review() {
             professor = `${first} ${last}`;
         }
 
-        fetch(`${process.VITE_BASE_URL}api/evaluations/forms`, {
-            method: 'POST',
+        let userId;
+        try {
+            userId = JSON.parse(localStorage.getItem('userInfo')).id;
+        } catch {
+            userId = null;
+        }
+
+        fetch(url, {
+            method,
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                userId: 'anonymous',
+                userId,
                 courseIdName,
                 difficulty,
                 rate,
@@ -153,12 +246,12 @@ export default function Review() {
         return (
             <div className={styles.submittedTextContainer}>
                 <h1 className={styles.submittedText}>
-                    Thank you for your submission!
+                    {edit ? 'Edit success ^^' : 'Thank you for your submission!'}
                 </h1>
                 <div className={styles.backContainer}>
                     <button
                         type='button'
-                        onClick={() => navigate(`/course/${courseId}`)}
+                        onClick={() => navigate(-1)}
                         className={styles.back}
                     >
                         Back
@@ -185,6 +278,7 @@ export default function Review() {
                     handleCommentProfChange={handleCommentProfChange}
                     handleSubmit={handleSubmit}
                     handleGradeChange={handleGradeChange}
+					handleConfirm={handleConfirm}
                     difficulty={difficulty}
                     setDifficulty={setDifficulty}
                     rate={rate}
@@ -202,6 +296,9 @@ export default function Review() {
                     term={term}
                     first={first}
                     last={last}
+					semester={semester}
+					grade={grade}
+                    edit={edit}
                 />
             </div>
         </div>

@@ -1,20 +1,19 @@
+import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../context/UserContext.jsx';
 
 export default function ProtectedRoute({ children }) {
-    const { loggingInState } = useContext(UserContext);
-    const [loggingIn, setLoggingIn] = loggingInState;
+    const { authState } = useContext(UserContext);
+    const [validated, setValidated] = authState;
     const navigate = useNavigate();
 
-    const authenticated = localStorage.getItem('authenticated');
-
     useEffect(() => {
-        if (!authenticated) {
-            setLoggingIn(true);
-            navigate('/');
-        }
-    }, [authenticated]);
+        setTimeout(() => {
+            if (!validated) {
+                navigate('/login', { replace: true });
+            }
+        }, 1000);
+    }, [validated]);
 
     return children;
 }
