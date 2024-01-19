@@ -64,6 +64,7 @@ export async function googleOauthHandler(req, res) {
 
 		const { id_token, access_token } = await getGoogleOAuthTokens(code);
 		const googleUser = await getAndSaveGoogleUser({ id_token, access_token });
+		console.log('googleUser: ', googleUser);
 		if (!googleUser.data.verified_email) {
 			return res.status(403).json({ message: 'Google account is not verified' });
 		}
