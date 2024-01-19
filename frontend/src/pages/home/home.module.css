@@ -54,27 +54,30 @@ background image
 /**********
 shift text
 **********/
+
 .reviewNumContainer{
 	display: flex;
 	justify-content: center;
-	z-index: 0;
-	width: 100%;
+	background-color: #fff;
+	z-index: 2;
+	padding-bottom: 100px;
 	padding-top: 100px;
-
+	margin-top: -100px;
 }
 .reviewText{
-	position: absolute;
+	/* position: absolute; */
 	/* width: 100%; */
 	display: flex;
 	z-index: 0;
 	font-size: 40px;
-	font-family: Lexend Tera;
+	/* right: 40px; */
 
 }
 .reviewNum{
 	font-size: 80px;
 	margin-top: -30px;
 	margin-left: 30px;
+	/* font-style: italic; */
 }
 .searchContainer{
 	display: flex;
@@ -114,18 +117,21 @@ recent review
 	width: 100%;
 	height: auto;
 	padding-bottom: 100px;
-	/* margin-bottom: 100px; */
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	background-color: #fff;
-	z-index: 2;
+	/* z-index: 2; */
+
 
 }
 
 .recentReviewContainer{
 	width: 80%;
 	margin: 30px auto;
+	display: flex;
+	justify-content: space-between;
+
 
 }
 
