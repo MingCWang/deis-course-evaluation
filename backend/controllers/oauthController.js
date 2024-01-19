@@ -5,6 +5,11 @@ import User from '../models/user.js';
 
 async function getGoogleOAuthTokens(code) {
 	const url = 'https://oauth2.googleapis.com/token';
+	console.log('code: ', code);
+	console.log('process.env.GOOGLE_CLIENT_ID: ', process.env.GOOGLE_CLIENT_ID);
+	console.log('process.env.GOOGLE_CLIENT_SECRET: ', process.env.GOOGLE_CLIENT_SECRET);
+	console.log('process.env.GOOGLE_OAUTH_REDIRECT_URI: ', process.env.GOOGLE_OAUTH_REDIRECT_URI);
+	
 	const values = {
 		code: code,
 		client_id: process.env.GOOGLE_CLIENT_ID,
@@ -42,7 +47,6 @@ async function getAndSaveGoogleUser({ id_token, access_token }) {
 				Authorization: `Bearer ${id_token}`,
 			}
 		});
-		console.log('userData: ', userData);
 		const user = {
 			name: { first: userData.data.given_name, last: userData.data.family_name },
 			email: userData.data.email,
