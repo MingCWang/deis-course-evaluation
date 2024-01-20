@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import NavBar from './NavBar/NavBar.jsx';
 import Footer from './Footer.jsx';
 import styles from './Layout.module.css';
@@ -6,15 +7,23 @@ import ScrollToTop from './ScrollToTop.jsx';
 
 export default function Layout() {
     const location = useLocation();
+	const [loading, setLoading] = useState(true);
 
     let mainstyle = styles.main;
-	let loading = false;
 
-    if (location.pathname === '/login') {
-        mainstyle = styles.loginMain;
-    }else if(location.pathname === '/loading'){
-		loading = true;
+	if (location.pathname === '/login') {
+		mainstyle = styles.loginMain;
 	}
+
+	useEffect(() => {
+		if(location.pathname === '/loading'){
+			setLoading(true);
+		}else{
+			setLoading(false);
+		}
+	}
+	, [location]);
+
 
     return (
         <>
