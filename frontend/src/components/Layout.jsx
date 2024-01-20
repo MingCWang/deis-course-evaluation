@@ -16,7 +16,7 @@ export default function Layout() {
 	}
 
 	useEffect(() => {
-		if(location.pathname === '/loading'){
+		if(location.pathname.startsWith('/loading')){
 			setLoading(true);
 		}else{
 			setLoading(false);
