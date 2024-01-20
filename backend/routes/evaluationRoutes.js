@@ -2,6 +2,7 @@
 import express from 'express';
 const router = express.Router();
 import { create, remove, update, read, readWithIds, readRecent, addLikes, totalReviews} from '../controllers/evaluationsController.js';
+import {validateToken} from '../controllers/authController.js';
 
 /**
  * Evaluations API routes
@@ -9,7 +10,9 @@ import { create, remove, update, read, readWithIds, readRecent, addLikes, totalR
  * GET api/evaluations?course=course&semester=semester&professor=professor
  * POST api/evaluations/user
  */
-router.post('/forms', create);
+
+
+router.post('/forms', validateToken, create);
 router.get('/', read);
 router.post('/user', readWithIds);
 router.get('/recent', readRecent);

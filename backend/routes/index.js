@@ -9,6 +9,7 @@ import evaluationRoutes from './evaluationRoutes.js';
 import likedCourseRoutes from './likedCourseRoutes.js';
 import emailRoutes from './emailRoutes.js';
 
+
 router.use('/api/evaluations', evaluationRoutes);
 router.use('/api/courses', courseRoutes);
 router.use('/auth', authRoutes);
