@@ -112,10 +112,14 @@ export default function Review({ edit }) {
 	const handleDelete = (event) => {
         const { id } = JSON.parse(localStorage.getItem('userInfo'));
 		event.preventDefault();
+		const jwt = localStorage.getItem('jwt');
+		if (!jwt) return;
         fetch(`${process.VITE_BASE_URL}api/evaluations/forms/${reviewId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
+				Accept: 'application/json',
+				Authorization: `Bearer ${jwt}`,
             },
 			body: JSON.stringify({
 				courseId: courseInfo.id,
@@ -182,10 +186,15 @@ export default function Review({ edit }) {
             userId = null;
         }
 
+		const jwt = localStorage.getItem('jwt');
+		if (!jwt) return;
+		
         fetch(url, {
             method,
             headers: {
                 'Content-Type': 'application/json',
+				Accept: 'application/json',
+				Authorization: `Bearer ${jwt}`,
             },
             body: JSON.stringify({
                 userId,

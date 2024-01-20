@@ -2,7 +2,7 @@
 import express from 'express';
 const router = express.Router();
 import { create, remove, update, read, readWithIds, readRecent, addLikes, totalReviews} from '../controllers/evaluationsController.js';
-import {validateToken} from '../controllers/authController.js';
+import {validateToken} from '../utils/checkToken.js';
 
 /**
  * Evaluations API routes
@@ -18,7 +18,7 @@ router.post('/user', readWithIds);
 router.get('/recent', readRecent);
 router.post('/likes', addLikes);
 router.get('/totalReviews', totalReviews);
-router.put('/forms/:id', update);
-router.delete('/forms/:id', remove);
+router.put('/forms/:id', validateToken, update);
+router.delete('/forms/:id', validateToken, remove);
 
 export default router; 
