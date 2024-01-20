@@ -8,14 +8,17 @@ export default function Layout() {
     const location = useLocation();
 
     let mainstyle = styles.main;
+	let loading = false;
 
     if (location.pathname === '/login') {
         mainstyle = styles.loginMain;
-    }
+    }else if(location.pathname === '/loading'){
+		loading = true;
+	}
 
     return (
         <>
-            <NavBar />
+            {!loading && <NavBar />}
 			<ScrollToTop />
             <main className={mainstyle}>
                 <Outlet />

@@ -43,7 +43,6 @@ export const validateToken = async (req, res) => {
 		console.log({ err });
 		res.status(401).json({ message: 'Invalid token' })
 	}
-
 }
 /**
  * Quick recap on URL params ":" vs Query params "?"

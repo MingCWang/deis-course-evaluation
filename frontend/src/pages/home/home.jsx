@@ -39,7 +39,7 @@ export default function Home() {
                 ))}
             </div>
 			<div className={styles.reviewNumContainer}><span className={styles.reviewText}>
-                        <span><em>Total Reviews: </em></span>
+                        <span><em>Total Reviews </em></span>
                         <span className={styles.reviewNum}>{totalReviews}</span>
             </span></div>
 			
