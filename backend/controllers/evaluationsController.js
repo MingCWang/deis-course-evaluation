@@ -34,14 +34,12 @@ import { calcAverage, getEvalFormParams } from '../utils/evaluationUtils.js';
 async function create(req, res) {
 	try {
 		const {courseIdName, userId} = req.body;
-		console.log({courseIdName})
 		// save evalform with the req aruguments 
 		const newEvalForm = new EvalForm(getEvalFormParams(req.body, userId));
 		const savedEvalForm = await newEvalForm.save();
 		// add evalform id to course comments with the matching course id 
 		const evalFormId = savedEvalForm._id;
 		const course = await Course.findByIdAndUpdate(courseIdName.id, { $push: { comments: evalFormId } }, { new: true });
-		console.log({course})
 		// add evalform id to user evals with the matching user id
 		if (userId !== 'anonymous'){
 			const user = await User.findByIdAndUpdate(userId, { $push: { evals: evalFormId } }, { new: true });
@@ -73,14 +71,12 @@ async function update(req, res) {
 		// TODO: Update the course by removing the old evalForm and adding the new one
 		//********************************************* */
 		const {courseIdName, userId} = req.body;
-		console.log({courseIdName})
 		// save evalform with the req aruguments 
 		const oldEvalForm = await EvalForm.findById(req.params.id);
 		const evalForm = await EvalForm.findByIdAndUpdate(req.params.id, getEvalFormParams(req.body, userId), {new: true});
 		const savedEvalForm = await evalForm.save();
 		// add evalform id to course comments with the matching course id 
 		const course = await Course.findById(courseIdName.id);
-		console.log({course})
 		try{
 			await calcAverage(course);
 		}catch(err){
