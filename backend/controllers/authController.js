@@ -52,7 +52,6 @@ export const validateToken = async (req, res) => {
  **/
 export const remove = async (req, res) => {
 	try {
-		console.log("req params", req.params);
 		const user = await User.findByIdAndDelete(req.params.id);
 		res.status(200).json({ message: 'User deleted', user });
 	} catch (err) {

@@ -10,27 +10,6 @@ export default function LikeButton({ courseId, isCourse, reload, isSmall }) {
     const [clicked, setClicked] = useState(false);
     const [added, setAdded] = useState(false);
 
-    // const { loggingInState, authState } = useContext(UserContext);
-    // const [loggingIn, setLoggingIn] = loggingInState;
-    // const [authenticated, setAuthenticated] = authState;
-
-    // **************************check if course is in liked courses when page is loaded, require auth version ***********************************************
-    // useEffect(() => {
-    //     const likedCourses =
-    //         JSON.parse(localStorage.getItem('likedCourses')) || [];
-
-    //     if (authenticated) {
-    //         if (likedCourses.includes(courseId)) {
-    //             setClicked(true);
-    //             setAdded(true);
-    //         }
-    //     } else {
-    //         setClicked(false);
-    //         setAdded(false);
-    //     }
-    // }, [authenticated, localStorage.getItem('likedCourses')]);
-    // *********************************************************************************************************************************************************
-
     useEffect(() => {
         const likedCourses =
             JSON.parse(localStorage.getItem('likedCourses')) || [];
@@ -60,18 +39,7 @@ export default function LikeButton({ courseId, isCourse, reload, isSmall }) {
             );
         }
     }, [clicked]);
-
-    // ********************************************This function is for when liking a course requries authentication*****************************************
-    // function handleLikedCourse() {
-    //     if (!authenticated) {
-    //         setLoggingIn(true);
-    //     } else {
-    //         setClicked(!clicked);
-    //         if (reload) reload();
-    //     }
-    // }
-    // *********************************************************************************************************************************************************
-
+	
     function handleLikedCourse() {
         setClicked(!clicked);
         if (reload) reload();
