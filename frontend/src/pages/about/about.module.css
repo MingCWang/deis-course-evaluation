@@ -34,6 +34,14 @@
 	transform: scale(2);
 }
 
+
+.container{
+	display: flex;
+	width: 100px;
+	justify-content: space-between;
+	align-items: center;
+}
+
 @media screen and (max-width: 930px){
 	.linkedin{
 		margin-bottom: 50px;
@@ -54,3 +62,4 @@
 		margin: -10px 0 50px;
 	}
 }
+

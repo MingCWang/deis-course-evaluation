@@ -1,4 +1,4 @@
-import { PiLinkedinLogoThin } from "react-icons/pi";
+import { PiLinkedinLogoThin , PiInstagramLogoThin } from "react-icons/pi";
 import { Link } from 'react-router-dom';
 import styles from './about.module.css';
 
@@ -16,9 +16,16 @@ export default function About() {
                 professor is a good fit? DeisEval got you. <br />
                 <br /> More features coming, stay tuned!
             </p>
-			<Link to='https://www.linkedin.com/in/mingshih-wang/'>
-				<PiLinkedinLogoThin className={styles.linkedin}/>
-			</Link>
+			<div className={styles.container} >
+				<Link to='https://www.linkedin.com/in/mingshih-wang/'>
+					<PiLinkedinLogoThin className={styles.linkedin}/>
+				</Link>
+				<Link to='https://www.instagram.com/deis_eval/'>
+					<PiInstagramLogoThin className={styles.linkedin}/>
+				</Link>
+			</div>
+			
+		
         </div>
     );
 }
