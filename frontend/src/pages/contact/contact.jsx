@@ -43,10 +43,13 @@ export default function Contact() {
         <div className={styles.wrapper}>
             <div className={styles.contact}>
                 <div className={styles.descContainer}>
-                    <p className={styles.title}><i>CONTACT</i></p>
+                    <p className={styles.title}>
+                        <i>CONTACT</i>
+                    </p>
                     <p className={styles.desc}>
-                        Want to add a course?<br />
-						have suggestions for us? 
+                        Want to add a course?
+                        <br />
+                        have suggestions for us?
                         <br />
                         Fill out the form!
                         <br />
@@ -74,7 +77,7 @@ export default function Contact() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className={styles.input}
-						placeholder='optional, to get back to you'
+                        placeholder='optional, to get back to you'
                     />
                     <label htmlFor='subject' className={styles.label}>
                         Subject
@@ -95,7 +98,7 @@ export default function Contact() {
                         onChange={(e) => setMessage(e.target.value)}
                         className={styles.inputMessage}
                         rows={10}
-						placeholder='If you are requesting a course, please include the course name and number. Ex: COSI 21A, Data Structures and Algorithms'
+                        placeholder='If you are requesting a course, please include the course name and number. Ex: COSI 21A, Data Structures and Algorithms'
                     />
                     <div className={styles.buttonWrapper}>
                         <div className={styles.buttonborders}>

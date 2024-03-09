@@ -14,9 +14,8 @@ export default function Login() {
                     </p>
                     <p className={styles.loginText}>
                         Write and upvote ratings <br />
-						& <br />
+                        & <br />
                         Edit, save, delete your ratings <br />
-						
                     </p>
                     <a href={getGoogleUrl()} className={styles.googleButton}>
                         <FcGoogle className={styles.googleIcon} />

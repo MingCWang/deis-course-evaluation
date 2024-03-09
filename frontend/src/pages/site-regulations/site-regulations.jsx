@@ -13,10 +13,11 @@ export default function SiteRegulations() {
 
                 <h2>User Access</h2>
 
-             
                 <p>
-				Access to the course evaluation website is restricted to current students, faculty, and authorized administrative staff of the college.
-Users are required to log in using their college-issued credentials.
+                    Access to the course evaluation website is restricted to
+                    current students, faculty, and authorized administrative
+                    staff of the college. Users are required to log in using
+                    their college-issued credentials.
                 </p>
                 <h2>User Conduct</h2>
                 <p>
