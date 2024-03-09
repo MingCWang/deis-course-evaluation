@@ -1,6 +1,6 @@
 # Contributing Guide
 
-I'm really glad you're reading this, because we need all the we can get to help make this a perfect platform for Brandeis.
+I'm really glad you're reading this, because we need all the help we can get to make this a perfect platform for Brandeis.
 
 If you haven't already, go follow our 
 
