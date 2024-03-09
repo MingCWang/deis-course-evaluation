@@ -94,5 +94,5 @@ Start reading our code and you'll get the hang of it. We optimize for readabilit
 
 ## Submitting issues
 
-If you find a bug or have a feature request, please open an issue [here](https://github.com/MingCWang/deiseval/issues/new)
+If you find a bug or have a feature request, please open an issue [here](https://github.com/MingCWang/deiseval/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=)
 
