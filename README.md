@@ -69,16 +69,21 @@ Each part of this project helped me understand more about building apps, managin
 - Better user flow, the blank search bar might confuse users when first visiting the website
 - Profile dropdown requires clicking on the profile button to retract, make it so users can click anywhere to close it. 
 
-## 🚦 Running the Project
+##  🔨 Contributing
 
 To run the project in your local environment, follow these steps:
 
 1. Clone the repo
-2. Run `npm install` inside the /backend and /frontend directory of the project
-3. Run `npm run dev` in the backend and /frontend directory of the project
+2. Run `npm install` inside the `/backend` and `/frontend` directory of the project
+3. Run `npm run dev` in the `/backend` and `/frontend` directory of the project
 
+See the [contributing guide](./CONTRIBUTING.md) for more technical details on contributing
    
 ## :last_quarter_moon: REST API Routes
+
+<details>
+<summary>Click to expand</summary>
+  
 ### Course
 - GET /api/courses - Get all courses
 - GET /api/courses/:id - Get course by id
@@ -98,3 +103,6 @@ To run the project in your local environment, follow these steps:
 - POST api/liked-courses - Get all liked courses with the given user id
 - POST api/liked-courses/add - Add a new liked course
 - POST api/liked-courses/remove - Remove a liked course
+</details>
+
+
