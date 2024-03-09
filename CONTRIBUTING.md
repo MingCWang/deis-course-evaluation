@@ -15,7 +15,9 @@ Here are the links to some important resources:
 
 
 
-Contributing to `deiseval` is fairly easy. This document shows you how to get the source, how to test and build it and how to contribute to the project.
+Contributing to `deiseval` is fairly easy. (If you haven't picked an issue to work on, check [here](https://github.com/MingCWang/deiseval/issues))
+
+This document shows you how to get the source, how to test and build it and how to contribute to the project.
 
 ## Dependencies
 
