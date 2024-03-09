@@ -59,14 +59,14 @@ find the server code in the `/backend` folder. And [React](https://react.dev/) f
 
 - Check out a new branch and name it to what you intend to do:
  	````
-    $ git checkout -b <fix/feature>/<Name of feature or bug>
+    $ git checkout -b <bugfix/feature>/<Name of feature or bug>
     ````
   - Example:
    	````
     $ git checkout -b feature/sidebar
     ````
    
-  - Use one branch per fix/feature
+  - Use one branch per bugfix/feature
 - Make your changes
   - Make sure to run `npm run format` before committing your changes.
 - Commit your changes
