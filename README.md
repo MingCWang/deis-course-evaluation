@@ -2,6 +2,7 @@
 
 This is a course evaluation website for Brandeis students. The website allows students to search for courses and view the course evaluations. Students can also add courses to their list and view the list of courses they have added. This website is created in hope that it will be a useful tool for students to gain authnetic insights about the courses they are interested in. 
 
+### [How to contribute?](#Contributing) 
 
 ## 📦 Technologies
 
