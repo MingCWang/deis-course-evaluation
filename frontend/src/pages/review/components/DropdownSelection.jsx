@@ -35,7 +35,7 @@ export default function ComboBox({ value, options, label, handleChange }) {
                 renderInput={(params) => (
                     <TextField {...params} label={label} />
                 )}
-				value={value}
+                value={value}
             />
         </ThemeProvider>
     );

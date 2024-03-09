@@ -74,74 +74,73 @@ export default function NavBar() {
             >
                 <p className={styles.title}>Deis Eval</p>
             </div>
-			<div className={styles.right}>
-            {!validated ? (
-                <Link className={styles.auth} to='/login'>
-                    Login
-                </Link>
-            ) : (
-                <button
-                    type='button'
-                    className={styles.profileButton}
-                    onClick={handleOnClick}
-                >
-                    <AiOutlineUser className={styles.profileIcon} />
-                </button>
-            )}
+            <div className={styles.right}>
+                {!validated ? (
+                    <Link className={styles.auth} to='/login'>
+                        Login
+                    </Link>
+                ) : (
+                    <button
+                        type='button'
+                        className={styles.profileButton}
+                        onClick={handleOnClick}
+                    >
+                        <AiOutlineUser className={styles.profileIcon} />
+                    </button>
+                )}
 
-            {profileClicked && (
-                <ProfileDropdown handleOnClick={handleOnClick} />
-            )}
-            <div
-                className={header}
-                onClick={() => setClicked(!clicked)}
-                onKeyDown={() => setClicked(!clicked)}
-                role='button'
-                tabIndex={0}
-            >
-                <Link className={styles.logo} to='/'>
-                    Deis Eval
-                </Link>
-                <div className={styles.navWrapper}>
-					{/* <Link className={styles.link} to='/'>
+                {profileClicked && (
+                    <ProfileDropdown handleOnClick={handleOnClick} />
+                )}
+                <div
+                    className={header}
+                    onClick={() => setClicked(!clicked)}
+                    onKeyDown={() => setClicked(!clicked)}
+                    role='button'
+                    tabIndex={0}
+                >
+                    <Link className={styles.logo} to='/'>
+                        Deis Eval
+                    </Link>
+                    <div className={styles.navWrapper}>
+                        {/* <Link className={styles.link} to='/'>
                         Home
                     </Link> */}
-                    <Link className={styles.link} to='/search'>
-                        Search
-                    </Link>
-                    {!validated ? (
-                        <Link className={styles.link} to='/saved-courses'>
-                            Saved
+                        <Link className={styles.link} to='/search'>
+                            Search
                         </Link>
-                    ) : null}
+                        {!validated ? (
+                            <Link className={styles.link} to='/saved-courses'>
+                                Saved
+                            </Link>
+                        ) : null}
 
-                    <Link className={styles.link} to='/about'>
-                        About
-                    </Link>
-                    <Link className={styles.link} to='/contact'>
-                        Contact
-                    </Link>
-				
+                        <Link className={styles.link} to='/about'>
+                            About
+                        </Link>
+                        <Link className={styles.link} to='/contact'>
+                            Contact
+                        </Link>
+                    </div>
+                </div>
+                <div className={styles.burger}>
+                    <input
+                        hidden
+                        className={styles.checkicon}
+                        id='checkicon'
+                        name='checkicon'
+                        type='checkbox'
+                        checked={clicked}
+                        onChange={() => setClicked(!clicked)}
+                        onClick={() => setClicked(!clicked)}
+                    />
+                    <label className={styles.iconmenu} htmlFor='checkicon'>
+                        <div className={`${styles.bar} ${styles.bar1}`} />
+                        <div className={`${styles.bar} ${styles.bar2}`} />
+                        <div className={`${styles.bar} ${styles.bar3}`} />
+                    </label>
                 </div>
             </div>
-            <div className={styles.burger}>
-                <input
-                    hidden
-                    className={styles.checkicon}
-                    id='checkicon'
-                    name='checkicon'
-                    type='checkbox'
-                    checked={clicked}
-                    onChange={() => setClicked(!clicked)}
-                    onClick={() => setClicked(!clicked)}
-                />
-                <label className={styles.iconmenu} htmlFor='checkicon'>
-                    <div className={`${styles.bar} ${styles.bar1}`} />
-                    <div className={`${styles.bar} ${styles.bar2}`} />
-                    <div className={`${styles.bar} ${styles.bar3}`} />
-                </label>
-            </div>
-			</div>
         </div>
     );
 }

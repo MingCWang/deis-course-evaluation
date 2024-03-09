@@ -22,12 +22,10 @@ export default function UseLikeReview({ reviewId, setClicked, clicked }) {
 
         if (!validated) id = null; // if the local storage is not cleared before this part renders, the user will still see the likes being marked
 
-	
-
         fetch(`${process.VITE_BASE_URL}api/evaluations/likes`, {
             method: 'POST',
             headers: {
-				'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 evalId: reviewId,
@@ -83,7 +81,6 @@ export default function UseLikeReview({ reviewId, setClicked, clicked }) {
                     setError(true);
                 });
         }
-
     }, [clicked]);
 
     return { likes, error, isChecked };

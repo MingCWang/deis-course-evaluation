@@ -29,9 +29,9 @@ export default function Review({ edit }) {
     const [error, setError] = useState(false);
     const [courseInfo, setCourseInfo] = useState({});
     const [loadingCourse, setLoadingCourse] = useState(true);
-	const [reviewId, setReviewId] = useState(null);
+    const [reviewId, setReviewId] = useState(null);
     const navigate = useNavigate();
-	const process = import.meta.env;
+    const process = import.meta.env;
 
     useEffect(() => {
         // if review is in edit mode, pass in the original review info
@@ -49,12 +49,12 @@ export default function Review({ edit }) {
                 commentProf: fetchedCommentProf,
                 advice: fetchedAdvice,
                 course: fetchedCourse,
-				_id
+                _id,
             } = JSON.parse(localStorage.getItem('reviewInfo'));
             const firstName = fetchedProf.split(' ')[0];
             const lastName = fetchedProf.split(' ')[1];
 
-			setReviewId(_id)
+            setReviewId(_id);
             setDifficulty(fetchedDiff);
             setRate(fetchedRate);
             setUsefulness(fetchedUseful);
@@ -64,14 +64,14 @@ export default function Review({ edit }) {
             setFirst(firstName);
             setLast(lastName);
             setSemester(fetchedSemester);
-			setComment(fetchedComment)
-			setCommentProf(fetchedCommentProf || '')
-			setAdvice(fetchedAdvice || '')
-			setCourseInfo({
-				course: fetchedCourse.name,
-				courseTitle: fetchedCourse.title,
-				id: fetchedCourse.id,
-			});
+            setComment(fetchedComment);
+            setCommentProf(fetchedCommentProf || '');
+            setAdvice(fetchedAdvice || '');
+            setCourseInfo({
+                course: fetchedCourse.name,
+                courseTitle: fetchedCourse.title,
+                id: fetchedCourse.id,
+            });
             setLoadingCourse(false);
         } else {
             // fetch course info if not in edit mode
@@ -107,42 +107,39 @@ export default function Review({ edit }) {
         { label: 'SPRING 2019', value: 'SPRING 2019' },
     ];
 
-
-
-	const handleDelete = (event) => {
+    const handleDelete = (event) => {
         const { id } = JSON.parse(localStorage.getItem('userInfo'));
-		event.preventDefault();
-		const jwt = localStorage.getItem('jwt');
-		if (!jwt) return;
+        event.preventDefault();
+        const jwt = localStorage.getItem('jwt');
+        if (!jwt) return;
         fetch(`${process.VITE_BASE_URL}api/evaluations/forms/${reviewId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-				Accept: 'application/json',
-				Authorization: `Bearer ${jwt}`,
+                Accept: 'application/json',
+                Authorization: `Bearer ${jwt}`,
             },
-			body: JSON.stringify({
-				courseId: courseInfo.id,
-				userId: id,
-			}),
+            body: JSON.stringify({
+                courseId: courseInfo.id,
+                userId: id,
+            }),
         })
-		.then((response) => response.json())
-		.then((data) => {
-			if (!data.error) {
-				
-				setSubmit(true);
-			} else {
-				setError(true);
-				console.log(data.error);
-			}
-		})
+            .then((response) => response.json())
+            .then((data) => {
+                if (!data.error) {
+                    setSubmit(true);
+                } else {
+                    setError(true);
+                    console.log(data.error);
+                }
+            })
             .catch((err) => {
                 console.log(err);
             });
     };
 
-	const handleConfirm = (event) => {
-		event.preventDefault();
+    const handleConfirm = (event) => {
+        event.preventDefault();
         const confirmation = window.confirm(
             'Are you sure you want to delete this review?',
         );
@@ -151,25 +148,23 @@ export default function Review({ edit }) {
         }
     };
 
-
     function handleSubmit(event, isUpdate) {
-		let method = 'POST';
-		let url = `${process.VITE_BASE_URL}api/evaluations/forms`;
-		if (isUpdate) {
-			method = 'PUT';
-			url = `${process.VITE_BASE_URL}api/evaluations/forms/${reviewId}`;
-		}
+        let method = 'POST';
+        let url = `${process.VITE_BASE_URL}api/evaluations/forms`;
+        if (isUpdate) {
+            method = 'PUT';
+            url = `${process.VITE_BASE_URL}api/evaluations/forms/${reviewId}`;
+        }
         event.preventDefault();
         console.log('submitting form');
         const commentString = comment.comment;
         const commentProfString = commentProf.commentProf;
         const adviceString = advice.advice;
 
-
         const courseIdName = {
             id: edit ? courseInfo.id : courseId,
             name: courseFormatted,
-			title: courseTitleFormatted,
+            title: courseTitleFormatted,
         };
 
         let professor;
@@ -186,15 +181,15 @@ export default function Review({ edit }) {
             userId = null;
         }
 
-		const jwt = localStorage.getItem('jwt');
-		if (!jwt) return;
-		
+        const jwt = localStorage.getItem('jwt');
+        if (!jwt) return;
+
         fetch(url, {
             method,
             headers: {
                 'Content-Type': 'application/json',
-				Accept: 'application/json',
-				Authorization: `Bearer ${jwt}`,
+                Accept: 'application/json',
+                Authorization: `Bearer ${jwt}`,
             },
             body: JSON.stringify({
                 userId,
@@ -255,7 +250,9 @@ export default function Review({ edit }) {
         return (
             <div className={styles.submittedTextContainer}>
                 <h1 className={styles.submittedText}>
-                    {edit ? 'Edit success ^^' : 'Thank you for your submission!'}
+                    {edit
+                        ? 'Edit success ^^'
+                        : 'Thank you for your submission!'}
                 </h1>
                 <div className={styles.backContainer}>
                     <button
@@ -287,7 +284,7 @@ export default function Review({ edit }) {
                     handleCommentProfChange={handleCommentProfChange}
                     handleSubmit={handleSubmit}
                     handleGradeChange={handleGradeChange}
-					handleConfirm={handleConfirm}
+                    handleConfirm={handleConfirm}
                     difficulty={difficulty}
                     setDifficulty={setDifficulty}
                     rate={rate}
@@ -305,8 +302,8 @@ export default function Review({ edit }) {
                     term={term}
                     first={first}
                     last={last}
-					semester={semester}
-					grade={grade}
+                    semester={semester}
+                    grade={grade}
                     edit={edit}
                 />
             </div>

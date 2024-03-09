@@ -39,7 +39,7 @@ export default function LikeButton({ courseId, isCourse, reload, isSmall }) {
             );
         }
     }, [clicked]);
-	
+
     function handleLikedCourse() {
         setClicked(!clicked);
         if (reload) reload();

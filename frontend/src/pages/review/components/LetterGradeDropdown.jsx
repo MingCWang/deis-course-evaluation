@@ -13,15 +13,11 @@ const theme = createTheme({
 });
 
 export default function ComboBox({ value, options, label, handleGradeChange }) {
-	
-
-		for (let i = 0; i < options.length; i++) {
-			if (options[i].value === value) {
-				value = options[i];
-			}
-		}
-	
-	
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].value === value) {
+            value = options[i];
+        }
+    }
 
     return (
         <ThemeProvider theme={theme}>
@@ -42,7 +38,7 @@ export default function ComboBox({ value, options, label, handleGradeChange }) {
                 renderInput={(params) => (
                     <TextField {...params} label={label} />
                 )}
-				value={value}
+                value={value}
             />
         </ThemeProvider>
     );

@@ -48,7 +48,7 @@ export default function ReviewCard({ review }) {
         attendance = 'Mandatory';
     }
 
-	const	{card} = styles;
+    const { card } = styles;
 
     let rating;
     const ratingAverage = review.rate;
@@ -72,7 +72,6 @@ export default function ReviewCard({ review }) {
         color = styles.red;
     }
 
-
     const handleCheckboxChange = () => {
         if (!validated) {
             navigate('/login');
@@ -85,7 +84,7 @@ export default function ReviewCard({ review }) {
         localStorage.setItem('reviewInfo', JSON.stringify(review));
     };
 
-	const isCoursePage = location.includes('/course/');
+    const isCoursePage = location.includes('/course/');
 
     return (
         <div className={`${card} ${color}`}>

@@ -114,6 +114,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     // <React.StrictMode>
     <UserProvider>
         <RouterProvider router={router} />
-    </UserProvider>
+    </UserProvider>,
     // </React.StrictMode>,
 );

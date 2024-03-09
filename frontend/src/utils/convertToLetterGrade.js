@@ -1,4 +1,6 @@
 export default function convertToLetterGrade(grade) {
+    const roundedGrade = Math.round(grade);
+
     const letterGrades = {
         13: 'A+',
         12: 'A',
@@ -13,7 +15,7 @@ export default function convertToLetterGrade(grade) {
         3: 'D',
         2: 'D-',
         1: 'F',
-		0: 'N/A',
+        0: 'N/A',
     };
-    return letterGrades[grade];
+    return letterGrades[roundedGrade];
 }

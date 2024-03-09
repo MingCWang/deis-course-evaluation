@@ -32,7 +32,7 @@ export default function Form({
     handleCommentProfChange,
     handleAdviceChange,
     handleSubmit,
-	handleConfirm,
+    handleConfirm,
     difficulty,
     setDifficulty,
     rate,
@@ -50,22 +50,17 @@ export default function Form({
     term,
     first,
     last,
-	semester,
-	grade,
+    semester,
+    grade,
     edit,
 }) {
-
-
-
-
-
     return (
         <form className={styles.form}>
             <div className={styles.dropdownWrapper}>
                 <div className={styles.termWrapper}>
                     <p className={styles.term}>Term:</p>
                     <DropdownSelection
-						value={semester}
+                        value={semester}
                         options={term}
                         label='Select Term'
                         handleChange={handleSemesterChange}
@@ -116,7 +111,7 @@ export default function Form({
             <div className={styles.ratingWrapper}>
                 <h2 className={styles.ratingDesc}>Your grade (optional)</h2>
                 <LetterGradeDropdown
-					value={grade}
+                    value={grade}
                     options={letterGrades}
                     label='grade'
                     handleGradeChange={handleGradeChange}
@@ -150,27 +145,27 @@ export default function Form({
                 </div>
             )}
             {edit && (
-				<div className={styles.editoptions}>
-				                <div className={styles.submit}>
-                    <button
-                        className={styles.submitButton}
-                        type='submit'
-                        onClick={(e) => handleSubmit(e, true)}
-                    >
-                        Update
-                    </button>
+                <div className={styles.editoptions}>
+                    <div className={styles.submit}>
+                        <button
+                            className={styles.submitButton}
+                            type='submit'
+                            onClick={(e) => handleSubmit(e, true)}
+                        >
+                            Update
+                        </button>
+                    </div>
+                    or
+                    <div className={styles.submit}>
+                        <button
+                            className={styles.deleteButton}
+                            type='submit'
+                            onClick={handleConfirm}
+                        >
+                            Delete
+                        </button>
+                    </div>
                 </div>
-				or
-				         <div className={styles.submit}>
-						 <button
-							 className={styles.deleteButton}
-							 type='submit'
-							 onClick={handleConfirm}>
-							 Delete
-						 </button>
-					 </div>
-				</div>
-
             )}
         </form>
     );

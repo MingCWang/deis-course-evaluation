@@ -7,28 +7,26 @@ import ScrollToTop from './ScrollToTop.jsx';
 
 export default function Layout() {
     const location = useLocation();
-	const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     let mainstyle = styles.main;
 
-	if (location.pathname === '/login') {
-		mainstyle = styles.loginMain;
-	}
+    if (location.pathname === '/login') {
+        mainstyle = styles.loginMain;
+    }
 
-	useEffect(() => {
-		if(location.pathname.startsWith('/loading')){
-			setLoading(true);
-		}else{
-			setLoading(false);
-		}
-	}
-	, [location]);
-
+    useEffect(() => {
+        if (location.pathname.startsWith('/loading')) {
+            setLoading(true);
+        } else {
+            setLoading(false);
+        }
+    }, [location]);
 
     return (
         <>
             {!loading && <NavBar />}
-			<ScrollToTop />
+            <ScrollToTop />
             <main className={mainstyle}>
                 <Outlet />
             </main>
