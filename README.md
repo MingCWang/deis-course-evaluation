@@ -2,7 +2,7 @@
 
 This is a course evaluation website for Brandeis students. The website allows students to search for courses and view the course evaluations. Students can also add courses to their list and view the list of courses they have added. This website is created in hope that it will be a useful tool for students to gain authnetic insights about the courses they are interested in. 
 
-### [How to contribute?](#-contributing)
+### [How to contribute?](./CONTRIBUTING.md)
 
 ## 📦 Technologies
 
@@ -69,16 +69,6 @@ Each part of this project helped me understand more about building apps, managin
 - A more intuitive search bar
 - Better user flow, the blank search bar might confuse users when first visiting the website
 - Profile dropdown requires clicking on the profile button to retract, make it so users can click anywhere to close it. 
-
-##  🔨 Contributing
-
-To run the project in your local environment, follow these steps:
-
-1. Clone the repo
-2. Run `npm install` inside the `/backend` and `/frontend` directory of the project
-3. Run `npm run dev` in the `/backend` and `/frontend` directory of the project
-
-See the [contributing guide](./CONTRIBUTING.md) for more technical details on contributing
    
 ## :last_quarter_moon: REST API Routes
 
