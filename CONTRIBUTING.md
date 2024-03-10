@@ -70,9 +70,9 @@ GOOGLE_OAUTH_REDIRECT_URI='http://localhost:5173/loading'
 EMAIL_PWD=<TYPE_RANDOM_STRING>
 ````
 
-and in the `/frontend` folder with the following content:
+and in the `/frontend` folder with the following content: 
 
-````
+````.env
 VITE_GOOGLE_CLIENT_ID=<YOUR_GOOGLE_CLIENT_ID>
 VITE_SERVER_ENDPOINT="http://localhost:8081"
 VITE_GOOGLE_OAUTH_REDIRECT_URI="http://localhost:5173/loading"
