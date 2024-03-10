@@ -57,6 +57,47 @@ Example: `http://localhost:5173/`
 We use a complete [Express](http://expressjs.com/) server stack. You will
 find the server code in the `/backend` folder. And [React](https://react.dev/) for the `/frontend`.
 
+### `.env` file
+
+You will need to create a `.env` file in the `/backend` folder with the following content:
+
+````.env
+MONGODB_URL=<MONGODB_CONNECTION_STRING>
+JWT_SECRET=<RANDOM_STRING_FOR_JWT_SECRET>
+GOOGLE_CLIENT_ID=<TYPE_RANDOM_STRING>
+GOOGLE_CLIENT_SECRET=<YOUR_GOOGLE_CLIENT_SECRET>
+GOOGLE_OAUTH_REDIRECT_URI='http://localhost:5173/loading'
+EMAIL_PWD=<TYPE_RANDOM_STRING>
+````
+
+and in the `/frontend` folder with the following content:
+
+````
+VITE_GOOGLE_CLIENT_ID=<YOUR_GOOGLE_CLIENT_ID>
+VITE_SERVER_ENDPOINT="http://localhost:8081"
+VITE_GOOGLE_OAUTH_REDIRECT_URI="http://localhost:5173/loading"
+VITE_BASE_URL="http://localhost:8081/"
+````
+
+### Obtaining the `MONGODB_URL` and `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
+
+You will need to create a MongoDB database and a Google OAuth 2.0 client ID.
+
+To create a MongoDB cluster in Atlas, follow these steps.
+
+1. Log in to your MongoDB Atlas account at 
+https://cloud.mongodb.com.
+2. Click on the “Create” button.
+3. Choose your cluster type (dedicated, serverless, shared).
+4. Choose your cloud provider and region.
+5. Click on “Create cluster.”
+6. Once your cluster is created, click on the “Connect” button.
+7. Copy the connection string. This is your `MONGODB_URL`.
+
+
+To create a Google OAuth 2.0 client ID, see [here](https://developers.google.com/identity/protocols/oauth2) for more information
+
+
 ## Contributing/Submitting changes
 
 - Check out a new branch and name it to what you intend to do:
