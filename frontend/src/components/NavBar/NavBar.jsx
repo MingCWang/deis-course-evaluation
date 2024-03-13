@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import styles from './NavBar.module.css';
 // import UseValidateJWT from '../../services/UseValidateJWT.jsx';
@@ -15,6 +15,7 @@ export default function NavBar() {
     const { authState } = useContext(UserContext);
     const [validated] = authState;
     const [profileClicked, setProfileClicked] = useState(false);
+    const dropdownRef = useRef(null);
 
     // const {validated, setValidated }= UseValidateJWT();
 
@@ -32,6 +33,20 @@ export default function NavBar() {
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setProfileClicked(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
         };
     }, []);
 
@@ -90,7 +105,7 @@ export default function NavBar() {
                 )}
 
                 {profileClicked && (
-                    <ProfileDropdown handleOnClick={handleOnClick} />
+                    <ProfileDropdown handleOnClick={handleOnClick} ref={dropdownRef} />
                 )}
                 <div
                     className={header}
