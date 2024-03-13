@@ -14,7 +14,7 @@ export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const { authState } = useContext(UserContext);
     const [validated] = authState;
-    const [profileClicked, setProfileClicked] = useState(true);
+    const [profileClicked, setProfileClicked] = useState(false);
 
     // const {validated, setValidated }= UseValidateJWT();
 
