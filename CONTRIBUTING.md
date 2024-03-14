@@ -77,7 +77,7 @@ VITE_GOOGLE_OAUTH_REDIRECT_URI="http://localhost:5173/loading"
 VITE_BASE_URL="http://localhost:8081/"
 ````
 
-### Obtaining the `MONGODB_URL` and `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
+#### Obtaining the `MONGODB_URL` and `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`
 
 You will need to create a MongoDB database and a Google OAuth 2.0 client ID.
 
