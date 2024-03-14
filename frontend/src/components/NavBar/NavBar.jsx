@@ -40,6 +40,7 @@ export default function NavBar() {
     };
 
     function handleOnClick() {
+        // setProfileClicked(!profileClicked);
         setProfileClicked(!profileClicked);
     }
 
