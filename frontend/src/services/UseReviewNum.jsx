@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const process = import.meta.env;
 
-export default function UseTotalReveiws() {
+export default function UseReviewNum() {
     const [error, setError] = useState(false);
     const [totalReviews, setTotalReviews] = useState(0);
 

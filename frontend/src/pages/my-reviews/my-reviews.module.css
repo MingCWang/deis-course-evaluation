@@ -1,9 +1,3 @@
-h1{
-	margin: 20px
-}
-p{
-	text-align: center;
-}
 
 /* Divider */
 .dividerContainer {
@@ -25,7 +19,7 @@ p{
 	font-family: Kite One;
 	font-family: Montserrat;
 	font-family: PT Serif;
-
+	margin: 20px;
 	font-size: 30px;
 	font-weight: 400;
 }

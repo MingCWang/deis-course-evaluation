@@ -30,7 +30,7 @@ export default function Layout() {
             <main className={mainstyle}>
                 <Outlet />
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }

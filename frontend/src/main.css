@@ -7,21 +7,43 @@
 	/* border: 1px solid red; */
 }
 
-html {
-	font-family: Montserrat;
-	font-family: PT Serif;
-	/* Firefox */
-	scrollbar-width: none;
-	background-color: #FDFFEF;
-	background-color: #ffffff;
+:root {
+	--background: #232946;
+	--headline: #fffffe;
+	--paragraph: #b8c1ec;
+	--button: #eebbc3;
+	--button-text: #232946;
+	--stroke: #121629;
+}
 
+h1, h2, h3, h4, h5, h6 {
+	color: var(--headline);
 	padding: 0;
 	margin: 0;
-
-
-
-
+	font-weight: 200;
 }
+
+h1{
+	font-size: 3rem;
+}
+
+p {
+	color: var(--paragraph);
+	font-weight: 200;
+	font-size: 1.5rem;
+}
+
+html {
+	/* Firefox */
+	font-family: "Kanit", sans-serif;
+	scrollbar-width: none;
+	background-color: var(--background);
+	padding: 0;
+	margin: 0;
+}
+
+
+
 body {   
 	/* overscroll-behavior: none; */
 }

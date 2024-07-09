@@ -8,8 +8,11 @@
 	min-height: calc(100vh - 124px);
 }
 
+
+
 .loginMain{
 	composes: main;
 	padding-top: 0;
 	/* background-color: #7da3fc; */
 }
+

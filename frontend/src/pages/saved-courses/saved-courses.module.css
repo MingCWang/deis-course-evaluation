@@ -1,9 +1,4 @@
-h1{
-	margin: 20px
-}
-p{
-	text-align: center;
-}
+
 
 /* Divider */
 .dividerContainer {
@@ -27,6 +22,8 @@ p{
 	font-family: PT Serif;
 	font-size: 30px;
 	font-weight: 400;
+	margin: 20px;
+
 }
 
 .nosaved{
