@@ -2,7 +2,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../context/UserContext.jsx';
 
-import ReviewCard from '../../components/ReviewCard/ReviewCard.jsx';
+// import ReviewCard from '../../components/ReviewCard/ReviewCard.jsx';
 import fetchUserReviews from '../../services/fetchUserReviews.js';
 import styles from './my-reviews.module.css';
 

@@ -14,6 +14,18 @@
 	--button: #eebbc3;
 	--button-text: #232946;
 	--stroke: #121629;
+	--card-background: #fffffe;
+	--card-headline: #232946;
+	--card-paragraph: #232946;
+	--card-highlight: #d4939d;
+	--card-tag-text: #b8c1ec;
+	--card-tag-background: #232946;
+	--A: #4ce600;
+	--B: #339a00;
+	--C: #ffffbf;
+	--D: #fdae61;
+	--F: #d7191c;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,13 +36,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-	font-size: 3rem;
+	font-size: 60px;
+}
+
+h2{
+	font-size: 50px;
+
 }
 
 p {
 	color: var(--paragraph);
 	font-weight: 200;
-	font-size: 1.5rem;
+	font-size: 30px;
 }
 
 html {

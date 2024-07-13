@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { format, set } from 'date-fns';
+import { format } from 'date-fns';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { LiaEditSolid } from 'react-icons/lia';
 import styles from './ReviewCard.module.css';
-import convertToLetterGrade from '../../utils/convertToLetterGrade';
+import convertToLetterGrade from '../../utils/convertToLetterGrade.js';
 import RatingBox from '../CourseReviewCard/RatingBox.jsx';
 import UseLikeReview from '../../services/UseLikeReview.jsx';
 // import UseValidateJWT from '../../services/UseValidateJWT.jsx';

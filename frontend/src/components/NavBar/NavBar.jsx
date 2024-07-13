@@ -22,9 +22,13 @@ export default function NavBar() {
     if (location.pathname === '/login') {
         return null;
     }
+    let { navBar } = styles;
+    if (location.pathname === '/home') {
+        navBar = styles.navBarAnimated;
+    }
 
     return (
-        <div className={styles.navBar}>
+        <div className={navBar}>
             <div className={styles.navWrapper}>
                 <Link className={styles.link} to='/'>
                     Home

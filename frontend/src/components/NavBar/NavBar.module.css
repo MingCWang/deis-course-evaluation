@@ -16,9 +16,9 @@
 }
 
 .navWrapper{
-	width: 300px;
+	width: 400px;
 	height: 35px;
-	padding: 10px 20px;
+	padding: 10px 65px;
 	display: flex;
 	justify-content: space-between;
 	/* position: fixed; */
@@ -28,6 +28,36 @@
 	border-radius: 20px;
 	border: 1px solid transparent;
 	z-index: 100;
-
+	animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+
+/**
+ * ----------------------------------------
+ * animation slide-in-right
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-in-right {
+	0% {
+	  -webkit-transform: translateY(-1000px);
+			  transform: translateY(-1000px);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: translateY(0);
+			  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  @keyframes slide-in-right {
+	0% {
+	  -webkit-transform: translateY(-1000px);
+			  transform: translateY(-1000px);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: translateY(0);
+			  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
