@@ -30,6 +30,7 @@ const ExpandMore = styled((props) => {
   }));
 
 
+
 export default function ReviewCardSmall({ review }) {
 
 	const [expanded, setExpanded] = React.useState(false);
@@ -38,20 +39,13 @@ export default function ReviewCardSmall({ review }) {
 	  setExpanded(!expanded);
 	};
 
-	const cardStyle = {
-		backgroundColor: 'cardBackground.main',
-		maxWidth: 500,
-		borderRadius: '3px',
-		margin: '0 auto 30px',
-    };
-	
+
 	let rating = review.rate;
     let color;
 	
     if (rating % 1 === 0) {
         rating = rating.toFixed(1);
     } 
-	console.log(rating);
     if (rating == 5) {
         color = 'A.main';
     } else if (rating >= 4) {
@@ -64,6 +58,12 @@ export default function ReviewCardSmall({ review }) {
         color = 'F.main';
     }
 
+	const cardStyle = {
+		backgroundColor: 'cardBackground.main',
+		maxWidth: 500,
+		borderRadius: '3px',
+	};
+	
 	const ratingBoxStyle = {
 		backgroundColor: color,
 		color: 'cardHeadline.main',
@@ -72,7 +72,7 @@ export default function ReviewCardSmall({ review }) {
 		justifyContent: 'center',
 		alignItems: 'center',
 	};
-
+	
 	const cardContainer = {
 		display: 'flex',
 		flexDirection: 'column',
@@ -85,6 +85,10 @@ export default function ReviewCardSmall({ review }) {
 	
     const formattedDate = format(new Date(review.createdAt), 'MMMM do, yyyy');
 
+	const DISPLAY_LENGTH = 300;
+
+	const displayText = review.comment.length > DISPLAY_LENGTH ? review.comment.substring(0, DISPLAY_LENGTH) + '...' : review.comment;
+	const hiddenText = review.comment.length > DISPLAY_LENGTH ? review.comment.substring(DISPLAY_LENGTH) : '';
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -103,23 +107,20 @@ export default function ReviewCardSmall({ review }) {
 								{formattedDate}
 							</Typography>
 						</Box>
-						<Typography color='cardParagraph.main' sx={{pb: 2}}>
-							{review.professor}
+						<Typography color='cardParagraph.main' variant='h6' sx={{pb: 2, display: 'flex', alignItems: 'center'}}>
+							<Typography color='cardParagraph.main' sx={{pr: 1, fontWeight: 300}}>with </Typography> {review.professor}
 						</Typography>
 						<Typography variant='body2' color='cardParagraph.main' style={{fontWeight: 300}}>
-								Lizards are a widespread group of squamate reptiles, with
-								over 6,000 species, ranging across all continents except
-								Antarctica	Lizards are a widespread group of squamate reptiles, with
-								over 6,000 species, ranging across all continents except
-								Antarctica
-							</Typography>
+							<Typography color='cardParagraph.main'>Comment</Typography>
+							{displayText}
+						</Typography>
 						<Collapse in={expanded} timeout="auto" unmountOnExit>
 							<Typography variant='body2' color='cardParagraph.main' style={{fontWeight: 300}}>
-								Lizards are a widespread group of squamate reptiles, with
-								over 6,000 species, ranging across all continents except
-								Antarctica	Lizards are a widespread group of squamate reptiles, with
-								over 6,000 species, ranging across all continents except
-								Antarctica
+								{hiddenText}
+								<Typography color='cardParagraph.main'>What could be improved?</Typography>
+								{review.commentProf}
+								<Typography color='cardParagraph.main'>Advice</Typography>
+								{review.advice}
 							</Typography>
 						</Collapse>
 					</CardContent>

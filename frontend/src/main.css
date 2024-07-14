@@ -9,7 +9,10 @@
 
 :root {
 	--background: #232946;
+	--background-secondary: #eebbc3;
+
 	--headline: #fffffe;
+	--headline-secondary: #232946;
 	--paragraph: #b8c1ec;
 	--button: #eebbc3;
 	--button-text: #232946;

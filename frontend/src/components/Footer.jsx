@@ -3,20 +3,7 @@ import styles from './Footer.module.css';
 
 export default function Footer() {
     const location = useLocation();
-    const pathIsHome = location.pathname === '/';
 
-    let footerStyles;
-    let yearStyles;
-    // if (pathIsHome) {
-    //     footerStyles = styles.footerMain;
-    //     yearStyles = styles.yearMain;
-    // } else {
-    //     footerStyles = styles.footer;
-    //     yearStyles = styles.year;
-    // }
-
-    footerStyles = styles.footerMain;
-    yearStyles = styles.yearMain;
 
     if (location.pathname === '/login') {
         return null;
@@ -24,17 +11,37 @@ export default function Footer() {
 
     return (
         <div className={styles.container}>
-            <div className={footerStyles}>
-                <p className={styles.year}> © 2024 Deis Eval</p>
-                <Link className={styles.link} to='/terms-conditions'>
-                    Terms & Conditions
-                </Link>
-                <Link className={styles.link} to='/privacy-policy'>
-                    Privacy Policy
-                </Link>
-                <Link className={styles.link} to='/site-regulations'>
-                    Site Regulations
-                </Link>
+            <div className={styles.footer}>
+				<div>
+					<h3>Deis Eval</h3>
+					<p>Never pick the wrong course again</p>
+				</div>
+				<div>
+					<h3>Resources</h3>
+					<Link className={styles.link} to='/terms-conditions'>
+						Terms & Conditions
+					</Link>
+					<Link className={styles.link} to='/privacy-policy'>
+						Privacy Policy
+					</Link>
+					<Link className={styles.link} to='/site-regulations'>
+						Site Regulations
+					</Link>
+				</div>
+				<div>
+					<h3>Resources</h3>
+					<Link className={styles.link} to='/terms-conditions'>
+						Terms & Conditions
+					</Link>
+					<Link className={styles.link} to='/privacy-policy'>
+						Privacy Policy
+					</Link>
+					<Link className={styles.link} to='/site-regulations'>
+						Site Regulations
+					</Link>
+				</div>
+                <p className={styles.year}> © 2024. All Rights Reserved</p>
+   
             </div>
         </div>
     );
