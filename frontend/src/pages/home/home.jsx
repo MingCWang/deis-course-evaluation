@@ -265,8 +265,8 @@ export default function Home() {
 		
 
 	const gridContainer = {
-		paddingLeft: "40px",
-		paddingRight: "40px"
+		paddingLeft: "60px",
+		paddingRight: "60px"
 	}
 		
     return (
@@ -307,7 +307,7 @@ export default function Home() {
 			<Box sx={{ flexGrow: 1 }}>
 				<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={gridContainer}>	
 					{mockReviews.map((review) => (
-					<Grid item xs={4} sm={4} md={4} key={review._id}>
+					<Grid item xs={4} sm={4} md={4} key={review._id} sx={{}}>
 						<ScrollAnimation animateIn="bounceIn" duration={1} animateOnce>
 							<ReviewCardSmall review={review}  />
 						</ScrollAnimation>
