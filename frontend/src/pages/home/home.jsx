@@ -3,15 +3,15 @@ import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import ScrollAnimation from 'react-animate-on-scroll';
+import { ThemeProvider } from '@mui/material/styles';
 import UseRecentReviews from '../../services/UseRecentReviews.jsx';
 // icon imports
 import styles from './home.module.css';
-import ScrollAnimation from 'react-animate-on-scroll';
 import SearchButton from './SearchButton';
 import UseReviewNum from '../../services/UseReviewNum.jsx';
 import ReviewCardSmall from '../../components/ReviewCard/ReviewCardSmall.jsx';
 import theme from '../../utils/ColorTheme.jsx';
-import { ThemeProvider } from '@mui/material/styles';
 
 export default function Home() {
     // const width = useWindowWidth();
@@ -268,32 +268,32 @@ export default function Home() {
 		paddingLeft: "60px",
 		paddingRight: "60px"
 	}
-		
+// 	<div className={styles.stats}>
+// 	<div>
+// 		{/* <h2>{totalReviews}</h2> */}
+// 		<h1 className={styles.reviewNum}>
+// 			60<span className={styles.unit}>reviews</span>
+// 		</h1>
+// 	</div>
+// 	<div>
+// 		{/* <h2>{totalReviews}</h2> */}
+// 		<h1 className={styles.reviewNum}>
+// 			2300<span className={styles.unit}>courses</span>
+// 		</h1>
+// 		<h5>last updated on 07-08-2024</h5>
+// 	</div>
+// </div>
     return (
         <div className={styles.homeContainer}>
             <div className={styles.descContainer}>
                 <div className={styles.desc}>
-                    <h1>deiseval</h1>
-                    <p>course evaluation site for Brandeis University</p>
+                    <h1 style={{color: 'var(--card-headline)'}}>deiseval</h1>
+                    <p style={{color: 'var(--card-headline)'}}>course evaluation site for Brandeis University</p>
                     <div className={styles.searchButton}>
                         <SearchButton />
                     </div>
                 </div>
-                <div className={styles.stats}>
-                    <div>
-                        {/* <h2>{totalReviews}</h2> */}
-                        <h1 className={styles.reviewNum}>
-                            60<span className={styles.unit}>reviews</span>
-                        </h1>
-                    </div>
-                    <div>
-                        {/* <h2>{totalReviews}</h2> */}
-                        <h1 className={styles.reviewNum}>
-                            2300<span className={styles.unit}>courses</span>
-                        </h1>
-                        <h5>last updated on 07-08-2024</h5>
-                    </div>
-                </div>
+            
             </div>
             <div className={styles.image}>
                 <div className={styles.shade}>

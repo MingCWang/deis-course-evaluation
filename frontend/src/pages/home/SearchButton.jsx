@@ -15,7 +15,7 @@ export default function SearchButton() {
     return (
         <ThemeProvider theme={theme}>
             <Button
-                variant='contained'
+                variant='outlined'
                 color='button'
                 style={style}
                 endIcon={<DoubleArrowIcon />}

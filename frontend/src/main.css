@@ -8,7 +8,7 @@
 }
 
 :root {
-	--background: #232946;
+	/* --background: #232946;
 	--background-secondary: #eebbc3;
 
 	--headline: #fffffe;
@@ -22,7 +22,28 @@
 	--card-paragraph: #232946;
 	--card-highlight: #d4939d;
 	--card-tag-text: #b8c1ec;
-	--card-tag-background: #232946;
+	--card-tag-background: #232946; */
+
+	/* --background: #ffffff; */
+	--background: #f5f4f0;
+
+	--background-secondary: #f5f4f0;
+
+	--headline: #343434;
+	/* --headline: #003478; */
+	--headline-secondary: #343434;
+	--paragraph: #343434;
+	--button: #343434;
+	--button-text: #343434;
+	--stroke: #343434;
+	--card-background: #ffffff;
+	--card-headline: #003478;
+	--card-paragraph: #686868;
+	--card-highlight: #003478;
+	--card-tag-text: #ffffff;
+	--card-tag-background: #003478;
+
+
 	--A: #4ce600;
 	--B: #339a00;
 	--C: #ffffbf;
