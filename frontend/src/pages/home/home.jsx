@@ -63,7 +63,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"likes": 0,
 			"createdAt": "2024-03-06T00:48:25.737Z",
 			"updatedAt": "2024-07-06T02:12:33.448Z",
@@ -86,7 +90,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"likes": 0,
 			"createdAt": "2024-03-06T00:48:25.737Z",
 			"updatedAt": "2024-07-06T02:12:33.448Z",
@@ -109,7 +117,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"likes": 0,
 			"createdAt": "2024-03-06T00:48:25.737Z",
 			"updatedAt": "2024-07-06T02:12:33.448Z",
@@ -132,7 +144,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"commentProf": "test",
 			"advice": "test",
 			"likes": 0,
@@ -184,7 +200,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"likes": 0,
 			"createdAt": "2024-03-06T00:48:25.737Z",
 			"updatedAt": "2024-07-06T02:12:33.448Z",
@@ -207,7 +227,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"likes": 0,
 			"createdAt": "2024-03-06T00:48:25.737Z",
 			"updatedAt": "2024-07-06T02:12:33.448Z",
@@ -230,7 +254,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"likes": 0,
 			"createdAt": "2024-03-06T00:48:25.737Z",
 			"updatedAt": "2024-07-06T02:12:33.448Z",
@@ -253,7 +281,11 @@ export default function Home() {
 			"attendance": true,
 			"grade": 9,
 			"delivery": "In Person",
-			"comment": "test",
+			"comment": `lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+			`,
 			"commentProf": "test",
 			"advice": "test",
 			"likes": 0,
@@ -305,7 +337,7 @@ export default function Home() {
             </div>
             <div className={styles.recentTitle}>Recent Reviews</div>
 			<Box sx={{ flexGrow: 1 }}>
-				<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={gridContainer}>	
+				<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 8 }} sx={gridContainer}>	
 					{mockReviews.map((review) => (
 					<Grid item xs={4} sm={4} md={4} key={review._id} sx={{}}>
 						<ScrollAnimation animateIn="bounceIn" duration={1} animateOnce>

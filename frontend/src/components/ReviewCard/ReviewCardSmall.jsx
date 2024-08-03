@@ -56,7 +56,7 @@ export default function ReviewCardSmall({ review }) {
 
     const cardStyle = {
         backgroundColor: 'cardBackground.main',
-        maxWidth: 500,
+        maxWidth: 550,
         borderRadius: '3px',
         margin: '0 auto',
     };
@@ -85,7 +85,7 @@ export default function ReviewCardSmall({ review }) {
 
     const displayText =
         review.comment.length > DISPLAY_LENGTH
-            ? review.comment.substring(0, DISPLAY_LENGTH) + '...'
+            ? `${review.comment.substring(0, DISPLAY_LENGTH)  }...`
             : review.comment;
     const hiddenText =
         review.comment.length > DISPLAY_LENGTH
