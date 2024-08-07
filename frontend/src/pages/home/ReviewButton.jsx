@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import RateReviewIcon from '@mui/icons-material/RateReview';
 import theme from '../../utils/ColorTheme.jsx';
 
-export default function SearchButton() {
+export default function ReviewButton() {
     const style = {
         borderRadius: '12px',
         padding: '10px 30px',
@@ -15,16 +15,13 @@ export default function SearchButton() {
     return (
         <ThemeProvider theme={theme}>
             <Button
-                variant='outlined'
+                variant='contained'
                 color='button'
                 style={style}
-                endIcon={<DoubleArrowIcon />}
+                endIcon={<RateReviewIcon/>}
             >
-                search courses
+                leave a review
             </Button>
         </ThemeProvider>
     );
 }
-
-
-

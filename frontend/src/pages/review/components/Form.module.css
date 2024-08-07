@@ -2,13 +2,13 @@
 
 
 .submit{
-	margin: 40px 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	margin: 20px 0;
+
 }
 .submitButton{
-	font-family: 'Montserrat', sans-serif;
 	color: #FFFFFF;
 	font-size: 20px;
 	font-weight: 700;
@@ -26,37 +26,37 @@
 }
 /*Controls the contents width*/
 .form {
-	width: 80%;
 	height: auto;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.h2 {
-	font-size: 20px;
-	font-weight: 700;
-}
 
 .ratingWrapper {
 	margin-top: 40px;
 	display: flex;
 	justify-content: space-between;
-	flex-direction: row;
 	width: 100%;
+	/* flex-direction: column; */
 }
 
 /* professor input */
 .profWrapper{
-	width: 40%;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 }
 .prof{
 	width: auto;
 	font-size: 24px;
-	font-weight: 700;
+	/* font-weight: 700; */
 	padding-right: 40px;;	
 }
 .professorInput {
-	width: 615px;
+	width: 200px;
 	height: 55px;
 	margin-right: 10px;
 	border: none;
@@ -75,7 +75,7 @@
 
 /* Grade button*/
 .gradeDropdown {
-	width: 615px;
+	width: 100%;
 	height: 35px;
 	border: none;
 	background-color: rgba(0, 0, 0, 0.205);
@@ -104,17 +104,24 @@
 .dropdownWrapper{
 	margin-top: 40px;
 	display: flex;
-	/* justify-direction: row; */
+	flex-direction: column;
 	width: 100%;
 }
 
 .termWrapper{
-	width: 40%;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 20px;
 }
 .term{
 	composes: prof;
+	margin-right: 60px;
+}
+
+.termInput {
+	width: 100%;
 }
 
 .editoptions{
@@ -131,50 +138,11 @@
 	background-color: #FF0000;
 }
 
-@media only screen and (max-width: 1300px) {
-
-	.form {
-		width: auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	.professorInput {
-		width: 200px;
-	}	
-	.term{
-		margin-right: 60px;
-	}
-	.termInput {
-		width: 100%;
-	}
-	.termWrapper{
-		width: 100%;
-		margin-bottom: 20px;
-	}
-	.gradeDropdown {
-		width: 100%;
-	}
-	.ratingWrapper {
-		flex-direction: column;
-		display: flex;
-		width: 100%;
-	}
-	.dropdownWrapper{
-		flex-direction: column;
-	}
-	.submit{
-		margin: 20px 0;
-	}
-
-	.form h2 {
-		margin-bottom: 20px;
-	}
-
+.ratingDesc{
+	font-size: 24px;
 }
 
-@media only screen and (max-width: 665px) {
+/* @media only screen and (max-width: 665px) {
 	.form{
 		width: 80%;
 	
@@ -202,11 +170,11 @@
 		margin: 10px 0;
 	}	
 
-}
+} */
 
 
 
-
+/* 
 @media screen and (max-width: 400px){
 	.ratingDesc{
 		font-size: 21px;
@@ -214,4 +182,4 @@
 	.professorInput {
 		width: 250px;
 	}	
-}
+} */

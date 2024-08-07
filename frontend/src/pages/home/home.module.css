@@ -128,7 +128,7 @@
 
 .searchButton{
 	margin-top: 60px;
-	animation: flash 3s infinite;
+	/* animation: flash 3s infinite; */
 }
 @keyframes flash {
 	0%, 50%, 100% {

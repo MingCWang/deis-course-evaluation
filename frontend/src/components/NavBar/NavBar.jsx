@@ -2,7 +2,9 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
+import IconButton from '@mui/material/IconButton';
 import styles from './NavBar.module.css';
+
 // import UseValidateJWT from '../../services/UseValidateJWT.jsx';
 import { UserContext } from '../../context/UserContext.jsx';
 
@@ -49,13 +51,10 @@ export default function NavBar() {
                         Login
                     </Link>
                 ) : (
-                    <button
-                        type='button'
-                        className={styles.profileButton}
-                        onClick={handleOnClick}
-                    >
-                        <AiOutlineUser className={styles.profileIcon} />
-                    </button>
+                 
+					<IconButton aria-label='profile' r sx={{color: "white"}}  onClick={handleOnClick}>
+                        <AiOutlineUser />
+					</IconButton>
                 )}
             </div>
         </div>

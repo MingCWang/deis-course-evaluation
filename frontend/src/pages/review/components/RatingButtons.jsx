@@ -1,60 +1,53 @@
-/* eslint-disable react/prop-types */
-import { useState } from 'react';
-import styles from './ButtonsStyles.module.css';
+import * as React from 'react';
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star';
 
-function RatingButton({ rate, state, setState, hovered, setHovered }) {
-    function handleOnClick(e) {
-        e.preventDefault();
-        if (rate !== state) setState(rate);
-    }
+const labels = {
+  0.5: 'Useless',
+  1: 'Useless+',
+  1.5: 'Poor',
+  2: 'Poor+',
+  2.5: 'Ok',
+  3: 'Ok+',
+  3.5: 'Good',
+  4: 'Good+',
+  4.5: 'Excellent',
+  5: 'Excellent+',
+};
 
-    function handleOnMouseOver(e) {
-        e.preventDefault();
-        setHovered(rate);
-    }
-
-    function handleOnMouseOut(e) {
-        e.preventDefault();
-        setHovered(state);
-    }
-
-    let buttonStyle =
-        rate <= state ? styles.ratingButtonSelected : styles.ratingButton;
-    const hoverStyle =
-        rate <= hovered ? styles.ratingButtonHovered : styles.ratingButton;
-
-    if (rate === 1) buttonStyle = `${buttonStyle} ${styles.firstRatingButton}`;
-    else if (rate === 5) {
-        buttonStyle = `${buttonStyle} ${styles.lastRatingButton}`;
-    }
-    return (
-        <button
-            className={`${buttonStyle} ${hoverStyle}`}
-            onClick={handleOnClick}
-            onMouseOver={handleOnMouseOver}
-            onMouseOut={handleOnMouseOut}
-        />
-    );
+function getLabelText(value) {
+  return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
 
-export default function RatingButtons({ state, setState }) {
-    const numRatingButtons = [1, 2, 3, 4, 5];
-    const [hovered, setHovered] = useState(1);
+export default function HoverRating() {
+  const [value, setValue] = React.useState(2);
+  const [hover, setHover] = React.useState(-1);
 
-    return (
-        <div className={styles.ratingButtonsWrapper}>
-            <p className={styles.levelText}>1</p>
-            {numRatingButtons.map((rate) => (
-                <RatingButton
-                    key={rate}
-                    rate={rate}
-                    state={state}
-                    setState={setState}
-                    hovered={hovered}
-                    setHovered={setHovered}
-                />
-            ))}
-            <p className={styles.levelText}>5</p>
-        </div>
-    );
+  return (
+    <Box
+      sx={{
+        width: 200,
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Rating
+        name="hover-feedback"
+        value={value}
+        precision={0.5}
+        getLabelText={getLabelText}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        onChangeActive={(event, newHover) => {
+          setHover(newHover);
+        }}
+        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+      />
+      {value !== null && (
+        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+      )}
+    </Box>
+  );
 }

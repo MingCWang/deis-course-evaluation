@@ -1,6 +1,44 @@
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+	components: {
+		MuiTextField: {
+			styleOverrides: {
+			root: {
+				'& label': {
+				color: '#fffffe',
+				},
+				'& label.Mui-focused': {
+				color: '#fffffe',
+				},
+				'& .MuiInput-underline:after': {
+				borderBottomColor: '#fffffe',
+				},
+				'& .MuiOutlinedInput-root': {
+					color: '#fffffe',
+				'& fieldset': {
+					borderColor: '#fffffe',
+				},
+				'&:hover fieldset': {
+					borderColor: '#fffffe',
+					borderWidth: '0.15rem',
+				},
+				'&.Mui-focused fieldset': {
+					borderColor: '#fffffe',
+				},
+				},
+			},
+			},
+		},
+		MuiFormHelperText: {
+			styleOverrides: {
+			root: {
+				textTransform: 'initial',
+				fontSize: '1rem',
+			},
+			},
+		},
+	},
     palette: {
         primary: {
             main: '#b8c1ec',
@@ -11,6 +49,9 @@ const theme = createTheme({
         tertiary: {
             main: '#eebbc3',
         },
+		background: {
+			main: '#232946',
+		},
         highlight: {
             main: '#eebbc3',
         },
@@ -57,6 +98,8 @@ const theme = createTheme({
     typography: {
         fontFamily: 'Kanit, sans-serif',
     },
+
+	
 });
 
 export default theme;

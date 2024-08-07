@@ -270,8 +270,9 @@ export default function Review({ edit }) {
         <div className={styles.review}>
             <div className={styles.titleContainer}>
                 <h1 className={styles.title}>
-                    <span className={styles.titleSpan}>Rate: </span>
-                    {courseFormatted} {courseTitleFormatted}
+					<div>  <span className={styles.titleSpan}>{courseFormatted}</span>
+                    {courseTitleFormatted}</div>
+                  
                 </h1>
             </div>
             <div className={styles.reviewContainer}>
