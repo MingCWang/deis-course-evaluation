@@ -14,10 +14,10 @@ import Form from './components/Form.jsx';
 export default function Review({ edit }) {
     const { id: courseId } = useParams();
     const [submit, setSubmit] = useState(false);
-    const [difficulty, setDifficulty] = useState(1);
-    const [rate, setRate] = useState(1);
-    const [usefulness, setUsefulness] = useState(1);
-    const [attendance, setAttendance] = useState(true);
+    const [difficulty, setDifficulty] = useState(2);
+    const [rate, setRate] = useState(2);
+    const [usefulness, setUsefulness] = useState(2);
+    const [attendance, setAttendance] = useState('yes');
     const [delivery, setDelivery] = useState('In Person');
     const [grade, setGrade] = useState(0);
     const [first, setFirst] = useState('');
@@ -270,9 +270,13 @@ export default function Review({ edit }) {
         <div className={styles.review}>
             <div className={styles.titleContainer}>
                 <h1 className={styles.title}>
-					<div>  <span className={styles.titleSpan}>{courseFormatted}</span>
-                    {courseTitleFormatted}</div>
-                  
+                    <div>
+                        {' '}
+                        <span className={styles.titleSpan}>
+                            {courseFormatted}
+                        </span>
+                        {courseTitleFormatted}
+                    </div>
                 </h1>
             </div>
             <div className={styles.reviewContainer}>

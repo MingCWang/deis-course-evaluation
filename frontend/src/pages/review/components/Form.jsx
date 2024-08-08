@@ -2,10 +2,10 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import { ThemeProvider } from '@mui/material/styles';
 import styles from './Form.module.css';
-import DropdownSelection from './DropdownSelection.jsx';
-import RatingButtons from './RatingButtons.jsx';
-import AttendanceButtons from './AttendanceButtons.jsx';
-import DeliveryButtons from './DeliveryButtons.jsx';
+import DropdownSelection from './TermDropDown.jsx';
+import RatingButtons from './buttons/RatingButtons.jsx';
+import AttendanceButtons from './buttons/AttendanceButtons.jsx';
+import DeliveryButtons from './buttons/DeliveryButtons.jsx';
 import LetterGradeDropdown from './LetterGradeDropdown.jsx';
 import CommentSection from './CommentSection.jsx';
 import customTheme from '../../../utils/ColorTheme.jsx';
@@ -72,32 +72,36 @@ export default function Form({
                 </div>
                 <div className={styles.profWrapper}>
                     <h2 className={styles.prof}>Professor:</h2>
-					<ThemeProvider theme={customTheme}>
-					
-					<Box
-						component="form"
-						sx={{
-							display: "flex",
-							flexDirection: "row",
-							alignItems: "center",
-							'& .MuiTextField-root': { marginLeft: "20px", width: 280 },
-						}}
-						noValidate
-						autoComplete="off"
-					>
-						<TextField
-							id="outlined-required"
-							label="First Name"
-							onChange={(e) => handleFirstName(e.target.value)}
-						/>
-						<TextField
-							id="outlined-required"
-							label="Last Name"
-							onChange={(e) => handleLastName(e.target.value)}
-						/>
-					</Box>
-					</ThemeProvider>
-					
+                    <ThemeProvider theme={customTheme}>
+                        <Box
+                            component='form'
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                '& .MuiTextField-root': {
+                                    marginLeft: '20px',
+                                    width: 280,
+                                },
+                            }}
+                            noValidate
+                            autoComplete='off'
+                        >
+                            <TextField
+                                id='outlined-required'
+                                label='First Name'
+                                onChange={(e) =>
+                                    handleFirstName(e.target.value)
+                                }
+                            />
+                            <TextField
+                                id='outlined-required'
+                                label='Last Name'
+                                onChange={(e) => handleLastName(e.target.value)}
+                            />
+                        </Box>
+                    </ThemeProvider>
+
                     {/* <input
                         className={styles.professorInput}
                         value={first}
@@ -112,10 +116,8 @@ export default function Form({
                     /> */}
                 </div>
             </div>
-			<div className={styles.ratingWrapper}>
-                <h2 className={styles.ratingDesc}>
-                    Rate the quality
-                </h2>
+            <div className={styles.ratingWrapper}>
+                <h2 className={styles.ratingDesc}>Rate the quality</h2>
                 <RatingButtons state={rate} setState={setRate} />
             </div>
             <div className={styles.ratingWrapper}>
@@ -126,7 +128,7 @@ export default function Form({
                 <h2 className={styles.ratingDesc}>Rate the usefulness</h2>
                 <RatingButtons state={usefulness} setState={setUsefulness} />
             </div>
-          
+
             <div className={styles.ratingWrapper}>
                 <h2 className={styles.ratingDesc}>Attendance is required</h2>
                 <AttendanceButtons
@@ -140,11 +142,10 @@ export default function Form({
                 <DeliveryButtons state={delivery} setState={setDelivery} />
             </div>
             <div className={styles.ratingWrapper}>
-                <h2 className={styles.ratingDesc}>Your grade (optional)</h2>
+                <h2 className={styles.ratingDesc}>Your grade</h2>
                 <LetterGradeDropdown
                     value={grade}
                     options={letterGrades}
-                    label='grade'
                     handleGradeChange={handleGradeChange}
                 />
             </div>

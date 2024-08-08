@@ -9,7 +9,6 @@ import customTheme from '../utils/ColorTheme.jsx';
 const process = import.meta.env;
 
 export default function Footer() {
-	
     const location = useLocation();
 
     if (location.pathname === '/login') {

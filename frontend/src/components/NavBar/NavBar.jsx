@@ -51,10 +51,14 @@ export default function NavBar() {
                         Login
                     </Link>
                 ) : (
-                 
-					<IconButton aria-label='profile' r sx={{color: "white"}}  onClick={handleOnClick}>
+                    <IconButton
+                        aria-label='profile'
+                        r
+                        sx={{ color: 'white' }}
+                        onClick={handleOnClick}
+                    >
                         <AiOutlineUser />
-					</IconButton>
+                    </IconButton>
                 )}
             </div>
         </div>

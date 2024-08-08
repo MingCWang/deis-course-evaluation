@@ -18,7 +18,7 @@ export default function ReviewButton() {
                 variant='contained'
                 color='button'
                 style={style}
-                endIcon={<RateReviewIcon/>}
+                endIcon={<RateReviewIcon />}
             >
                 leave a review
             </Button>

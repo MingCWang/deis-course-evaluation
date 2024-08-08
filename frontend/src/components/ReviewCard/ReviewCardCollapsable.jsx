@@ -1,9 +1,8 @@
 /**
  * @file A collapsable review card component that displays a review with a course name, professor, rating, comment, and advice.
- * 
+ *
  * NOT IMPLEMENTED: The review card is not yet used in the application.
  */
-
 
 import * as React from 'react';
 import Card from '@mui/material/Card';

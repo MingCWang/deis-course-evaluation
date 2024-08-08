@@ -321,7 +321,7 @@ export default function Home() {
                     <h1>deiseval</h1>
                     <p>course evaluation site for Brandeis University</p>
                     <div className={styles.searchButton}>
-                        <SearchButton />    <ReviewButton />
+                        <SearchButton /> <ReviewButton />
                     </div>
                 </div>
                 <div className={styles.stats}>
@@ -348,30 +348,42 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-			<ThemeProvider theme={customTheme}>
-				<Box sx={{ width: '90%', margin: '50px auto' }}>
-					<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-						<Tabs
-							value={value}
-							onChange={handleChange}
-							aria-label='review type toggle'
-						>
-							<Tab label='Most Recent'  sx={{
-          color: value === 0 ? 'primary.main' : 'secondary.main', // Active vs inactive color
-          '&.Mui-selected': {
-            color: 'primary.main', // Active tab color
-          },
-        }}/>
-							<Tab label='Most Popular' sx={{
-          color: value === 1 ? 'primary.main' : 'secondary.main', // Active vs inactive color
-          '&.Mui-selected': {
-            color: 'primary.main', // Active tab color
-          },
-        }}/>
-						</Tabs>
-					</Box>
-				</Box>
-			</ThemeProvider>
+            <ThemeProvider theme={customTheme}>
+                <Box sx={{ width: '90%', margin: '50px auto' }}>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                        <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            aria-label='review type toggle'
+                        >
+                            <Tab
+                                label='Most Recent'
+                                sx={{
+                                    color:
+                                        value === 0
+                                            ? 'primary.main'
+                                            : 'secondary.main', // Active vs inactive color
+                                    '&.Mui-selected': {
+                                        color: 'primary.main', // Active tab color
+                                    },
+                                }}
+                            />
+                            <Tab
+                                label='Most Popular'
+                                sx={{
+                                    color:
+                                        value === 1
+                                            ? 'primary.main'
+                                            : 'secondary.main', // Active vs inactive color
+                                    '&.Mui-selected': {
+                                        color: 'primary.main', // Active tab color
+                                    },
+                                }}
+                            />
+                        </Tabs>
+                    </Box>
+                </Box>
+            </ThemeProvider>
             {/* <div className={styles.recentTitle}>Recent Reviews</div> */}
             <Box sx={{ flexGrow: 1 }}>
                 <Grid
