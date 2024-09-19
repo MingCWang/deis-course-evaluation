@@ -2,7 +2,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import styles from './search.module.css';
-import CourseCard from '../../components/CourseReviewCard/CourseCard.jsx';
+import CourseCard from '../../components/CourseCard/CourseCard.jsx';
 import UseCourseSearch from '../../services/UseCourseSearch.jsx';
 import Loading from '../loading/loading';
 import SearchBar from './SearchBar.jsx';

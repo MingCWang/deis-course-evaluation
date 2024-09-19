@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './saved-courses.module.css';
-import CourseCard from '../../components/CourseReviewCard/CourseCard.jsx';
+import CourseCard from '../../components/CourseCard/CourseCard.jsx';
 import fetchLikeCoursesWithIds from '../../services/fetchLikeCoursesWithIds';
 
 export default function SavedCourses() {

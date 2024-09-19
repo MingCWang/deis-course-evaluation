@@ -18,6 +18,8 @@ export default function TermDropDown({
                 id='combo-box-demo'
                 forcePopupIcon
                 options={options}
+				clearIcon={false}
+				popupIcon={false}
                 slotProps={{
                     paper: {
                         sx: {
@@ -32,10 +34,10 @@ export default function TermDropDown({
                 }}
                 sx={{
                     width: 280,
-                    '@media (max-width: 665px)': {
-                        width: '70%', // Width for screens smaller than 665px
-                        marginRight: '0px',
-                    },
+                    // '@media (max-width: 665px)': {
+                    //     width: '70%', // Width for screens smaller than 665px
+                    //     marginRight: '0px',
+                    // },
                 }}
                 renderInput={(params) => (
                     <TextField

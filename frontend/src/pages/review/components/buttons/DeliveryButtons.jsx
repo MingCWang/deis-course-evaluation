@@ -53,7 +53,7 @@ export default function DeliveryButtons({ state, setState }) {
                             />
                         }
                         label='Hybrid'
-                        sx={{ color: 'secondary.main' }}
+                        sx={{ color: 'secondary.main', mr:0 }}
                     />
                 </RadioGroup>
             </FormControl>

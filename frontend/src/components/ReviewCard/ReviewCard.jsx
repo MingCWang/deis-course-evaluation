@@ -5,7 +5,7 @@ import { useEffect, useState, useContext } from 'react';
 import { LiaEditSolid } from 'react-icons/lia';
 import styles from './ReviewCard.module.css';
 import convertToLetterGrade from '../../utils/convertToLetterGrade.js';
-import RatingBox from '../CourseReviewCard/RatingBox.jsx';
+import RatingBox from '../CourseCard/RatingBox.jsx';
 import UseLikeReview from '../../services/UseLikeReview.jsx';
 // import UseValidateJWT from '../../services/UseValidateJWT.jsx';
 import { UserContext } from '../../context/UserContext.jsx';

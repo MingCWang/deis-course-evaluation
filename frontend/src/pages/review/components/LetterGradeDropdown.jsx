@@ -20,6 +20,8 @@ export default function ComboBox({ value, options, handleGradeChange }) {
                 disablePortal
                 id='combo-box-demo'
                 options={options}
+				clearIcon={false}
+				popupIcon={false}
 				slotProps={{
                     paper: {
                         sx: {
@@ -29,6 +31,7 @@ export default function ComboBox({ value, options, handleGradeChange }) {
                                     color: 'background.main',
                                 },
                             },
+							
                         },
                     },
                 }}
@@ -37,12 +40,12 @@ export default function ComboBox({ value, options, handleGradeChange }) {
                     // '& .MuiInputBase-root': {
                     //     borderRadius: '10px',
                     // },
-                    '@media (max-width: 665px)': {
-                        width: '80%', // Width for screens smaller than 665px
-                    },
+                    // '@media (max-width: 665px)': {
+                    //     width: '80%', // Width for screens smaller than 665px
+                    // },
                 }}
                 renderInput={(params) => (
-                    <TextField {...params} label={'optional'} />
+                    <TextField {...params} />
                 )}
                 value={value}
             />

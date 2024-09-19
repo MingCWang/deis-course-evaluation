@@ -9,6 +9,7 @@ import DeliveryButtons from './buttons/DeliveryButtons.jsx';
 import LetterGradeDropdown from './LetterGradeDropdown.jsx';
 import CommentSection from './CommentSection.jsx';
 import customTheme from '../../../utils/ColorTheme.jsx';
+import SubmitButton from './buttons/SubmitButton.jsx';
 
 const letterGrades = [
     { label: 'A+', value: 13 },
@@ -61,17 +62,8 @@ export default function Form({
     return (
         <form className={styles.form}>
             <div className={styles.dropdownWrapper}>
-                <div className={styles.termWrapper}>
-                    <h2 className={styles.term}>Term:</h2>
-                    <DropdownSelection
-                        value={semester}
-                        options={term}
-                        label='Select Term'
-                        handleChange={handleSemesterChange}
-                    />
-                </div>
-                <div className={styles.profWrapper}>
-                    <h2 className={styles.prof}>Professor:</h2>
+				<div className={styles.profWrapper}>
+                    <h2 className={styles.prof}>Professor</h2>
                     <ThemeProvider theme={customTheme}>
                         <Box
                             component='form'
@@ -115,8 +107,23 @@ export default function Form({
                         placeholder='Last Name'
                     /> */}
                 </div>
+                <div className={styles.termWrapper}>
+                    <h2 className={styles.term}>Term</h2>
+                    <DropdownSelection
+                        value={semester}
+                        options={term}
+                        label='Select Term'
+                        handleChange={handleSemesterChange}
+                    />
+                </div>
+               
             </div>
-            <div className={styles.ratingWrapper}>
+
+			<div className={styles.dividerContainer}>
+                <div className={styles.divider} />
+            </div>
+
+            <div className={styles.ratingWrapperNoMargin}>
                 <h2 className={styles.ratingDesc}>Rate the quality</h2>
                 <RatingButtons state={rate} setState={setRate} />
             </div>
@@ -152,28 +159,22 @@ export default function Form({
             <div className={styles.dividerContainer}>
                 <div className={styles.divider} />
             </div>
-
-            <CommentSection
-                comment={comment}
-                commentProf={commentProf}
-                advice={advice}
-                handleCommentChange={handleCommentChange}
-                handleCommentProfChange={handleCommentProfChange}
-                handleAdviceChange={handleAdviceChange}
-            />
+			
+			<CommentSection
+				comment={comment}
+				commentProf={commentProf}
+				advice={advice}
+				handleCommentChange={handleCommentChange}
+				handleCommentProfChange={handleCommentProfChange}
+				handleAdviceChange={handleAdviceChange}
+			/>
 
             {error && (
                 <div className={styles.error}>Please answer all questions*</div>
             )}
             {!edit && (
                 <div className={styles.submit}>
-                    <button
-                        className={styles.submitButton}
-                        type='submit'
-                        onClick={handleSubmit}
-                    >
-                        Submit
-                    </button>
+					<SubmitButton onClick={handleSubmit}/>
                 </div>
             )}
             {edit && (

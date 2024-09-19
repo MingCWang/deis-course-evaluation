@@ -21,7 +21,7 @@ export default function NavBar() {
         setProfileClicked(!profileClicked);
     }
 
-    if (location.pathname === '/login') {
+    if (location.pathname === '/login' || location.pathname.includes('/review')) {
         return null;
     }
     let { navBar } = styles;

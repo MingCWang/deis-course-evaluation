@@ -6,8 +6,8 @@ import ReviewCard from '../../components/ReviewCard/ReviewCard.jsx';
 import fetchReviews from '../../services/fetchReviews.js';
 import fetchCourse from '../../services/fetchCourse.js';
 import convertToLetterGrade from '../../utils/convertToLetterGrade.js';
-import LikeButton from '../../components/CourseReviewCard/LikeButton.jsx';
-import RateCourseButton from '../../components/CourseReviewCard/RateCourseButton.jsx';
+import LikeButton from '../../components/CourseCard/LikeButton.jsx';
+import RateCourseButton from '../../components/CourseCard/RateCourseButton.jsx';
 import Loading from '../loading/loading.jsx';
 
 export default function Course() {

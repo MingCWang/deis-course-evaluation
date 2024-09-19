@@ -42,12 +42,18 @@
 	width: 100%;
 	/* flex-direction: column; */
 }
+.ratingWrapperNoMargin{
+	composes: ratingWrapper;
+	margin: 0;
+}
 
 /* professor input */
 .profWrapper{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 20px;
+
 }
 .prof{
 	width: auto;
@@ -113,7 +119,6 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	margin-bottom: 20px;
 }
 .term{
 	composes: prof;
@@ -140,6 +145,7 @@
 
 .ratingDesc{
 	font-size: 24px;
+	margin: auto 0;
 }
 
 /* @media only screen and (max-width: 665px) {

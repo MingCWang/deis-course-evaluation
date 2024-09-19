@@ -41,7 +41,7 @@ export default function AttendanceButtons({ state, setState }) {
                             />
                         }
                         label='no'
-                        sx={{ color: 'secondary.main' }}
+                        sx={{ color: 'secondary.main', mr:0 }}
                     />
                 </RadioGroup>
             </FormControl>
