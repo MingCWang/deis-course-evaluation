@@ -27,7 +27,7 @@ const corsOptions = {
 
 // app.use(cors(corsOptions));  // production
 app.use(cors()) // development
-
+app.options('*', cors())
 // app.use(morgan('dev'));
 // app.use(express.static('public'));
 app.use(express.json());
