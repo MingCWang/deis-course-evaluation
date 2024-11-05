@@ -89,6 +89,8 @@ export default function Review({ edit }) {
     );
 
     const term = [
+		{ label: 'FALL 2024', value: 'FALL 2024' },
+		{ label: 'SUMMER 2024', value: 'SUMMER 2024' },
         { label: 'SPRING 2024', value: 'SPRING 2024' },
         { label: 'FALL 2023', value: 'FALL 2023' },
         { label: 'SUMMER 2023', value: 'SUMMER 2023' },

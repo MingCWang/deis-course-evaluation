@@ -78,7 +78,7 @@ Each part of this project helped me understand more about building apps, managin
 ### Course
 - GET /api/courses - Get all courses
 - GET /api/courses/:id - Get course by id
-- POST /api/courses/reviews - Get all evaluations with the given course id
+- GET /api/courses/reviews - Get all evaluations with the given course id
 ### Auth
  - POST auth/oauth/google - generate jwt token after login with google oauth2.0
  - POST auth/login - generate jwt token after login with username/password
