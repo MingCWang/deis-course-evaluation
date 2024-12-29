@@ -1,8 +1,11 @@
+![banner](https://github.com/user-attachments/assets/5266a138-9d89-46a5-8b11-e6e16486ed9b)
+
 # :school: deiseval
-
-sunsetted*
-
 This is a course evaluation website for Brandeis students that I created as my first full stack project during the summer of sophomore year. I didn't want this to be a project that lives on localhost, I wanted it to be something that people can interact with. This website is created in hope that it will be a useful tool for students to gain authentic insights about the courses they are interested in. 
+
+
+
+## Sunsetted
 
 In April of 2024, I received $2200 from [ain family startup award](https://www.brandeisstartup.com/projects/deis-eval) in funding to continue developing and revamping an improved user interface. I was later reached out by the univeristy provost to collaborate with the school's [ITS department](https://www.brandeis.edu/its/). 
 
@@ -31,14 +34,24 @@ Here's what you can do with deiseval:
 
 - **Search courses**: deiseval contains all the courses that were taught from 2017-2023
 
+
+https://github.com/user-attachments/assets/d145be23-7c16-4281-ac99-af842a43ce89
+
+
 _Actions below requires user login with Brandeis credentials_
 
+
 - **Rate a course**: After searching for a course, you can either add it to your list or rate it by clicking on the 'rate this course' button.
+
+https://github.com/user-attachments/assets/4d389d3c-9b7a-4e5b-bab8-0f2bbf58d2fa
 
 - **Edit ratings**: You can edit your ratings after submission by clicking on the button on the top right of the rating card.
   
 - **View past reviews**: Click on the profile button to see all your liked courses and ratings
   
+
+https://github.com/user-attachments/assets/3aab5d9a-f37d-4ed1-8543-0abaebd98b10
+
 
 ## 👩🏽‍🍳 The Process
 
