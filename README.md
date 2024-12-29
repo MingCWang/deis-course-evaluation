@@ -1,9 +1,19 @@
 # :school: deiseval
 
-This is a course evaluation website for Brandeis students. The website allows students to search for courses and view the course evaluations. Students can also add courses to their list and view the list of courses they have added. This website is created in hope that it will be a useful tool for students to gain authentic insights about the courses they are interested in. 
+sunsetted*
 
-### [How to contribute?](./CONTRIBUTING.md)
-### [Join our discussions!](https://github.com/MingCWang/deiseval/discussions)
+This is a course evaluation website for Brandeis students that I created as my first full stack project during the summer of sophomore year. I didn't want this to be a project that lives on localhost, I wanted it to be something that people can interact with. This website is created in hope that it will be a useful tool for students to gain authentic insights about the courses they are interested in. 
+
+In April of 2024, I received $2200 from [ain family startup award](https://www.brandeisstartup.com/projects/deis-eval) in funding to continue developing and revamping an improved user interface. I was later reached out by the univeristy provost to collaborate with the school's [ITS department](https://www.brandeis.edu/its/). 
+
+Due to the reasons below, I have decided to pause my efforts in continuing this project in November of 2024. 
+
+- This project poses a conflict of interest with Brandeis' evaluation system. After a discussion with 10+ professors, the ITS department, acadmeic services, and follow up emails, the conclusion was to integrate deiseval into the existing evaluation system, which doesn't align with my original plans for the project. 
+- I want to shift my focus in expanding my skill set and diving deeper into topics that I'm interested in, I also joined an early stage startup and I want to maximize my experience as an intern. 
+
+This project has taught me a lot and brought me a lot of experiences that I would never had thought of, but we move. :)
+
+
 ## 📦 Technologies
 
 - `Vite`
@@ -96,4 +106,5 @@ Each part of this project helped me understand more about building apps, managin
 - POST api/liked-courses/remove - Remove a liked course
 </details>
 
+### [How to contribute?](./CONTRIBUTING.md)
 
