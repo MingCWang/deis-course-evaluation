@@ -7,7 +7,7 @@ This is a course evaluation website for Brandeis students that I created as my f
 
 ## Sunsetted
 
-In April of 2024, I received $2200 from [ain family startup award](https://www.brandeisstartup.com/projects/deis-eval) in funding to continue developing and revamping an improved user interface. I was later reached out by the univeristy provost to collaborate with the school's [ITS department](https://www.brandeis.edu/its/). 
+In April of 2024, I received $2200 in funding from [ain family startup award](https://www.brandeisstartup.com/projects/deis-eval) to continue developing and revamping an improved user interface. I was later reached out by the univeristy provost to collaborate with the school's [ITS department](https://www.brandeis.edu/its/). 
 
 200+ users and 40+ reviews later, I have decided to pause my efforts in continuing this project in November of 2024 due to the reasons below:
 
