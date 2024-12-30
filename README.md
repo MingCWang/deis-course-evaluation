@@ -9,12 +9,13 @@ This is a course evaluation website for Brandeis students that I created as my f
 
 In April of 2024, I received $2200 from [ain family startup award](https://www.brandeisstartup.com/projects/deis-eval) in funding to continue developing and revamping an improved user interface. I was later reached out by the univeristy provost to collaborate with the school's [ITS department](https://www.brandeis.edu/its/). 
 
-Due to the reasons below, I have decided to pause my efforts in continuing this project in November of 2024. 
+200+ users and 40+ reviews later, I have decided to pause my efforts in continuing this project in November of 2024 due to the reasons below, . 
 
 - This project poses a conflict of interest with Brandeis' evaluation system. After a discussion with 10+ professors, the ITS department, acadmeic services, and follow up emails, the conclusion was to integrate deiseval into the existing evaluation system, which doesn't align with my original plans for the project. 
 - I want to shift my focus in expanding my skill set and diving deeper into topics that I'm interested in, I also joined an early stage startup and I want to maximize my experience as an intern. 
 
 This project has taught me a lot and brought me a lot of experiences that I would never had thought of, but we move. :) 
+
 
 
 ## 📦 Technologies
