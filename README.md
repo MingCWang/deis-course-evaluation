@@ -14,7 +14,7 @@ Due to the reasons below, I have decided to pause my efforts in continuing this 
 - This project poses a conflict of interest with Brandeis' evaluation system. After a discussion with 10+ professors, the ITS department, acadmeic services, and follow up emails, the conclusion was to integrate deiseval into the existing evaluation system, which doesn't align with my original plans for the project. 
 - I want to shift my focus in expanding my skill set and diving deeper into topics that I'm interested in, I also joined an early stage startup and I want to maximize my experience as an intern. 
 
-This project has taught me a lot and brought me a lot of experiences that I would never had thought of, but we move. :)
+This project has taught me a lot and brought me a lot of experiences that I would never had thought of, but we move. :) 
 
 
 ## 📦 Technologies
@@ -32,7 +32,7 @@ This project has taught me a lot and brought me a lot of experiences that I woul
 
 Here's what you can do with deiseval:
 
-- **Search courses**: deiseval contains all the courses that were taught from 2017-2023
+- **Search courses**: deiseval contains all the courses that were taught from 2017-2023, scraped with a custom scraper that I made [here](https://github.com/MingCWang/deiseval-scraper).
 
 
 https://github.com/user-attachments/assets/d145be23-7c16-4281-ac99-af842a43ce89
